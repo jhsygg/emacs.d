@@ -1,0 +1,32 @@
+;; Object mytest/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "mytest/"
+  :tables (list 
+   (semanticdb-table "j1_1.java"
+    :major-mode 'jde-mode
+    :tags 
+        '( ("j1_1" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [50 63]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [25 119]))                  
+                :type "class")
+                nil [1 121]))          
+    :file "j1_1.java"
+    :pointmax 122
+    :fsize 121
+    :lastmodtime '(21160 29506)
+    :unmatched-syntax '((PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) (PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) ($EOI 18 . 18) ($EOI 15 . 15) ($EOI 14 . 14) ($EOI 24 . 24) ($EOI 20 . 20) ($EOI 18 . 18) ($EOI 13 . 13) ($EOI 7 . 7))
+    )
+   )
+  :file "!home!jdp!mytest!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

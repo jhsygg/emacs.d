@@ -1,0 +1,11 @@
+This is the old CVS repository of GNU AUCTeX.  It is *obsolete*!  Don't commit
+here anymore!  (Hopefully, it's configured so that it doesn't accept commits
+anymore.)
+
+GNU AUCTeX now uses Git for version control.  The git repository is linked from
+the savannah AUCTeX project page:
+
+  https://savannah.gnu.org/projects/auctex
+
+Everyone who had commit access for this old CVS repository now has push access
+for the Git repository.

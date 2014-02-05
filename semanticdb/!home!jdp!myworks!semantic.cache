@@ -1,0 +1,18 @@
+;; Object myworks/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "myworks/"
+  :tables (list 
+   (semanticdb-table "水钢计量管理制度201312.html"
+    :major-mode 'html-mode
+    :tags nil
+    :file "水钢计量管理制度201312.html"
+    :pointmax 27154
+    :fsize 40755
+    :lastmodtime '(21159 52741)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!jdp!myworks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )
