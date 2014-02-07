@@ -2,6 +2,14 @@
 ;;这个配置文件最好不要编译，否则下面定义的erc-sir等函数不能用 
 ;;不过这个应该可以修改，我以后试试 
 (require 'erc) 
+(require 'erc-log)
+(require 'erc-notify)
+(require 'erc-spelling)
+(require 'erc-autoaway)
+
+;; Interpret mIRC-style color commands in IRC chats
+(setq erc-interpret-mirc-color t)
+
 ;;设定一个有关方便连接IRC服务器的函数 
 (defmacro de-erc-connect (command server port nick) 
   "Create interactive command `command', for connecting to an IRC server. The 
@@ -54,4 +62,7 @@ command uses interactive mode if passed an argument."
 ;;erc中文的关键设置，这个一定需要，否则你只能看中文，而不能“说”中文 
 (setq erc-encoding-default 'utf-8) 
 
-
+/quit;; exclude boring stuff from tracking
+(erc-track-mode t)
+(setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                "324" "329" "332" "333" "353" "477"))
