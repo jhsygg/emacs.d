@@ -73,6 +73,11 @@
 	   (:name facebook :auto-generated t :type emacswiki :description "Access the Facebook API from emacs" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/facebook.el"))
  (fuzzy status "installed" recipe
 	(:name fuzzy :website "https://github.com/auto-complete/fuzzy-el" :description "Fuzzy matching utilities for GNU Emacs" :type github :pkgname "auto-complete/fuzzy-el"))
+ (git-emacs status "required" recipe nil)
+ (go-mode status "installed" recipe
+	  (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el" :features go-mode :post-init
+		 (add-to-list 'auto-mode-alist
+			      '("\\.go\\'" . go-mode))))
  (google-maps status "removed" recipe nil)
  (graphviz-dot-mode status "installed" recipe
 		    (:name graphviz-dot-mode :type http :website "http://www.graphviz.org/" :description "graphviz dot language mode" :url "http://www.graphviz.org/Misc/graphviz-dot-mode.el" :autoloads t))

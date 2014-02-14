@@ -20,7 +20,7 @@ Major mode for editing Apache configuration files.
 ;;;***
 
 ;;;### (autoloads (ascii-off ascii-on ascii-display ascii-customize)
-;;;;;;  "ascii/ascii" "ascii/ascii.el" (21157 16296))
+;;;;;;  "ascii/ascii" "ascii/ascii.el" (21237 47594))
 ;;; Generated autoloads from ascii/ascii.el
 
 (autoload 'ascii-customize "ascii/ascii" "\
@@ -327,8 +327,9 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 \(fn)" t nil)
 
-;;;### (autoloads (auto-complete) "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (21150 42414))
+;;;### (autoloads (global-auto-complete-mode auto-complete-mode auto-complete)
+;;;;;;  "auto-complete/auto-complete" "auto-complete/auto-complete.el"
+;;;;;;  (21237 47587))
 ;;; Generated autoloads from auto-complete/auto-complete.el
 
 (autoload 'auto-complete "auto-complete/auto-complete" "\
@@ -336,11 +337,37 @@ Start auto-completion at current point.
 
 \(fn &optional SOURCES)" t nil)
 
+(autoload 'auto-complete-mode "auto-complete/auto-complete" "\
+AutoComplete mode
+
+\(fn &optional ARG)" t nil)
+
+(defvar global-auto-complete-mode nil "\
+Non-nil if Global-Auto-Complete mode is enabled.
+See the command `global-auto-complete-mode' for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-auto-complete-mode'.")
+
+(custom-autoload 'global-auto-complete-mode "auto-complete/auto-complete" nil)
+
+(autoload 'global-auto-complete-mode "auto-complete/auto-complete" "\
+Toggle Auto-Complete mode in all buffers.
+With prefix ARG, enable Global-Auto-Complete mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Auto-Complete mode is enabled in all buffers where
+`auto-complete-mode-maybe' would do it.
+See `auto-complete-mode' for more information on Auto-Complete mode.
+
+\(fn &optional ARG)" t nil)
+
 ;;;***
 
 ;;;### (autoloads (holiday-solar-term holiday-lunar cal-china-x-birthday-from-chinese)
-;;;;;;  "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el" (21157
-;;;;;;  16296))
+;;;;;;  "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el" (21237
+;;;;;;  47596))
 ;;; Generated autoloads from cal-china-x/cal-china-x.el
 
 (autoload 'cal-china-x-birthday-from-chinese "cal-china-x/cal-china-x" "\
@@ -444,7 +471,7 @@ Default bookmark handler for w3m buffers.
 
 ;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
 ;;;;;;  octet-find-file octet-buffer) "emacs-w3m/octet" "emacs-w3m/octet.el"
-;;;;;;  (19563 28233))
+;;;;;;  (21237 47596))
 ;;; Generated autoloads from emacs-w3m/octet.el
 
 (autoload 'octet-buffer "emacs-w3m/octet" "\
@@ -1388,6 +1415,90 @@ Add a file to `erc-xdcc-files'.
 
 ;;;***
 
+;;;### (autoloads (go-download-play godoc gofmt-before-save go-mode)
+;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (21237 47564))
+;;; Generated autoloads from go-mode/go-mode.el
+
+(autoload 'go-mode "go-mode/go-mode" "\
+Major mode for editing Go source text.
+
+This mode provides (not just) basic editing capabilities for
+working with Go code. It offers almost complete syntax
+highlighting, indentation that is almost identical to gofmt and
+proper parsing of the buffer content to allow features such as
+navigation by function, manipulation of comments or detection of
+strings.
+
+In addition to these core features, it offers various features to
+help with writing Go code. You can directly run buffer content
+through gofmt, read godoc documentation from within Emacs, modify
+and clean up the list of package imports or interact with the
+Playground (uploading and downloading pastes).
+
+The following extra functions are defined:
+
+- `gofmt'
+- `godoc'
+- `go-import-add'
+- `go-remove-unused-imports'
+- `go-goto-imports'
+- `go-play-buffer' and `go-play-region'
+- `go-download-play'
+- `godef-describe' and `godef-jump'
+- `go-coverage'
+
+If you want to automatically run `gofmt' before saving a file,
+add the following hook to your emacs configuration:
+
+\(add-hook 'before-save-hook #'gofmt-before-save)
+
+If you want to use `godef-jump' instead of etags (or similar),
+consider binding godef-jump to `M-.', which is the default key
+for `find-tag':
+
+\(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd \"M-.\") #'godef-jump)))
+
+Please note that godef is an external dependency. You can install
+it with
+
+go get code.google.com/p/rog-go/exp/cmd/godef
+
+
+If you're looking for even more integration with Go, namely
+on-the-fly syntax checking, auto-completion and snippets, it is
+recommended that you look at goflymake
+\(https://github.com/dougm/goflymake), gocode
+\(https://github.com/nsf/gocode), go-eldoc
+\(github.com/syohex/emacs-go-eldoc) and yasnippet-go
+\(https://github.com/dominikh/yasnippet-go)
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist (cons "\\.go\\'" 'go-mode))
+
+(autoload 'gofmt-before-save "go-mode/go-mode" "\
+Add this to .emacs to run gofmt on the current buffer when saving:
+ (add-hook 'before-save-hook 'gofmt-before-save).
+
+Note that this will cause go-mode to get loaded the first time
+you save any file, kind of defeating the point of autoloading.
+
+\(fn)" t nil)
+
+(autoload 'godoc "go-mode/go-mode" "\
+Show go documentation for a query, much like M-x man.
+
+\(fn QUERY)" t nil)
+
+(autoload 'go-download-play "go-mode/go-mode" "\
+Downloads a paste from the playground and inserts it in a Go
+buffer. Tries to look for a URL at point.
+
+\(fn URL)" t nil)
+
+;;;***
+
 ;;;### (autoloads (graphviz-dot-mode) "graphviz-dot-mode/graphviz-dot-mode"
 ;;;;;;  "graphviz-dot-mode/graphviz-dot-mode.el" (21158 26505))
 ;;; Generated autoloads from graphviz-dot-mode/graphviz-dot-mode.el
@@ -2009,16 +2120,27 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("ascii-table/ascii-table.el" "bazaar/bazaar.el"
-;;;;;;  "chm-view/chm-view.el" "muse/lisp/muse-autoloads.el" "muse/lisp/muse-backlink.el"
+;;;### (autoloads nil nil ("ac-math/ac-math.el" "ascii-table/ascii-table.el"
+;;;;;;  "auto-complete-yasnippet/auto-complete-yasnippet.el" "auto-complete/auto-complete-config.el"
+;;;;;;  "auto-complete/auto-complete-pkg.el" "bazaar/bazaar.el" "bzr-ui/bzr-ui.el"
+;;;;;;  "cedet/cedet-build.el" "cedet/cedet-devel-load.el" "cedet/cedet-ediff.el"
+;;;;;;  "cedet/cedet-emacs-merge.el" "cedet/cedet-remove-builtin.el"
+;;;;;;  "cedet/cedet-update-changelog.el" "cedet/cedet-update-version.el"
+;;;;;;  "chinese-chess-pvc/chinese-chess-pvc.el" "chinese-chess/chinese-chess.el"
+;;;;;;  "chm-view/chm-view.el" "cscope/cscope.el" "date-calc/date-calc.el"
+;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
+;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "emacs-init/emacs-init.el"
+;;;;;;  "muse/lisp/muse-autoloads.el" "muse/lisp/muse-backlink.el"
 ;;;;;;  "muse/lisp/muse-book.el" "muse/lisp/muse-context.el" "muse/lisp/muse-docbook.el"
 ;;;;;;  "muse/lisp/muse-groff.el" "muse/lisp/muse-html.el" "muse/lisp/muse-http.el"
 ;;;;;;  "muse/lisp/muse-ikiwiki.el" "muse/lisp/muse-import-xml.el"
 ;;;;;;  "muse/lisp/muse-ipc.el" "muse/lisp/muse-journal.el" "muse/lisp/muse-latex.el"
 ;;;;;;  "muse/lisp/muse-latex2png.el" "muse/lisp/muse-poem.el" "muse/lisp/muse-regexps.el"
 ;;;;;;  "muse/lisp/muse-texinfo.el" "muse/lisp/muse-wiki.el" "muse/lisp/muse-xml-common.el"
-;;;;;;  "muse/lisp/muse-xml.el" "wcy-compose/wcy-compose.el") (21159
-;;;;;;  61530 353642))
+;;;;;;  "muse/lisp/muse-xml.el" "wcy-compose/wcy-compose.el") (21237
+;;;;;;  47631 589895))
 
 ;;;***
 

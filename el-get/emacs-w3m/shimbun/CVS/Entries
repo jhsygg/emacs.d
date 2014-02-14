@@ -1,5 +1,4 @@
 /.cvsignore/1.2/Tue Feb  4 12:00:43 2003//
-/ChangeLog/1.303/Mon Dec  2 23:44:28 2013//
 /mew-shimbun.el/1.58/Wed Jan 13 00:59:30 2010//
 /nnshimbun.el/1.74/Wed Feb 15 23:15:55 2012//
 /sb-2ch.el/1.17/Tue Jul  5 23:52:29 2005//
@@ -8,7 +7,6 @@
 /sb-arch-bluegate.el/1.6/Wed Oct 17 11:15:58 2007//
 /sb-asahi-html.el/1.22/Wed Oct 17 11:15:58 2007//
 /sb-asahi-mytown.el/1.13/Wed Oct 17 11:15:58 2007//
-/sb-asahi.el/1.181/Mon Dec  2 23:44:29 2013//
 /sb-atmarkit.el/1.19/Thu Nov  4 04:32:04 2010//
 /sb-atom-hash.el/1.10/Fri Apr 22 02:10:56 2011//
 /sb-atom.el/1.11/Fri Apr 22 02:10:56 2011//
@@ -132,5 +130,7 @@
 /sb-yomiuri.el/1.60/Fri Jan 11 07:43:25 2008//
 /sb-zdnet-jp.el/1.9/Wed Oct 17 11:15:58 2007//
 /sb-zeit-de.el/1.17/Thu Nov  4 04:32:04 2010//
-/shimbun.el/1.222/Fri Jun 28 08:34:17 2013//
+/ChangeLog/1.306/Sat Feb  8 05:00:28 2014//
+/sb-asahi.el/1.183/Sat Feb  8 05:00:28 2014//
+/shimbun.el/1.223/Sat Feb  8 05:00:28 2014//
 D

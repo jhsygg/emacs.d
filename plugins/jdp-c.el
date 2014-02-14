@@ -5,8 +5,11 @@
 (c-set-offset 'substatement-open 0)
 
 ;;C语言编辑策略
+(setq c-default-style "k&r"
+      c-basic-offset 8)
+
 (defun my-c-mode-common-hook()
-  (setq tab-width 4 indent-tabs-mode nil)
+  (setq tab-width 8 indent-tabs-mode nil)
   ;;; hungry-delete and auto-newline
   (c-toggle-auto-hungry-state 1)
   ;;按键定义
@@ -25,7 +28,7 @@
   (setq c-macro-prompt-flag t)
   (setq hs-minor-mode t)
   (setq abbrev-mode t)
-  )
+)
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 ;;C++语言策略
@@ -35,11 +38,15 @@
   ;;  (define-key c++-mode-map [f3] 'replace-regexp)
   )
 
+;; 导入cedet
 (require 'cedet)
+
+;; 配置Semantic的检索范围
 (setq semanticdb-project-roots 
       (list
        (expand-file-name "/")))
 
+;; 自动补齐命令，如果在单词中间就补齐，否则就是tab
 (defun my-indent-or-complete ()
   (interactive)
   (if (looking-at "\\>")
@@ -49,6 +56,8 @@
  
 (global-set-key [(control tab)] 'my-indent-or-complete)
 
+
+;; hippie的自动补齐策略，优先调用了senator的分析结果
 (autoload 'senator-try-expand-semantic "senator")
 
 (setq hippie-expand-try-functions-list

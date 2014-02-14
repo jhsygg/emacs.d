@@ -106,7 +106,7 @@ Create all nnshimbun groups prepared for SERVER.
 ;;;***
 
 ;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
-;;;;;;  octet-find-file octet-buffer) "octet" "octet.el" (19563 28233))
+;;;;;;  octet-find-file octet-buffer) "octet" "octet.el" (21237 47596))
 ;;; Generated autoloads from octet.el
 
 (autoload 'octet-buffer "octet" "\

@@ -27,12 +27,15 @@ uname -v = #1 SMP Sun Jul 14 01:31:27 UTC 2013
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /opt//bin
 PATH: /opt/bin
+PATH: /usr/lib64/qt-3.3/bin
 PATH: /usr/local/bin
 PATH: /usr/bin
 PATH: /bin
 PATH: /usr/local/sbin
 PATH: /usr/sbin
+PATH: /bin
 PATH: /home/jdp/.local/bin
 PATH: /home/jdp/bin
 
@@ -55,8 +58,8 @@ configure:1954: result: not found, using 2013-06-06 instead
 configure:2008: checking for /usr/bin/emacs
 configure:2038: result: /usr/bin/emacs
 configure:2054: checking if /usr/bin/emacs is XEmacs
-/usr/bin/emacs -batch -no-site-file -eval (let* ((x (if (featurep (quote xemacs)) "yes" "no"))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322"))
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+/usr/bin/emacs -batch -no-site-file -eval (let* ((x (if (featurep (quote xemacs)) "yes" "no"))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403"))
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => no
 configure:2074: result: no
 configure:2078: checking for Emacs prefix
@@ -67,20 +70,20 @@ configure:2078: checking for Emacs prefix
         (setq prefix parent)
       (if (string= (file-name-nondirectory parent) "bin")
          (setq prefix (directory-file-name (file-name-directory parent)))))
-    prefix) (error NONE)))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322")) /usr/bin/emacs
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+    prefix) (error NONE)))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403")) /usr/bin/emacs
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => /usr
 configure:2097: result: "/usr"
 configure:2127: checking if Emacs is recent enough
 /usr/bin/emacs -batch -no-site-file -eval (let* ((x (cond ((< emacs-major-version 21) "no")
 			 ((> emacs-major-version 21) "yes")
 			 ((< emacs-minor-version 01) "no")
-			 (t "yes")))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322"))
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+			 (t "yes")))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403"))
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => yes
 configure:2141: result: yes
 configure:2151: checking for MULE support
-/usr/bin/emacs -batch -eval (let* ((x (condition-case nil (require 'mule ) 	(error (prog1 nil (message "mule not found")))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322"))
+/usr/bin/emacs -batch -eval (let* ((x (condition-case nil (require 'mule ) 	(error (prog1 nil (message "mule not found")))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403"))
 Loading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/ebib-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/ecb.el (source)...
@@ -99,11 +102,11 @@ Loading /usr/share/emacs/site-lisp/site-start.d/mew-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/php-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/rpm-spec-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/w3m-init.el (source)...
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => mule
 configure:2185: result: yes
 configure:2230: checking if build directory is valid
-/usr/bin/emacs -batch -eval (let* ((x (if (or (member (directory-file-name default-directory) load-path)	      (member (file-name-as-directory default-directory) load-path))	 "no" "yes"))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322"))
+/usr/bin/emacs -batch -eval (let* ((x (if (or (member (directory-file-name default-directory) load-path)	      (member (file-name-as-directory default-directory) load-path))	 "no" "yes"))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403"))
 Loading /usr/share/emacs/site-lisp/site-start.d/desktop-entry-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/ebib-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/ecb.el (source)...
@@ -122,7 +125,7 @@ Loading /usr/share/emacs/site-lisp/site-start.d/mew-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/php-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/rpm-spec-mode-init.el (source)...
 Loading /usr/share/emacs/site-lisp/site-start.d/w3m-init.el (source)...
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => yes
 configure:2246: result: yes
 configure:2334: checking where lisp files go
@@ -155,8 +158,8 @@ configure:2455: checking where the package lisp files go
               (t
 	       `(expand-file-name
                    ,(file-relative-name path startupdir)
-	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322")) /home/jdp/.emacs.d/el-get/auctex/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403")) /home/jdp/.emacs.d/el-get/auctex/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => (expand-file-name "auctex" (file-name-directory load-file-name))
 configure:2536: result: /home/jdp/.emacs.d/el-get/auctex/auctex
 configure:2539: checking where the data files go
@@ -185,8 +188,8 @@ configure:2539: checking where the data files go
               (t
 	       `(expand-file-name
                    ,(file-relative-name path startupdir)
-	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322")) /home/jdp/.emacs.d/el-get/auctex/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403")) /home/jdp/.emacs.d/el-get/auctex/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => (expand-file-name "auctex" (file-name-directory load-file-name))
 configure:2620: result: /home/jdp/.emacs.d/el-get/auctex/auctex
 /usr/bin/emacs -batch -no-site-file -eval (let* ((path(pop command-line-args-left)) (lispdir(pop command-line-args-left)) (startup(pop command-line-args-left)) (target(pop command-line-args-left))(x (progn (setq path (directory-file-name path))
@@ -214,8 +217,8 @@ configure:2620: result: /home/jdp/.emacs.d/el-get/auctex/auctex
               (t
 	       `(expand-file-name
                    ,(file-relative-name path startupdir)
-	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322"))  /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/auctex.el tex-site.el
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403"))  /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/auctex.el tex-site.el
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => (expand-file-name "tex-site.el" (file-name-directory load-file-name))
 configure:2697: checking where the info files go
 configure:2699: result: ${datarootdir}/info
@@ -246,8 +249,8 @@ configure:2720: result: ${localstatedir}/auctex
               (t
 	       `(expand-file-name
                    ,(file-relative-name path startupdir)
-	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-7322")) /usr/local/var/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
-Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-7322
+	           (file-name-directory load-file-name))))))))) (write-region (if (stringp x) x (prin1-to-string x)) nil "./conftest-8403")) /usr/local/var/auctex /home/jdp/.emacs.d/el-get/auctex /home/jdp/.emacs.d/el-get/auctex/tex-site.el
+Wrote /home/jdp/.emacs.d/el-get/auctex/conftest-8403
 => "/usr/local/var/auctex"
 configure:2800: checking for tex
 configure:2818: found /usr/bin/tex

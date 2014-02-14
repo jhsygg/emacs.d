@@ -25,6 +25,28 @@
     :lastmodtime '(21160 29506)
     :unmatched-syntax '((PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) (PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) ($EOI 18 . 18) ($EOI 15 . 15) ($EOI 14 . 14) ($EOI 24 . 24) ($EOI 20 . 20) ($EOI 18 . 18) ($EOI 13 . 13) ($EOI 7 . 7))
     )
+   (semanticdb-table "cp_8_4.c"
+    :major-mode 'c-mode
+    :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("stdlib.h" include (:system-flag t) nil [20 39])
+            ("string.h" include (:system-flag t) nil [40 59])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [70 79])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [80 93]))                  
+                :type "int")
+                nil [61 525]))          
+    :file "cp_8_4.c"
+    :pointmax 541
+    :fsize 540
+    :lastmodtime '(21242 62988)
+    :unmatched-syntax 'nil
+    )
    )
   :file "!home!jdp!mytest!semantic.cache"
   :semantic-tag-version "2.0"

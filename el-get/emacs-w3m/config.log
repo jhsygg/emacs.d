@@ -27,12 +27,15 @@ uname -v = #1 SMP Sun Jul 14 01:31:27 UTC 2013
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /opt//bin
 PATH: /opt/bin
+PATH: /usr/lib64/qt-3.3/bin
 PATH: /usr/local/bin
 PATH: /usr/bin
 PATH: /bin
 PATH: /usr/local/sbin
 PATH: /usr/sbin
+PATH: /bin
 PATH: /home/jdp/.local/bin
 PATH: /home/jdp/bin
 
@@ -73,17 +76,17 @@ configure:2358: checking what a flavor does /usr/bin/emacs have
 			  (cdr (nreverse
 				(split-string emacs-version
 					      (concat (vector 92 46))))))
-			 "."))))) (write-region (format "%s" x) nil "./conftest-14862" nil 5))'
+			 "."))))) (write-region (format "%s" x) nil "./conftest-7906" nil 5))'
 => Emacs 24.1
 configure:2402: result: Emacs 24.1
 configure:2414: checking prefix for /usr/bin/emacs
-/usr/bin/emacs -q -no-site-file -batch -eval '(let ((x (expand-file-name ".." invocation-directory))) (write-region (format "%s" x) nil "./conftest-14862" nil 5))'
+/usr/bin/emacs -q -no-site-file -batch -eval '(let ((x (expand-file-name ".." invocation-directory))) (write-region (format "%s" x) nil "./conftest-7906" nil 5))'
 => /usr
 configure:2445: result: /usr
 configure:2453: checking where lisp files should go
 configure:2475: result: $(prefix)/share/emacs/site-lisp/w3m/
 configure:2637: checking where icon files should go
-/usr/bin/emacs -q -no-site-file -batch -eval '(let ((x (let ((prefix "/usr")	      (default (expand-file-name "images/w3m" data-directory)))	  (if (and prefix		   (progn		     (setq prefix (file-name-as-directory prefix))		     (eq 0 (string-match (regexp-quote prefix) default))))	      (replace-match "$(prefix)/" nil nil default)	    default)))) (write-region (format "%s" x) nil "./conftest-14862" nil 5))'
+/usr/bin/emacs -q -no-site-file -batch -eval '(let ((x (let ((prefix "/usr")	      (default (expand-file-name "images/w3m" data-directory)))	  (if (and prefix		   (progn		     (setq prefix (file-name-as-directory prefix))		     (eq 0 (string-match (regexp-quote prefix) default))))	      (replace-match "$(prefix)/" nil nil default)	    default)))) (write-region (format "%s" x) nil "./conftest-7906" nil 5))'
 => $(prefix)/share/emacs/24.1/etc/images/w3m
 configure:2681: result: $(prefix)/share/emacs/24.1/etc/images/w3m
 configure:2877: creating ./config.status

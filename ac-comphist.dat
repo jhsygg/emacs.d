@@ -1,338 +1,392 @@
-((("init" .
+((("init-php" .
+   [1 0 0 0 0 0 0 0])
+  ("c-set-style" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("kbd" .
+   [1 0 0])
+  ("global-semanticdb-minor-mode" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("noerror" .
+   [1 0 0 1 0 0 0])
+  ("window-system" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("when" .
    [1 0 0 0])
-  ("idle-highlight-mode" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("d2x" .
-   [1 0 0])
-  ("c-basic-offset" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("setq-default" .
-   [0 0 0 0 0 0 0 1 0 0 0 0])
-  ("renewcommand" .
-   [0 0 0 0 0 1 0 0 0 0 0 0])
-  ("section" .
-   [1 0 0 0 0 0 0])
-  ("newtheorem" .
-   [0 0 0 1 0 0 0 0 0 0])
-  ("weblogger-start-entry" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
-  ("global-set-key" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 3])
-  ("weblogger" .
-   [0 0 0 1 0 0 0 0 1])
-  ("MAXLINE" .
-   [1 0 0 2 0 0 0])
-  ("line" .
-   [10 0 0 0])
-  ("return" .
-   [0 0 0 6 0 0])
-  ("printf" .
-   [0 0 0 0 2 0])
-  ("copy" .
-   [2 0 0 1])
-  ("getline1" .
-   [0 0 0 4 0 0 1 1])
-  ("while" .
-   [0 0 0 1 0])
-  ("longest" .
-   [0 0 0 0 0 4 0])
-  ("char" .
-   [0 0 0 1])
-  ("extern" .
-   [0 0 0 3 1 0])
-  ("main" .
-   [3 0 0 0])
-  ("void" .
-   [0 0 0 1])
-  ("sql-mode" .
-   [1 0 0 0 0 0 0 0])
-  ("jde-mode" .
-   [1 0 0 0 0 0 0 0])
-  ("wcy-display-line-number" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("wcy-display-buffer-list" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("turn-on-iimage-mode" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("iimage-mode" .
-   [0 0 0 0 0 0 0 1 0 0 0])
-  ("qq-mode" .
-   [0 0 1 0 0 0 0])
-  ("init-css" .
-   [0 0 0 0 0 1 0 0])
-  ("buffer-name" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("twittering-accounts" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("twittering-enabled-services" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("twittering-disable-unread-status-notifier" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("jdp-w3m" .
-   [1 0 0 0 0 0 1])
-  ("semantic-load-system-cache-loaded" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
-  ("semantic-lex" .
-   [0 0 0 1 0 0 0 0 0 0 0 0])
-  ("ac-config-default" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("~/.emacs.d/auto-complete/ac-dict/" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("~/.emacs.d/auto-complete" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2])
-  ("ac-dictionary-directories" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
-  ("ac-dictionary" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("auto-complete-config" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("~/.emacs.d/auto-complete/" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("for" .
-   [1 0 0])
-  ("uncode" .
-   [1 0 0 0 0 0])
-  ("set" .
-   [1 0 0])
-  ("org-export-latex-classes" .
-   [3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("unless" .
-   [1 0 0 0 0 0])
-  ("org-latex" .
-   [1 0 0 0 0 0 0 0 0])
-  ("org-install" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("org" .
-   [1 0 0])
-  ("calendar-holidays" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("global-auto-complete-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("auto-complete" .
-   [0 0 0 0 2 0 0 0 0 1 0 0 1])
-  ("css-mode" .
-   [0 0 0 1 0 0 0 0])
-  ("autoload" .
-   [0 0 0 0 2 1 0 3])
-  ("color-theme-subtle-hacker" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("org-export-with-LaTeX-fragments" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("org-export-latex" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("view-calendar-holidays-initially" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("view" .
-   [0 0 1 0])
-  ("mark-holidays-in-calendar" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("calendar" .
-   [0 0 0 0 0 1 0 0])
-  ("nil" .
-   [3 0 0])
-  ("yasnippet-bundle" .
-   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
-  ("setq" .
-   [15 0 0 1])
-  ("desktop-read" .
-   [0 0 0 0 0 0 0 0 0 0 1 0])
-  ("desktop-load-default" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("load" .
-   [3 0 0 0])
-  ("chinese" .
-   [0 0 0 0 1 0 0])
-  ("require" .
-   [1 0 6 14 15 1 3])
-  ("add-to-list" .
-   [0 0 1 2 4 0 3 0 0 1 11])
-  ("session" .
-   [0 0 1 0 1 0 0])
-  ("add-hook" .
-   [1 0 0 0 0 1 0 1])
-  ("wcy-swbuff" .
-   [0 0 0 1 0 0 0 0 0 0])
-  ("wcy-desktop" .
-   [0 0 0 0 0 0 1 0 0 0 0])
-  ("epa-file" .
-   [0 0 0 0 1 0 0 0])
-  ("epa-file-enable" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("yasnippet" .
-   [0 0 0 3 0 0 0 0 0])
-  ("load-path" .
-   [1 0 0 0 5 1 0 1 10])
-  ("yas-global-mode" .
+  ("semantic-tag-folding-mode-map" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("define-lex" .
+   [0 0 0 0 0 0 1 1 0 0])
+  ("define-key" .
+   [0 0 0 0 0 1 0 0 0 1])
+  ("w3m" .
+   [0 0 1])
+  ("kbd-macro-query" .
    [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("diary-file" .
-   [0 0 0 0 0 0 1 0 0 0])
-  ("diary-mail-addr" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("diary-hook" .
-   [0 0 0 0 0 0 0 0 1 0])
-  ("holidays" .
-   [0 0 2 0 0 0 0 0])
-  ("set-locale-environment" .
-   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("set-default-font" .
-   [1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
-  ("cn-weather" .
-   [0 0 1 0 0 0 0 0 0 0])
-  ("auto-complete+" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("x" .
-   [1])
-  ("10000" .
-   [1 0 0 0 0])
-  ("mysqli" .
-   [1 0 0 0 0 0])
-  ("cedet" .
-   [0 0 1 0 0])
-  ("ac-math" .
-   [1 0 0 0 0 0 0])
-  ("mmm-face" .
-   [0 0 0 0 1 0 0 0])
-  ("twittering-mode" .
-   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("holiday-lunar-1" .
-   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("htmlize" .
-   [0 0 1 0 1 0 0])
-  ("graphviz-dot-mode" .
-   [0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 1])
-  ("n" .
-   [1])
-  ("muse" .
-   [2 0 0 0])
-  ("muse-mode" .
-   [2 0 0 0 0 0 1 0 1])
-  ("auto-mode-alist" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 1 2])
-  ("muse-html" .
-   [1 0 0 0 0 0 0 0 0])
-  ("append" .
-   [1 0 0 0 0 1])
-  ("list" .
-   [2 0 0 0])
-  ("expand-file-name" .
-   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("provide" .
-   [0 0 0 0 0 0 1])
-  ("blank" .
-   [2 0 0 0 0])
-  ("middle" .
-   [1 0 0 2 2 0])
-  ("right" .
-   [1 0 0 0 0])
-  ("searchnum" .
+  ("git-emacs" .
    [0 0 0 0 0 0 1 0 0])
-  ("left" .
-   [1 0 0 0])
-  ("strindex" .
-   [0 0 0 0 0 0 2 0])
-  ("pattern" .
-   [0 0 0 0 1 0 0])
-  ("found" .
-   [1 0 0 0 1])
-  ("config" .
+  ("fset" .
+   [3 0 0 0])
+  ("org-mode" .
+   [2 0 0 0 0 0 0 0])
+  ("php-mode-hook" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("load-library" .
+   [0 0 0 0 0 0 0 0 1 0 0 0])
+  ("hs-minor-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("and" .
+   [3 0 0])
+  ("member" .
    [1 0 0 0 0 0])
-  ("configure" .
+  ("sockaddr" .
+   [2 0 0 0 0 0 0 0])
+  ("provided" .
+   [0 0 0 0 1 0 0 0])
+  ("HAVE_TIMESPEC_STRUCT" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("HAVE_ADDRINFO_STRUCT" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("structure" .
    [1 0 0 0 0 0 0 0 0])
-  ("Define" .
-   [5 0 0 3 0 1])
-  ("the" .
-   [9 0 0])
-  ("following" .
-   [0 0 0 0 0 0 0 0 5])
-  ("have" .
+  ("socket" .
+   [1 0 0 0 0 0])
+  ("stdio" .
+   [1 0 0 0 0])
+  ("stat" .
    [1 0 0 0])
-  ("header" .
-   [2 0 0 0 0 0])
-  ("define" .
-   [7 0 0 1 0 9])
-  ("undef" .
-   [2 0 0 3 8])
-  ("HAVE_PTHREAD_H" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("pthread" .
+  ("inet" .
+   [2 0 0 0])
+  ("arpa" .
+   [2 0 0 0])
+  ("HAVE_IF_NAMEINDEX_STRUCT" .
+   [0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("netdb" .
+   [1 0 0 0 3])
+  ("HAVE_VSNPRINTF" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("HAVE_PSELECT" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("HAVE_GETHOSTBYNAME2" .
+   [0 0 0 0 1 0 2 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("HAVE_BZERO" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("functions" .
+   [0 0 0 1 0 0 0 0 1])
+  ("sys" .
+   [5 0 0])
+  ("include" .
+   [1 0 0 0 0 0 0])
+  ("can" .
+   [1 0 0])
+  ("time" .
+   [4 0 0 0])
+  ("sockio" .
+   [1 0 0 0 0 0])
+  ("select" .
+   [1 0 0 1 0 0])
+  ("ioctl" .
+   [1 0 0 0 0])
+  ("HAVE_SYS_SOCKIO_H" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("HAVE_SYS_SELECT_H" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1])
+  ("HAVE_SYS_IOCTL_H" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("d" .
+   [1])
+  ("strings" .
    [1 0 0 0 0 0 0])
   ("HAVE_STRINGS_H" .
    [0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("strings" .
+  ("pthread" .
    [1 0 0 0 0 0 0])
-  ("d" .
-   [1])
-  ("HAVE_SYS_IOCTL_H" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
-  ("HAVE_SYS_SELECT_H" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1])
-  ("HAVE_SYS_SOCKIO_H" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("ioctl" .
-   [1 0 0 0 0])
-  ("select" .
-   [1 0 0 1 0 0])
-  ("sockio" .
-   [1 0 0 0 0 0])
-  ("time" .
-   [4 0 0 0])
-  ("can" .
-   [1 0 0])
-  ("include" .
-   [1 0 0 0 0 0 0])
-  ("sys" .
-   [5 0 0])
-  ("functions" .
-   [0 0 0 1 0 0 0 0 1])
-  ("HAVE_BZERO" .
-   [0 0 0 0 0 1 0 0 0 0])
-  ("HAVE_GETHOSTBYNAME2" .
-   [0 0 0 0 1 0 2 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("HAVE_PSELECT" .
-   [0 0 0 0 0 0 0 1 0 0 0 0])
-  ("HAVE_VSNPRINTF" .
-   [0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("netdb" .
-   [1 0 0 0 3])
-  ("HAVE_IF_NAMEINDEX_STRUCT" .
-   [0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("arpa" .
-   [2 0 0 0])
-  ("inet" .
-   [2 0 0 0])
-  ("stat" .
+  ("HAVE_PTHREAD_H" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("undef" .
+   [2 0 0 3 8])
+  ("define" .
+   [7 0 0 1 0 9])
+  ("header" .
+   [2 0 0 0 0 0])
+  ("have" .
    [1 0 0 0])
-  ("stdio" .
-   [1 0 0 0 0])
-  ("socket" .
-   [1 0 0 0 0 0])
-  ("structure" .
+  ("following" .
+   [0 0 0 0 0 0 0 0 5])
+  ("the" .
+   [9 0 0])
+  ("Define" .
+   [5 0 0 3 0 1])
+  ("configure" .
    [1 0 0 0 0 0 0 0 0])
-  ("HAVE_ADDRINFO_STRUCT" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
-  ("HAVE_TIMESPEC_STRUCT" .
-   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("provided" .
-   [0 0 0 0 1 0 0 0])
-  ("sockaddr" .
-   [2 0 0 0 0 0 0 0])
-  ("member" .
+  ("config" .
    [1 0 0 0 0 0])
-  ("and" .
-   [1 0 0])
-  ("hs-minor-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 2])
-  ("load-library" .
-   [0 0 0 0 0 0 0 0 1 0 0 0])
-  ("php-mode-hook" .
-   [0 0 0 0 0 0 0 0 0 0 1 0 0])
-  ("org-mode" .
-   [2 0 0 0 0 0 0 0])
-  ("fset" .
-   [2 0 0 0])
-  ("git-emacs" .
+  ("found" .
+   [1 0 0 0 1])
+  ("pattern" .
+   [0 0 0 0 1 0 0])
+  ("strindex" .
+   [0 0 0 0 0 0 2 0])
+  ("left" .
+   [1 0 0 0])
+  ("searchnum" .
    [0 0 0 0 0 0 1 0 0])
-  ("kbd-macro-query" .
+  ("right" .
+   [1 0 0 0 0])
+  ("middle" .
+   [1 0 0 2 2 0])
+  ("blank" .
+   [2 0 0 0 0])
+  ("provide" .
+   [0 0 0 0 0 0 1])
+  ("expand-file-name" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("list" .
+   [2 0 0 0])
+  ("append" .
+   [1 0 0 0 0 1])
+  ("muse-html" .
+   [1 0 0 0 0 0 0 0 0])
+  ("auto-mode-alist" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 1 2])
+  ("muse-mode" .
+   [2 0 0 0 0 0 1 0 1])
+  ("muse" .
+   [2 0 0 0])
+  ("n" .
+   [1])
+  ("graphviz-dot-mode" .
+   [0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 1])
+  ("htmlize" .
+   [0 0 1 0 1 0 0])
+  ("holiday-lunar-1" .
    [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
-  ("w3m" .
-   [0 0 1])))
+  ("twittering-mode" .
+   [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("mmm-face" .
+   [0 0 0 0 1 0 0 0])
+  ("ac-math" .
+   [1 0 0 0 0 0 0])
+  ("cedet" .
+   [0 0 1 0 0])
+  ("mysqli" .
+   [1 0 0 0 0 0])
+  ("10000" .
+   [1 0 0 0 0])
+  ("x" .
+   [1])
+  ("auto-complete+" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("cn-weather" .
+   [0 0 1 0 0 0 0 0 0 0])
+  ("set-default-font" .
+   [1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("set-locale-environment" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("holidays" .
+   [0 0 2 0 0 0 0 0])
+  ("diary-hook" .
+   [0 0 0 0 0 0 0 0 1 0])
+  ("diary-mail-addr" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("diary-file" .
+   [0 0 0 0 0 0 1 0 0 0])
+  ("yas-global-mode" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("load-path" .
+   [1 0 0 0 5 1 0 1 11])
+  ("yasnippet" .
+   [0 0 0 3 0 0 0 0 0])
+  ("epa-file-enable" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("epa-file" .
+   [0 0 0 0 1 0 0 0])
+  ("wcy-desktop" .
+   [0 0 0 0 0 0 1 0 0 0 0])
+  ("wcy-swbuff" .
+   [0 0 0 1 0 0 0 0 0 0])
+  ("add-hook" .
+   [1 0 0 0 0 1 0 1])
+  ("session" .
+   [0 0 1 0 1 0 0])
+  ("add-to-list" .
+   [0 0 1 2 4 0 3 0 0 1 12])
+  ("require" .
+   [1 0 6 25 15 1 3])
+  ("chinese" .
+   [0 0 0 0 1 0 0])
+  ("load" .
+   [3 0 0 0])
+  ("desktop-load-default" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("desktop-read" .
+   [0 0 0 0 0 0 0 0 0 0 1 0])
+  ("setq" .
+   [19 0 0 1])
+  ("yasnippet-bundle" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("nil" .
+   [8 0 0])
+  ("calendar" .
+   [0 0 0 0 0 1 0 0])
+  ("mark-holidays-in-calendar" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("view" .
+   [0 0 1 0])
+  ("view-calendar-holidays-initially" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("org-export-latex" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("org-export-with-LaTeX-fragments" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("color-theme-subtle-hacker" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("autoload" .
+   [0 0 0 0 2 1 0 3])
+  ("css-mode" .
+   [0 0 0 1 0 0 0 0])
+  ("auto-complete" .
+   [0 0 0 0 2 0 0 0 0 1 0 0 1])
+  ("global-auto-complete-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("calendar-holidays" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("org" .
+   [1 0 0])
+  ("org-install" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("org-latex" .
+   [1 0 0 0 0 0 0 0 0])
+  ("unless" .
+   [1 0 0 0 0 0])
+  ("org-export-latex-classes" .
+   [3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("set" .
+   [1 0 0])
+  ("uncode" .
+   [1 0 0 0 0 0])
+  ("for" .
+   [1 0 0])
+  ("~/.emacs.d/auto-complete/" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("auto-complete-config" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("ac-dictionary" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("ac-dictionary-directories" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("~/.emacs.d/auto-complete" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2])
+  ("~/.emacs.d/auto-complete/ac-dict/" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("ac-config-default" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("semantic-lex" .
+   [0 0 0 1 0 0 0 0 0 0 0 0])
+  ("semantic-load-system-cache-loaded" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("jdp-w3m" .
+   [1 0 0 0 0 0 1])
+  ("twittering-disable-unread-status-notifier" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("twittering-enabled-services" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("twittering-accounts" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("buffer-name" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("init-css" .
+   [0 0 0 0 0 1 0 0])
+  ("qq-mode" .
+   [0 0 1 0 0 0 0])
+  ("iimage-mode" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("turn-on-iimage-mode" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("wcy-display-buffer-list" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("wcy-display-line-number" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("jde-mode" .
+   [1 0 0 0 0 0 0 0])
+  ("sql-mode" .
+   [1 0 0 0 0 0 0 0])
+  ("void" .
+   [0 0 0 1])
+  ("main" .
+   [3 0 0 0])
+  ("extern" .
+   [0 0 0 3 1 0])
+  ("char" .
+   [0 0 0 1])
+  ("longest" .
+   [0 0 0 0 0 4 0])
+  ("while" .
+   [0 0 0 1 0])
+  ("getline1" .
+   [0 0 0 4 0 0 1 1])
+  ("copy" .
+   [2 0 0 1])
+  ("printf" .
+   [0 0 0 0 2 0])
+  ("return" .
+   [0 0 0 6 0 0])
+  ("line" .
+   [10 0 0 0])
+  ("MAXLINE" .
+   [1 0 0 2 0 0 0])
+  ("weblogger" .
+   [0 0 0 1 0 0 0 0 1])
+  ("global-set-key" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 8])
+  ("weblogger-start-entry" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("newtheorem" .
+   [0 0 0 1 0 0 0 0 0 0])
+  ("section" .
+   [1 0 0 0 0 0 0])
+  ("renewcommand" .
+   [0 0 0 0 0 1 0 0 0 0 0 0])
+  ("setq-default" .
+   [0 0 0 0 0 0 0 1 0 0 0 0])
+  ("c-basic-offset" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 1])
+  ("d2x" .
+   [1 0 0])
+  ("idle-highlight-mode" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("init" .
+   [1 0 0 0])
+  ("a" .
+   [1])
+  ("all" .
+   [1 0 0])
+  ("make-frame-command" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("gdb-many-windows" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("gud" .
+   [1 0 0])
+  ("gdb" .
+   [1 0 0])
+  ("semantic" .
+   [0 0 0 0 0 0 0 2])
+  ("semantic-tag-folding" .
+   [1 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1])
+  ("global-semantic" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("global-semantic-tag-folding-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("c-default-style" .
+   [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("----------------------------------------------------------------------------" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("special-mode" .
+   [0 0 0 0 0 0 1 0 0 0 0 0])
+  ("feature" .
+   [0 0 0 0 0 0 1])
+  ("eldoc" .
+   [0 0 0 0 1])
+  ("init-site-lisp" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("init-exec-path" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0])))
