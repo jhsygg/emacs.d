@@ -56,7 +56,7 @@
 	    (:name date-calc :auto-generated t :type emacswiki :description "date calculation and parsing routines" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/date-calc.el"))
  (ecb status "removed" recipe nil)
  (el-get status "installed" recipe
-	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "4.stable" :pkgname "dimitri/el-get" :features el-get :info "." :load "el-get.el"))
+	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
  (emacs-init status "installed" recipe
 	     (:name emacs-init :auto-generated t :type emacswiki :description "Drew Adams's Emacs init file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/emacs-init.el"))
  (emacs-w3m status "installed" recipe
