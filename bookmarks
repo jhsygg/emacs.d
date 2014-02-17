@@ -14,7 +14,13 @@
  (position . 1325))
 ("org-capture-last-stored"
  (filename . "~/org/journal.org.gpg")
+<<<<<<< HEAD
+ (front-context-string . "**** 六盘水今日天气: 雨夹")
+ (rear-context-string . " 2014-02-14 星期五\n")
+ (position . 83979))
+=======
  (front-context-string . "**** 六盘水今日天气: 阴转")
  (rear-context-string . " 2014-02-17 星期一\n")
  (position . 84511))
+>>>>>>> dcfd10b90eb7399982a0bec7d9f85e6e241afd4b
 )

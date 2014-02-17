@@ -3,24 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (apache-mode) "apache-mode/apache-mode" "apache-mode/apache-mode.el"
-;;;;;;  (21150 45884))
-;;; Generated autoloads from apache-mode/apache-mode.el
-
-(autoload 'apache-mode "apache-mode/apache-mode" "\
-Major mode for editing Apache configuration files.
-
-\(fn)" t nil)
-(add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
-(add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
-(add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
-(add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
-(add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
-
-;;;***
-
 ;;;### (autoloads (ascii-off ascii-on ascii-display ascii-customize)
-;;;;;;  "ascii/ascii" "ascii/ascii.el" (21237 47594))
+;;;;;;  "ascii/ascii" "ascii/ascii.el" (21249 60386 192059 623000))
 ;;; Generated autoloads from ascii/ascii.el
 
 (autoload 'ascii-customize "ascii/ascii" "\
@@ -51,7 +35,7 @@ Turn off ASCII code display.
 ;;;***
 
 ;;;### (autoloads (turn-on-bib-cite bib-cite-minor-mode) "auctex/bib-cite"
-;;;;;;  "auctex/bib-cite.el" (18341 54637))
+;;;;;;  "auctex/bib-cite.el" (21249 60386 208059 268000))
 ;;; Generated autoloads from auctex/bib-cite.el
 
 (autoload 'bib-cite-minor-mode "auctex/bib-cite" "\
@@ -70,7 +54,7 @@ Unconditionally turn on Bib Cite mode.
 ;;;***
 
 ;;;### (autoloads (context-mode) "auctex/context" "auctex/context.el"
-;;;;;;  (20911 47549))
+;;;;;;  (21249 60386 212059 179000))
 ;;; Generated autoloads from auctex/context.el
 
 (defalias 'ConTeXt-mode 'context-mode)
@@ -90,7 +74,7 @@ of ConTeXt-mode-hook.
 ;;;***
 
 ;;;### (autoloads (context-en-mode) "auctex/context-en" "auctex/context-en.el"
-;;;;;;  (19618 16518))
+;;;;;;  (21249 60386 211059 201000))
 ;;; Generated autoloads from auctex/context-en.el
 
 (autoload 'context-en-mode "auctex/context-en" "\
@@ -108,7 +92,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads (context-nl-mode) "auctex/context-nl" "auctex/context-nl.el"
-;;;;;;  (19618 16529))
+;;;;;;  (21249 60386 212059 179000))
 ;;; Generated autoloads from auctex/context-nl.el
 
 (autoload 'context-nl-mode "auctex/context-nl" "\
@@ -126,7 +110,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads (font-latex-setup) "auctex/font-latex" "auctex/font-latex.el"
-;;;;;;  (20700 41370))
+;;;;;;  (21249 60386 225058 890000))
 ;;; Generated autoloads from auctex/font-latex.el
 
 (autoload 'font-latex-setup "auctex/font-latex" "\
@@ -137,7 +121,7 @@ Setup this buffer for LaTeX font-lock.  Usually called from a hook.
 ;;;***
 
 ;;;### (autoloads (docTeX-mode TeX-latex-mode BibTeX-auto-store)
-;;;;;;  "auctex/latex" "auctex/latex.el" (20826 34613))
+;;;;;;  "auctex/latex" "auctex/latex.el" (21249 60386 230058 779000))
 ;;; Generated autoloads from auctex/latex.el
 
 (autoload 'BibTeX-auto-store "auctex/latex" "\
@@ -175,7 +159,7 @@ runs the hooks in `docTeX-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (multi-prompt-key-value multi-prompt) "auctex/multi-prompt"
-;;;;;;  "auctex/multi-prompt.el" (20770 16651))
+;;;;;;  "auctex/multi-prompt.el" (21249 60386 232058 734000))
 ;;; Generated autoloads from auctex/multi-prompt.el
 
 (autoload 'multi-prompt "auctex/multi-prompt" "\
@@ -205,7 +189,7 @@ The return value is the string as entered in the minibuffer.
 ;;;***
 
 ;;;### (autoloads (ams-tex-mode TeX-plain-tex-mode) "auctex/plain-tex"
-;;;;;;  "auctex/plain-tex.el" (19707 64159))
+;;;;;;  "auctex/plain-tex.el" (21249 60386 234058 690000))
 ;;; Generated autoloads from auctex/plain-tex.el
 
 (autoload 'TeX-plain-tex-mode "auctex/plain-tex" "\
@@ -237,7 +221,7 @@ of `AmS-TeX-mode-hook'.
 ;;;***
 
 ;;;### (autoloads (LaTeX-install-toolbar TeX-install-toolbar) "auctex/tex-bar"
-;;;;;;  "auctex/tex-bar.el" (20690 53662))
+;;;;;;  "auctex/tex-bar.el" (21249 60386 273057 823000))
 ;;; Generated autoloads from auctex/tex-bar.el
 
 (autoload 'TeX-install-toolbar "auctex/tex-bar" "\
@@ -252,8 +236,8 @@ Install toolbar buttons for LaTeX mode.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (20669
-;;;;;;  44509))
+;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (21249
+;;;;;;  60386 275057 778000))
 ;;; Generated autoloads from auctex/tex-fold.el
  (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
 
@@ -262,7 +246,7 @@ Install toolbar buttons for LaTeX mode.
 ;;;***
 
 ;;;### (autoloads (tex-font-setup) "auctex/tex-font" "auctex/tex-font.el"
-;;;;;;  (18341 54636))
+;;;;;;  (21249 60386 275057 778000))
 ;;; Generated autoloads from auctex/tex-font.el
 
 (autoload 'tex-font-setup "auctex/tex-font" "\
@@ -273,7 +257,7 @@ Setup font lock support for TeX.
 ;;;***
 
 ;;;### (autoloads (TeX-texinfo-mode) "auctex/tex-info" "auctex/tex-info.el"
-;;;;;;  (20659 23181))
+;;;;;;  (21249 60386 276057 756000))
 ;;; Generated autoloads from auctex/tex-info.el
 
 (defalias 'Texinfo-mode 'texinfo-mode)
@@ -327,47 +311,9 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 \(fn)" t nil)
 
-;;;### (autoloads (global-auto-complete-mode auto-complete-mode auto-complete)
-;;;;;;  "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (21237 47587))
-;;; Generated autoloads from auto-complete/auto-complete.el
-
-(autoload 'auto-complete "auto-complete/auto-complete" "\
-Start auto-completion at current point.
-
-\(fn &optional SOURCES)" t nil)
-
-(autoload 'auto-complete-mode "auto-complete/auto-complete" "\
-AutoComplete mode
-
-\(fn &optional ARG)" t nil)
-
-(defvar global-auto-complete-mode nil "\
-Non-nil if Global-Auto-Complete mode is enabled.
-See the command `global-auto-complete-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-auto-complete-mode'.")
-
-(custom-autoload 'global-auto-complete-mode "auto-complete/auto-complete" nil)
-
-(autoload 'global-auto-complete-mode "auto-complete/auto-complete" "\
-Toggle Auto-Complete mode in all buffers.
-With prefix ARG, enable Global-Auto-Complete mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Auto-Complete mode is enabled in all buffers where
-`auto-complete-mode-maybe' would do it.
-See `auto-complete-mode' for more information on Auto-Complete mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
 ;;;### (autoloads (holiday-solar-term holiday-lunar cal-china-x-birthday-from-chinese)
-;;;;;;  "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el" (21237
-;;;;;;  47596))
+;;;;;;  "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el" (21249
+;;;;;;  60386 284057 578000))
 ;;; Generated autoloads from cal-china-x/cal-china-x.el
 
 (autoload 'cal-china-x-birthday-from-chinese "cal-china-x/cal-china-x" "\
@@ -399,8 +345,9 @@ See `cal-china-x-solar-term-name' for a list of solar term names .
 ;;;***
 
 ;;;### (autoloads (el-get-checksum el-get-make-recipes el-get-cd
-;;;;;;  el-get-self-update el-get-update-all el-get-version) "el-get/el-get"
-;;;;;;  "el-get/el-get.el" (21148 14739))
+;;;;;;  el-get-self-update el-get-update-packages-of-type el-get-update-all
+;;;;;;  el-get-version) "el-get/el-get" "el-get/el-get.el" (21250
+;;;;;;  10199 641333 514000))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -412,6 +359,11 @@ Message the current el-get version
 Performs update of all installed packages.
 
 \(fn &optional NO-PROMPT)" t nil)
+
+(autoload 'el-get-update-packages-of-type "el-get/el-get" "\
+Update all installed packages of type TYPE.
+
+\(fn TYPE)" t nil)
 
 (autoload 'el-get-self-update "el-get/el-get" "\
 Update el-get itself.  The standard recipe takes care of reloading the code.
@@ -437,7 +389,7 @@ Compute the checksum of the given package, and put it in the kill-ring
 ;;;***
 
 ;;;### (autoloads (el-get-list-packages) "el-get/el-get-list-packages"
-;;;;;;  "el-get/el-get-list-packages.el" (21148 14739))
+;;;;;;  "el-get/el-get-list-packages.el" (21250 10199 639333 558000))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -448,7 +400,7 @@ Display a list of packages.
 ;;;***
 
 ;;;### (autoloads (bookmark-w3m-bookmark-jump) "emacs-w3m/bookmark-w3m"
-;;;;;;  "emacs-w3m/bookmark-w3m.el" (19648 52975))
+;;;;;;  "emacs-w3m/bookmark-w3m.el" (21249 60386 297057 289000))
 ;;; Generated autoloads from emacs-w3m/bookmark-w3m.el
 
 (autoload 'bookmark-w3m-bookmark-jump "emacs-w3m/bookmark-w3m" "\
@@ -459,7 +411,7 @@ Default bookmark handler for w3m buffers.
 ;;;***
 
 ;;;### (autoloads (mime-w3m-preview-text/html) "emacs-w3m/mime-w3m"
-;;;;;;  "emacs-w3m/mime-w3m.el" (20927 43680))
+;;;;;;  "emacs-w3m/mime-w3m.el" (21249 60386 319056 800000))
 ;;; Generated autoloads from emacs-w3m/mime-w3m.el
 
 (autoload 'mime-w3m-preview-text/html "emacs-w3m/mime-w3m" "\
@@ -471,7 +423,7 @@ Default bookmark handler for w3m buffers.
 
 ;;;### (autoloads (octet-mime-setup mime-view-octet mime-preview-octet
 ;;;;;;  octet-find-file octet-buffer) "emacs-w3m/octet" "emacs-w3m/octet.el"
-;;;;;;  (21237 47596))
+;;;;;;  (21249 60386 319056 800000))
 ;;; Generated autoloads from emacs-w3m/octet.el
 
 (autoload 'octet-buffer "emacs-w3m/octet" "\
@@ -504,7 +456,7 @@ Octet setting for MIME module.
 ;;;***
 
 ;;;### (autoloads (w3m-antenna w3m-about-antenna) "emacs-w3m/w3m-antenna"
-;;;;;;  "emacs-w3m/w3m-antenna.el" (19187 58267))
+;;;;;;  "emacs-w3m/w3m-antenna.el" (21249 60386 356055 977000))
 ;;; Generated autoloads from emacs-w3m/w3m-antenna.el
 
 (autoload 'w3m-about-antenna "emacs-w3m/w3m-antenna" "\
@@ -522,7 +474,7 @@ Report changes of WEB sites, which is specified in `w3m-antenna-sites'.
 ;;;### (autoloads (w3m-setup-bookmark-menu w3m-about-bookmark w3m-bookmark-view-new-session
 ;;;;;;  w3m-bookmark-view w3m-bookmark-add-current-url-group w3m-bookmark-add-all-urls
 ;;;;;;  w3m-bookmark-add-current-url w3m-bookmark-add-this-url) "emacs-w3m/w3m-bookmark"
-;;;;;;  "emacs-w3m/w3m-bookmark.el" (20597 64488))
+;;;;;;  "emacs-w3m/w3m-bookmark.el" (21249 60386 357055 955000))
 ;;; Generated autoloads from emacs-w3m/w3m-bookmark.el
 
 (autoload 'w3m-bookmark-add-this-url "emacs-w3m/w3m-bookmark" "\
@@ -570,7 +522,7 @@ Setup w3m bookmark items in menubar.
 
 ;;;### (autoloads (w3m-about-cookie w3m-cookie w3m-cookie-get w3m-cookie-set
 ;;;;;;  w3m-cookie-shutdown) "emacs-w3m/w3m-cookie" "emacs-w3m/w3m-cookie.el"
-;;;;;;  (19449 53703))
+;;;;;;  (21249 60386 358055 933000))
 ;;; Generated autoloads from emacs-w3m/w3m-cookie.el
 
 (autoload 'w3m-cookie-shutdown "emacs-w3m/w3m-cookie" "\
@@ -602,7 +554,7 @@ Make the html contents to display and to enable you to manage cookies.
 ;;;***
 
 ;;;### (autoloads (w3m-dtree w3m-about-dtree) "emacs-w3m/w3m-dtree"
-;;;;;;  "emacs-w3m/w3m-dtree.el" (18964 36505))
+;;;;;;  "emacs-w3m/w3m-dtree.el" (21249 60386 358055 933000))
 ;;; Generated autoloads from emacs-w3m/w3m-dtree.el
 
 (autoload 'w3m-about-dtree "emacs-w3m/w3m-dtree" "\
@@ -619,7 +571,7 @@ If called with 'prefix argument', display all directorys and files.
 ;;;***
 
 ;;;### (autoloads (w3m-fb-mode) "emacs-w3m/w3m-fb" "emacs-w3m/w3m-fb.el"
-;;;;;;  (17681 2386))
+;;;;;;  (21249 60386 359055 910000))
 ;;; Generated autoloads from emacs-w3m/w3m-fb.el
 
 (defvar w3m-fb-mode nil "\
@@ -640,7 +592,7 @@ This allows frame-local lists of buffers (tabs).
 ;;;***
 
 ;;;### (autoloads (w3m-filter) "emacs-w3m/w3m-filter" "emacs-w3m/w3m-filter.el"
-;;;;;;  (21140 25919))
+;;;;;;  (21249 60386 360055 888000))
 ;;; Generated autoloads from emacs-w3m/w3m-filter.el
 
 (autoload 'w3m-filter "emacs-w3m/w3m-filter" "\
@@ -651,7 +603,7 @@ Apply filtering rule of URL against a content in this buffer.
 ;;;***
 
 ;;;### (autoloads (w3m-fontify-forms) "emacs-w3m/w3m-form" "emacs-w3m/w3m-form.el"
-;;;;;;  (21138 63962))
+;;;;;;  (21249 60386 360055 888000))
 ;;; Generated autoloads from emacs-w3m/w3m-form.el
 
 (autoload 'w3m-fontify-forms "emacs-w3m/w3m-form" "\
@@ -665,7 +617,8 @@ Process half-dumped data and fontify forms in this buffer.
 ;;;;;;  w3m-lnum-print-this-url w3m-lnum-edit-this-url w3m-lnum-external-view-this-url
 ;;;;;;  w3m-lnum-save-image w3m-lnum-view-image w3m-lnum-toggle-inline-image
 ;;;;;;  w3m-lnum-universal w3m-lnum-follow w3m-lnum-goto w3m-lnum-mode)
-;;;;;;  "emacs-w3m/w3m-lnum" "emacs-w3m/w3m-lnum.el" (21087 15965))
+;;;;;;  "emacs-w3m/w3m-lnum" "emacs-w3m/w3m-lnum.el" (21249 60386
+;;;;;;  362055 844000))
 ;;; Generated autoloads from emacs-w3m/w3m-lnum.el
 
 (autoload 'w3m-lnum-mode "emacs-w3m/w3m-lnum" "\
@@ -757,7 +710,7 @@ If no link under point, activate numbering and ask for one.
 ;;;***
 
 ;;;### (autoloads (w3m-namazu w3m-about-namazu) "emacs-w3m/w3m-namazu"
-;;;;;;  "emacs-w3m/w3m-namazu.el" (18964 36505))
+;;;;;;  "emacs-w3m/w3m-namazu.el" (21249 60386 363055 821000))
 ;;; Generated autoloads from emacs-w3m/w3m-namazu.el
 
 (autoload 'w3m-about-namazu "emacs-w3m/w3m-namazu" "\
@@ -773,7 +726,7 @@ Search indexed files with Namazu.
 ;;;***
 
 ;;;### (autoloads (w3m-perldoc w3m-about-perldoc) "emacs-w3m/w3m-perldoc"
-;;;;;;  "emacs-w3m/w3m-perldoc.el" (18197 61165))
+;;;;;;  "emacs-w3m/w3m-perldoc.el" (21249 60386 364055 799000))
 ;;; Generated autoloads from emacs-w3m/w3m-perldoc.el
 
 (autoload 'w3m-about-perldoc "emacs-w3m/w3m-perldoc" "\
@@ -790,7 +743,7 @@ View Perl documents.
 
 ;;;### (autoloads (w3m-search-uri-replace w3m-search-new-session
 ;;;;;;  w3m-search) "emacs-w3m/w3m-search" "emacs-w3m/w3m-search.el"
-;;;;;;  (20697 1486))
+;;;;;;  (21249 60386 365055 777000))
 ;;; Generated autoloads from emacs-w3m/w3m-search.el
 
 (autoload 'w3m-search "emacs-w3m/w3m-search" "\
@@ -818,7 +771,7 @@ Generate query string for ENGINE from URI matched by last search.
 ;;;### (autoloads (w3m-session-last-crashed-session w3m-session-last-autosave-session
 ;;;;;;  w3m-setup-session-menu w3m-session-select w3m-session-crash-recovery-remove
 ;;;;;;  w3m-session-save) "emacs-w3m/w3m-session" "emacs-w3m/w3m-session.el"
-;;;;;;  (20839 34704))
+;;;;;;  (21249 60386 365055 777000))
 ;;; Generated autoloads from emacs-w3m/w3m-session.el
 
 (autoload 'w3m-session-save "emacs-w3m/w3m-session" "\
@@ -854,7 +807,7 @@ Setup w3m session items in menubar.
 ;;;***
 
 ;;;### (autoloads (erc-handle-irc-url erc erc-select-read-args) "erc/erc"
-;;;;;;  "erc/erc.el" (21150 52007))
+;;;;;;  "erc/erc.el" (21249 60386 395055 110000))
 ;;; Generated autoloads from erc/erc.el
 
 (autoload 'erc-select-read-args "erc/erc" "\
@@ -896,34 +849,36 @@ Otherwise, connect to HOST:PORT as USER and /join CHANNEL.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-autoaway" "erc/erc-autoaway.el" (21150
-;;;;;;  52007))
+;;;### (autoloads nil "erc/erc-autoaway" "erc/erc-autoaway.el" (21249
+;;;;;;  60386 381055 421000))
 ;;; Generated autoloads from erc/erc-autoaway.el
  (autoload 'erc-autoaway-mode "erc-autoaway")
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-bbdb" "erc/erc-bbdb.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-bbdb" "erc/erc-bbdb.el" (21249 60386
+;;;;;;  383055 377000))
 ;;; Generated autoloads from erc/erc-bbdb.el
  (autoload 'erc-bbdb-mode "erc-bbdb")
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-button" "erc/erc-button.el" (21150
-;;;;;;  52007))
+;;;### (autoloads nil "erc/erc-button" "erc/erc-button.el" (21249
+;;;;;;  60386 383055 377000))
 ;;; Generated autoloads from erc/erc-button.el
  (autoload 'erc-button-mode "erc-button" nil t)
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-capab" "erc/erc-capab.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-capab" "erc/erc-capab.el" (21249 60386
+;;;;;;  383055 377000))
 ;;; Generated autoloads from erc/erc-capab.el
  (autoload 'erc-capab-identify-mode "erc-capab" nil t)
 
 ;;;***
 
 ;;;### (autoloads (erc-chess-ctcp-query-handler erc-cmd-CHESS) "erc/erc-chess"
-;;;;;;  "erc/erc-chess.el" (21150 52007))
+;;;;;;  "erc/erc-chess.el" (21249 60386 383055 377000))
 ;;; Generated autoloads from erc/erc-chess.el
 
 (defvar erc-ctcp-query-CHESS-hook '(erc-chess-ctcp-query-handler))
@@ -941,15 +896,15 @@ NICK should be the first and only arg to /chess
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-compat" "erc/erc-compat.el" (21150
-;;;;;;  52007))
+;;;### (autoloads nil "erc/erc-compat" "erc/erc-compat.el" (21249
+;;;;;;  60386 384055 355000))
 ;;; Generated autoloads from erc/erc-compat.el
  (autoload 'erc-define-minor-mode "erc-compat")
 
 ;;;***
 
 ;;;### (autoloads (erc-ctcp-query-DCC pcomplete/erc-mode/DCC erc-cmd-DCC)
-;;;;;;  "erc/erc-dcc" "erc/erc-dcc.el" (21150 52007))
+;;;;;;  "erc/erc-dcc" "erc/erc-dcc.el" (21249 60386 384055 355000))
 ;;; Generated autoloads from erc/erc-dcc.el
  (autoload 'erc-dcc-mode "erc-dcc")
 
@@ -982,7 +937,7 @@ that subcommand.
 ;;;;;;  erc-ezb-add-session erc-ezb-end-of-session-list erc-ezb-init-session-list
 ;;;;;;  erc-ezb-identify erc-ezb-notice-autodetect erc-ezb-lookup-action
 ;;;;;;  erc-ezb-get-login erc-cmd-ezb) "erc/erc-ezbounce" "erc/erc-ezbounce.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 385055 332000))
 ;;; Generated autoloads from erc/erc-ezbounce.el
 
 (autoload 'erc-cmd-ezb "erc/erc-ezbounce" "\
@@ -1044,8 +999,8 @@ Add EZBouncer convenience functions to ERC.
 
 ;;;***
 
-;;;### (autoloads (erc-fill) "erc/erc-fill" "erc/erc-fill.el" (21150
-;;;;;;  52007))
+;;;### (autoloads (erc-fill) "erc/erc-fill" "erc/erc-fill.el" (21249
+;;;;;;  60386 385055 332000))
 ;;; Generated autoloads from erc/erc-fill.el
  (autoload 'erc-fill-mode "erc-fill" nil t)
 
@@ -1058,14 +1013,14 @@ You can put this on `erc-insert-modify-hook' and/or `erc-send-modify-hook'.
 ;;;***
 
 ;;;### (autoloads nil "erc/erc-hecomplete" "erc/erc-hecomplete.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 386055 310000))
 ;;; Generated autoloads from erc/erc-hecomplete.el
  (autoload 'erc-hecomplete-mode "erc-hecomplete" nil t)
 
 ;;;***
 
 ;;;### (autoloads (erc-identd-stop erc-identd-start) "erc/erc-identd"
-;;;;;;  "erc/erc-identd.el" (21150 52007))
+;;;;;;  "erc/erc-identd.el" (21249 60386 386055 310000))
 ;;; Generated autoloads from erc/erc-identd.el
  (autoload 'erc-identd-mode "erc-identd")
 
@@ -1087,7 +1042,7 @@ system.
 ;;;***
 
 ;;;### (autoloads (erc-create-imenu-index) "erc/erc-imenu" "erc/erc-imenu.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 386055 310000))
 ;;; Generated autoloads from erc/erc-imenu.el
 
 (autoload 'erc-create-imenu-index "erc/erc-imenu" "\
@@ -1097,20 +1052,22 @@ system.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-join" "erc/erc-join.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-join" "erc/erc-join.el" (21249 60386
+;;;;;;  386055 310000))
 ;;; Generated autoloads from erc/erc-join.el
  (autoload 'erc-autojoin-mode "erc-join" nil t)
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-list" "erc/erc-list.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-list" "erc/erc-list.el" (21249 60386
+;;;;;;  387055 288000))
 ;;; Generated autoloads from erc/erc-list.el
  (autoload 'erc-list-mode "erc-list")
 
 ;;;***
 
 ;;;### (autoloads (erc-chanlist erc-list-channels) "erc/erc-list-old"
-;;;;;;  "erc/erc-list-old.el" (21150 52007))
+;;;;;;  "erc/erc-list-old.el" (21249 60386 387055 288000))
 ;;; Generated autoloads from erc/erc-list-old.el
  (autoload 'erc-list-old-mode "erc-list-old")
 
@@ -1131,7 +1088,7 @@ to RFC and send the LIST header (#321) at start of list transmission.
 ;;;***
 
 ;;;### (autoloads (erc-save-buffer-in-logs erc-logging-enabled) "erc/erc-log"
-;;;;;;  "erc/erc-log.el" (21150 52007))
+;;;;;;  "erc/erc-log.el" (21249 60386 387055 288000))
 ;;; Generated autoloads from erc/erc-log.el
  (autoload 'erc-log-mode "erc-log" nil t)
 
@@ -1163,7 +1120,7 @@ You can save every individual message by putting this function on
 ;;;### (autoloads (erc-delete-dangerous-host erc-add-dangerous-host
 ;;;;;;  erc-delete-keyword erc-add-keyword erc-delete-fool erc-add-fool
 ;;;;;;  erc-delete-pal erc-add-pal) "erc/erc-match" "erc/erc-match.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 388055 266000))
 ;;; Generated autoloads from erc/erc-match.el
  (autoload 'erc-match-mode "erc-match")
 
@@ -1209,14 +1166,15 @@ Delete dangerous-host interactively to `erc-dangerous-hosts'.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-menu" "erc/erc-menu.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-menu" "erc/erc-menu.el" (21249 60386
+;;;;;;  388055 266000))
 ;;; Generated autoloads from erc/erc-menu.el
  (autoload 'erc-menu-mode "erc-menu" nil t)
 
 ;;;***
 
 ;;;### (autoloads (erc-cmd-WHOLEFT) "erc/erc-netsplit" "erc/erc-netsplit.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 388055 266000))
 ;;; Generated autoloads from erc/erc-netsplit.el
  (autoload 'erc-netsplit-mode "erc-netsplit")
 
@@ -1228,7 +1186,7 @@ Show who's gone.
 ;;;***
 
 ;;;### (autoloads (erc-server-select erc-determine-network) "erc/erc-networks"
-;;;;;;  "erc/erc-networks.el" (21150 52007))
+;;;;;;  "erc/erc-networks.el" (21249 60386 389055 243000))
 ;;; Generated autoloads from erc/erc-networks.el
 
 (autoload 'erc-determine-network "erc/erc-networks" "\
@@ -1246,7 +1204,7 @@ Interactively select a server to connect to using `erc-server-alist'.
 ;;;***
 
 ;;;### (autoloads (pcomplete/erc-mode/NOTIFY erc-cmd-NOTIFY) "erc/erc-notify"
-;;;;;;  "erc/erc-notify.el" (21150 52007))
+;;;;;;  "erc/erc-notify.el" (21249 60386 390055 221000))
 ;;; Generated autoloads from erc/erc-notify.el
  (autoload 'erc-notify-mode "erc-notify" nil t)
 
@@ -1264,34 +1222,37 @@ with args, toggle notify status of people.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-page" "erc/erc-page.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-page" "erc/erc-page.el" (21249 60386
+;;;;;;  390055 221000))
 ;;; Generated autoloads from erc/erc-page.el
  (autoload 'erc-page-mode "erc-page")
 
 ;;;***
 
 ;;;### (autoloads nil "erc/erc-pcomplete" "erc/erc-pcomplete.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 390055 221000))
 ;;; Generated autoloads from erc/erc-pcomplete.el
  (autoload 'erc-completion-mode "erc-pcomplete" nil t)
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-replace" "erc/erc-replace.el" (21150
-;;;;;;  52007))
+;;;### (autoloads nil "erc/erc-replace" "erc/erc-replace.el" (21249
+;;;;;;  60386 390055 221000))
 ;;; Generated autoloads from erc/erc-replace.el
  (autoload 'erc-replace-mode "erc-replace")
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-ring" "erc/erc-ring.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-ring" "erc/erc-ring.el" (21249 60386
+;;;;;;  391055 199000))
 ;;; Generated autoloads from erc/erc-ring.el
  (autoload 'erc-ring-mode "erc-ring" nil t)
 
 ;;;***
 
 ;;;### (autoloads (erc-nickserv-identify erc-nickserv-identify-mode)
-;;;;;;  "erc/erc-services" "erc/erc-services.el" (21150 52007))
+;;;;;;  "erc/erc-services" "erc/erc-services.el" (21249 60386 391055
+;;;;;;  199000))
 ;;; Generated autoloads from erc/erc-services.el
  (autoload 'erc-services-mode "erc-services" nil t)
 
@@ -1308,14 +1269,15 @@ When called interactively, read the password using `read-passwd'.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-sound" "erc/erc-sound.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-sound" "erc/erc-sound.el" (21249 60386
+;;;;;;  391055 199000))
 ;;; Generated autoloads from erc/erc-sound.el
  (autoload 'erc-sound-mode "erc-sound")
 
 ;;;***
 
 ;;;### (autoloads (erc-speedbar-browser) "erc/erc-speedbar" "erc/erc-speedbar.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 392055 177000))
 ;;; Generated autoloads from erc/erc-speedbar.el
 
 (autoload 'erc-speedbar-browser "erc/erc-speedbar" "\
@@ -1326,21 +1288,22 @@ This will add a speedbar major display mode.
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-spelling" "erc/erc-spelling.el" (21150
-;;;;;;  52007))
+;;;### (autoloads nil "erc/erc-spelling" "erc/erc-spelling.el" (21249
+;;;;;;  60386 392055 177000))
 ;;; Generated autoloads from erc/erc-spelling.el
  (autoload 'erc-spelling-mode "erc-spelling" nil t)
 
 ;;;***
 
-;;;### (autoloads nil "erc/erc-stamp" "erc/erc-stamp.el" (21150 52007))
+;;;### (autoloads nil "erc/erc-stamp" "erc/erc-stamp.el" (21249 60386
+;;;;;;  392055 177000))
 ;;; Generated autoloads from erc/erc-stamp.el
  (autoload 'erc-timestamp-mode "erc-stamp" nil t)
 
 ;;;***
 
 ;;;### (autoloads (erc-track-minor-mode) "erc/erc-track" "erc/erc-track.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 393055 154000))
 ;;; Generated autoloads from erc/erc-track.el
 
 (defvar erc-track-minor-mode nil "\
@@ -1363,7 +1326,8 @@ module, otherwise the keybindings will not do anything useful.
 ;;;***
 
 ;;;### (autoloads (erc-truncate-buffer erc-truncate-buffer-to-size)
-;;;;;;  "erc/erc-truncate" "erc/erc-truncate.el" (21150 52007))
+;;;;;;  "erc/erc-truncate" "erc/erc-truncate.el" (21249 60386 393055
+;;;;;;  154000))
 ;;; Generated autoloads from erc/erc-truncate.el
  (autoload 'erc-truncate-mode "erc-truncate" nil t)
 
@@ -1383,7 +1347,7 @@ Meant to be used in hooks, like `erc-insert-post-hook'.
 ;;;***
 
 ;;;### (autoloads (erc-xdcc-add-file) "erc/erc-xdcc" "erc/erc-xdcc.el"
-;;;;;;  (21150 52007))
+;;;;;;  (21249 60386 393055 154000))
 ;;; Generated autoloads from erc/erc-xdcc.el
  (autoload 'erc-xdcc-mode "erc-xdcc")
 
@@ -1395,7 +1359,8 @@ Add a file to `erc-xdcc-files'.
 ;;;***
 
 ;;;### (autoloads (facebook-status facebook-users-set-status facebook-login)
-;;;;;;  "facebook/facebook" "facebook/facebook.el" (21150 52143))
+;;;;;;  "facebook/facebook" "facebook/facebook.el" (21249 60386 376055
+;;;;;;  532000))
 ;;; Generated autoloads from facebook/facebook.el
 
 (autoload 'facebook-login "facebook/facebook" "\
@@ -1416,7 +1381,8 @@ Add a file to `erc-xdcc-files'.
 ;;;***
 
 ;;;### (autoloads (go-download-play godoc gofmt-before-save go-mode)
-;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (21237 47564))
+;;;;;;  "go-mode/go-mode" "go-mode/go-mode.el" (21249 60386 376055
+;;;;;;  532000))
 ;;; Generated autoloads from go-mode/go-mode.el
 
 (autoload 'go-mode "go-mode/go-mode" "\
@@ -1500,7 +1466,8 @@ buffer. Tries to look for a URL at point.
 ;;;***
 
 ;;;### (autoloads (graphviz-dot-mode) "graphviz-dot-mode/graphviz-dot-mode"
-;;;;;;  "graphviz-dot-mode/graphviz-dot-mode.el" (21158 26505))
+;;;;;;  "graphviz-dot-mode/graphviz-dot-mode.el" (21249 60386 377055
+;;;;;;  510000))
 ;;; Generated autoloads from graphviz-dot-mode/graphviz-dot-mode.el
 
 (autoload 'graphviz-dot-mode "graphviz-dot-mode/graphviz-dot-mode" "\
@@ -1558,8 +1525,8 @@ Turning on Graphviz Dot mode calls the value of the variable
 ;;;### (autoloads (inferior-js-mode switch-to-js js-load-file-and-go
 ;;;;;;  js-load-file js-send-buffer-and-go js-send-buffer js-send-last-sexp
 ;;;;;;  js-send-last-sexp-and-go js-send-region-and-go js-send-region
-;;;;;;  run-js) "js-comint/js-comint" "js-comint/js-comint.el" (21151
-;;;;;;  9635))
+;;;;;;  run-js) "js-comint/js-comint" "js-comint/js-comint.el" (21249
+;;;;;;  60386 378055 488000))
 ;;; Generated autoloads from js-comint/js-comint.el
 
 (autoload 'run-js "js-comint/js-comint" "\
@@ -1640,372 +1607,8 @@ Javascript source.
 
 ;;;***
 
-;;;### (autoloads (js2-imenu-extras-mode js2-imenu-extras-setup)
-;;;;;;  "js2-mode/js2-imenu-extras" "js2-mode/js2-imenu-extras.el"
-;;;;;;  (21150 52662))
-;;; Generated autoloads from js2-mode/js2-imenu-extras.el
-
-(autoload 'js2-imenu-extras-setup "js2-mode/js2-imenu-extras" "\
-
-
-\(fn)" nil nil)
-
-(autoload 'js2-imenu-extras-mode "js2-mode/js2-imenu-extras" "\
-Toggle Imenu support for frameworks and structural patterns.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads (js2-mode js2-minor-mode) "js2-mode/js2-mode" "js2-mode/js2-mode.el"
-;;;;;;  (21150 52662))
-;;; Generated autoloads from js2-mode/js2-mode.el
-
-(autoload 'js2-minor-mode "js2-mode/js2-mode" "\
-Minor mode for running js2 as a background linter.
-This allows you to use a different major mode for JavaScript editing,
-such as `espresso-mode', while retaining the asynchronous error/warning
-highlighting features of `js2-mode'.
-
-\(fn &optional ARG)" t nil)
-
-(autoload 'js2-mode "js2-mode/js2-mode" "\
-Major mode for editing JavaScript code.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (nxml-web-mode html-erb-mode) "mmm-mode/mmm-erb"
-;;;;;;  "mmm-mode/mmm-erb.el" (21149 21716))
-;;; Generated autoloads from mmm-mode/mmm-erb.el
-
-(autoload 'html-erb-mode "mmm-mode/mmm-erb" "\
-
-
-\(fn)" t nil)
-
-(autoload 'nxml-web-mode "mmm-mode/mmm-erb" "\
-
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (mmm-add-classes) "mmm-mode/mmm-vars" "mmm-mode/mmm-vars.el"
-;;;;;;  (21149 21716))
-;;; Generated autoloads from mmm-mode/mmm-vars.el
-
-(autoload 'mmm-add-classes "mmm-mode/mmm-vars" "\
-Add the submode classes CLASSES to `mmm-classes-alist'.
-
-\(fn CLASSES)" nil nil)
-
-;;;***
-
-;;;### (autoloads nil "muse/lisp/muse" "muse/lisp/muse.el" (21158
-;;;;;;  24181))
-;;; Generated autoloads from muse/lisp/muse.el
- (add-to-list 'auto-mode-alist '("\\.muse\\'" . muse-mode-choose-mode))
-
-;;;***
-
-;;;### (autoloads (muse-blosxom-new-entry) "muse/lisp/muse-blosxom"
-;;;;;;  "muse/lisp/muse-blosxom.el" (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-blosxom.el
-
-(autoload 'muse-blosxom-new-entry "muse/lisp/muse-blosxom" "\
-Start a new blog entry with given CATEGORY.
-The filename of the blog entry is derived from TITLE.
-The page will be initialized with the current date and TITLE.
-
-\(fn CATEGORY TITLE)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-colors-toggle-inline-images) "muse/lisp/muse-colors"
-;;;;;;  "muse/lisp/muse-colors.el" (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-colors.el
-
-(autoload 'muse-colors-toggle-inline-images "muse/lisp/muse-colors" "\
-Toggle display of inlined images on/off.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-import-docbook-files muse-import-docbook)
-;;;;;;  "muse/lisp/muse-import-docbook" "muse/lisp/muse-import-docbook.el"
-;;;;;;  (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-import-docbook.el
-
-(autoload 'muse-import-docbook "muse/lisp/muse-import-docbook" "\
-Convert the Docbook buffer SRC to Muse, writing output in the DEST buffer.
-
-\(fn SRC DEST)" t nil)
-
-(autoload 'muse-import-docbook-files "muse/lisp/muse-import-docbook" "\
-Convert the Docbook file SRC to Muse, writing output to the DEST file.
-
-\(fn SRC DEST)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-import-latex) "muse/lisp/muse-import-latex"
-;;;;;;  "muse/lisp/muse-import-latex.el" (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-import-latex.el
-
-(autoload 'muse-import-latex "muse/lisp/muse-import-latex" "\
-
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-list-edit-minor-mode muse-insert-tag muse-index
-;;;;;;  muse-find-backlinks muse-search muse-search-with-command
-;;;;;;  muse-what-changed muse-previous-reference muse-next-reference
-;;;;;;  muse-follow-name-at-point-other-window muse-follow-name-at-point
-;;;;;;  muse-browse-result muse-edit-link-at-point muse-insert-relative-link-to-file
-;;;;;;  muse-decrease-list-item-indentation muse-increase-list-item-indentation
-;;;;;;  muse-insert-list-item muse-mode-choose-mode muse-mode) "muse/lisp/muse-mode"
-;;;;;;  "muse/lisp/muse-mode.el" (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-mode.el
-
-(autoload 'muse-mode "muse/lisp/muse-mode" "\
-Muse is an Emacs mode for authoring and publishing documents.
-\\{muse-mode-map}
-
-\(fn)" t nil)
-
-(autoload 'muse-mode-choose-mode "muse/lisp/muse-mode" "\
-Turn the proper Emacs Muse related mode on for this file.
-
-\(fn)" nil nil)
-
-(autoload 'muse-insert-list-item "muse/lisp/muse-mode" "\
-Insert a list item at the current point, taking into account
-your current list type and indentation level.
-
-\(fn)" t nil)
-
-(autoload 'muse-increase-list-item-indentation "muse/lisp/muse-mode" "\
-Increase the indentation of the current list item.
-
-\(fn)" t nil)
-
-(autoload 'muse-decrease-list-item-indentation "muse/lisp/muse-mode" "\
-Decrease the indentation of the current list item.
-
-\(fn)" t nil)
-
-(autoload 'muse-insert-relative-link-to-file "muse/lisp/muse-mode" "\
-Insert a relative link to a file, with optional description, at point.
-
-\(fn)" t nil)
-
-(autoload 'muse-edit-link-at-point "muse/lisp/muse-mode" "\
-Edit the current link.
-Do not rename the page originally referred to.
-
-\(fn)" t nil)
-
-(autoload 'muse-browse-result "muse/lisp/muse-mode" "\
-Visit the current page's published result.
-
-\(fn STYLE &optional OTHER-WINDOW)" t nil)
-
-(autoload 'muse-follow-name-at-point "muse/lisp/muse-mode" "\
-Visit the link at point.
-
-\(fn &optional OTHER-WINDOW)" t nil)
-
-(autoload 'muse-follow-name-at-point-other-window "muse/lisp/muse-mode" "\
-Visit the link at point in other window.
-
-\(fn)" t nil)
-
-(autoload 'muse-next-reference "muse/lisp/muse-mode" "\
-Move forward to next Muse link or URL, cycling if necessary.
-
-\(fn)" t nil)
-
-(autoload 'muse-previous-reference "muse/lisp/muse-mode" "\
-Move backward to the next Muse link or URL, cycling if necessary.
-In case of Emacs x <= 21 and ignoring of intangible properties (see
-`muse-mode-intangible-links').
-
-This function is not entirely accurate, but it's close enough.
-
-\(fn)" t nil)
-
-(autoload 'muse-what-changed "muse/lisp/muse-mode" "\
-Show the unsaved changes that have been made to the current file.
-
-\(fn)" t nil)
-
-(autoload 'muse-search-with-command "muse/lisp/muse-mode" "\
-Search for the given TEXT string in the project directories
-using the specified command.
-
-\(fn TEXT)" t nil)
-
-(autoload 'muse-search "muse/lisp/muse-mode" "\
-Search for the given TEXT using the default grep command.
-
-\(fn)" t nil)
-
-(autoload 'muse-find-backlinks "muse/lisp/muse-mode" "\
-Grep for the current pagename in all the project directories.
-
-\(fn)" t nil)
-
-(autoload 'muse-index "muse/lisp/muse-mode" "\
-Display an index of all known Muse pages.
-
-\(fn)" t nil)
-
-(autoload 'muse-insert-tag "muse/lisp/muse-mode" "\
-Insert a tag interactively with a blank line after it.
-
-\(fn TAG)" t nil)
-
-(autoload 'muse-list-edit-minor-mode "muse/lisp/muse-mode" "\
-This is a global minor mode for editing files with lists.
-It is meant to be used with other major modes, and not with Muse mode.
-
-Interactively, with no prefix argument, toggle the mode.
-With universal prefix ARG turn mode on.
-With zero or negative ARG turn mode off.
-
-This minor mode provides the Muse keybindings for editing lists,
-and support for filling lists properly.
-
-It recognizes not only Muse-style lists, which use the \"-\"
-character or numbers, but also lists that use asterisks or plus
-signs.  This should make the minor mode generally useful.
-
-Definition lists and footnotes are also recognized.
-
-Note that list items may omit leading spaces, for compatibility
-with modes that set `left-margin', such as
-`debian-changelog-mode'.
-
-\\{muse-list-edit-minor-mode-map}
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-project-publish muse-project-publish-this-file
-;;;;;;  muse-project-find-file) "muse/lisp/muse-project" "muse/lisp/muse-project.el"
-;;;;;;  (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-project.el
-
-(autoload 'muse-project-find-file "muse/lisp/muse-project" "\
-Open the Muse page given by NAME in PROJECT.
-If COMMAND is non-nil, it is the function used to visit the file.
-If DIRECTORY is non-nil, it is the directory in which the page
-will be created if it does not already exist.  Otherwise, the
-first directory within the project's fileset is used.
-
-\(fn NAME PROJECT &optional COMMAND DIRECTORY)" t nil)
-
-(autoload 'muse-project-publish-this-file "muse/lisp/muse-project" "\
-Publish the currently-visited file according to `muse-project-alist',
-prompting if more than one style applies.
-
-If FORCE is given, publish the file even if it is up-to-date.
-
-If STYLE is given, use that publishing style rather than
-prompting for one.
-
-\(fn &optional FORCE STYLE)" t nil)
-
-(autoload 'muse-project-publish "muse/lisp/muse-project" "\
-Publish the pages of PROJECT that need publishing.
-
-\(fn PROJECT &optional FORCE)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-browse-url) "muse/lisp/muse-protocols" "muse/lisp/muse-protocols.el"
-;;;;;;  (21158 24181))
-;;; Generated autoloads from muse/lisp/muse-protocols.el
-
-(autoload 'muse-browse-url "muse/lisp/muse-protocols" "\
-Handle URL with the function specified in `muse-url-protocols'.
-If OTHER-WINDOW is non-nil, open in a different window.
-
-\(fn URL &optional OTHER-WINDOW)" t nil)
-
-;;;***
-
-;;;### (autoloads (muse-publish-this-file muse-publish-file muse-publish-region)
-;;;;;;  "muse/lisp/muse-publish" "muse/lisp/muse-publish.el" (21158
-;;;;;;  24181))
-;;; Generated autoloads from muse/lisp/muse-publish.el
-
-(autoload 'muse-publish-region "muse/lisp/muse-publish" "\
-Apply the given STYLE's markup rules to the given region.
-The result is placed in a new buffer that includes TITLE in its name.
-
-\(fn BEG END &optional TITLE STYLE)" t nil)
-
-(autoload 'muse-publish-file "muse/lisp/muse-publish" "\
-Publish the given FILE in a particular STYLE to OUTPUT-DIR.
-If the argument FORCE is nil, each file is only published if it is
-newer than the published version.  If the argument FORCE is non-nil,
-the file is published no matter what.
-
-\(fn FILE STYLE &optional OUTPUT-DIR FORCE)" t nil)
-
-(autoload 'muse-publish-this-file "muse/lisp/muse-publish" "\
-Publish the currently-visited file.
-Prompt for both the STYLE and OUTPUT-DIR if they are not
-supplied.
-
-\(fn STYLE OUTPUT-DIR &optional FORCE)" t nil)
-
-;;;***
-
-;;;### (autoloads (php-mode php-extra-constants php) "php-mode/php-mode"
-;;;;;;  "php-mode/php-mode.el" (21150 52879))
-;;; Generated autoloads from php-mode/php-mode.el
-
-(let ((loads (get 'php 'custom-loads))) (if (member '"php-mode/php-mode" loads) nil (put 'php 'custom-loads (cons '"php-mode/php-mode" loads))))
-
-(defvar php-extra-constants 'nil "\
-A list of additional strings to treat as PHP constants.")
-
-(custom-autoload 'php-extra-constants "php-mode/php-mode" t)
-
-(add-to-list 'interpreter-mode-alist (cons "php" 'php-mode))
-
-(autoload 'php-mode "php-mode/php-mode" "\
-Major mode for editing PHP code.
-
-\\{php-mode-map}
-
-\(fn)" t nil)
-
-(dolist (pattern '("\\.php[s345t]?\\'" "\\.phtml\\'" "Amkfile" "\\.amk$")) (add-to-list 'auto-mode-alist `(,pattern . php-mode) t))
-
-;;;***
-
-;;;### (autoloads (twit) "twittering-mode/twittering-mode" "twittering-mode/twittering-mode.el"
-;;;;;;  (21150 58337))
-;;; Generated autoloads from twittering-mode/twittering-mode.el
-
-(autoload 'twit "twittering-mode/twittering-mode" "\
-Start twittering-mode.
-
-\(fn)" t nil)
-
-;;;***
-
 ;;;### (autoloads (wcy-complete) "wcy-complete/wcy-complete" "wcy-complete/wcy-complete.el"
-;;;;;;  (21158 40426))
+;;;;;;  (21249 60386 509052 575000))
 ;;; Generated autoloads from wcy-complete/wcy-complete.el
 
 (autoload 'wcy-complete "wcy-complete/wcy-complete" "\
@@ -2016,7 +1619,7 @@ Start twittering-mode.
 ;;;***
 
 ;;;### (autoloads nil "wcy-desktop/wcy-desktop" "wcy-desktop/wcy-desktop.el"
-;;;;;;  (21158 40491))
+;;;;;;  (21249 60386 510052 553000))
 ;;; Generated autoloads from wcy-desktop/wcy-desktop.el
 
 (defvar wcy-desktop-file-name "~/.wcy_desktop_save")
@@ -2027,7 +1630,7 @@ Start twittering-mode.
 ;;;;;;  dln-after-change-function dln-undisplay dln-display dln-core
 ;;;;;;  wcy-display-line-number-off wcy-display-line-number-on wcy-display-line-number-mode)
 ;;;;;;  "wcy-display-line-number/wcy-display-line-number" "wcy-display-line-number/wcy-display-line-number.el"
-;;;;;;  (21158 40572))
+;;;;;;  (21249 60386 510052 553000))
 ;;; Generated autoloads from wcy-display-line-number/wcy-display-line-number.el
 
 (autoload 'wcy-display-line-number-mode "wcy-display-line-number/wcy-display-line-number" "\
@@ -2077,70 +1680,11 @@ show the line number at left margine
 
 ;;;***
 
-;;;### (autoloads (yas-global-mode yas-minor-mode) "yasnippet/yasnippet"
-;;;;;;  "yasnippet/yasnippet.el" (21150 42492))
-;;; Generated autoloads from yasnippet/yasnippet.el
-
-(autoload 'yas-minor-mode "yasnippet/yasnippet" "\
-Toggle YASnippet mode.
-
-When YASnippet mode is enabled, `yas-expand', normally bound to
-the TAB key, expands snippets of code depending on the major
-mode.
-
-With no argument, this command toggles the mode.
-positive prefix argument turns on the mode.
-Negative prefix argument turns off the mode.
-
-Key bindings:
-\\{yas-minor-mode-map}
-
-\(fn &optional ARG)" t nil)
-
-(defvar yas-global-mode nil "\
-Non-nil if Yas-Global mode is enabled.
-See the command `yas-global-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `yas-global-mode'.")
-
-(custom-autoload 'yas-global-mode "yasnippet/yasnippet" nil)
-
-(autoload 'yas-global-mode "yasnippet/yasnippet" "\
-Toggle Yas minor mode in all buffers.
-With prefix ARG, enable Yas-Global mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Yas minor mode is enabled in all buffers where
-`yas-minor-mode-on' would do it.
-See `yas-minor-mode' for more information on Yas minor mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads nil nil ("ac-math/ac-math.el" "ascii-table/ascii-table.el"
-;;;;;;  "auto-complete-yasnippet/auto-complete-yasnippet.el" "auto-complete/auto-complete-config.el"
-;;;;;;  "auto-complete/auto-complete-pkg.el" "bazaar/bazaar.el" "bzr-ui/bzr-ui.el"
-;;;;;;  "cedet/cedet-build.el" "cedet/cedet-devel-load.el" "cedet/cedet-ediff.el"
-;;;;;;  "cedet/cedet-emacs-merge.el" "cedet/cedet-remove-builtin.el"
-;;;;;;  "cedet/cedet-update-changelog.el" "cedet/cedet-update-version.el"
-;;;;;;  "chinese-chess-pvc/chinese-chess-pvc.el" "chinese-chess/chinese-chess.el"
-;;;;;;  "chm-view/chm-view.el" "cscope/cscope.el" "date-calc/date-calc.el"
-;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
-;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
-;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "emacs-init/emacs-init.el"
-;;;;;;  "muse/lisp/muse-autoloads.el" "muse/lisp/muse-backlink.el"
-;;;;;;  "muse/lisp/muse-book.el" "muse/lisp/muse-context.el" "muse/lisp/muse-docbook.el"
-;;;;;;  "muse/lisp/muse-groff.el" "muse/lisp/muse-html.el" "muse/lisp/muse-http.el"
-;;;;;;  "muse/lisp/muse-ikiwiki.el" "muse/lisp/muse-import-xml.el"
-;;;;;;  "muse/lisp/muse-ipc.el" "muse/lisp/muse-journal.el" "muse/lisp/muse-latex.el"
-;;;;;;  "muse/lisp/muse-latex2png.el" "muse/lisp/muse-poem.el" "muse/lisp/muse-regexps.el"
-;;;;;;  "muse/lisp/muse-texinfo.el" "muse/lisp/muse-wiki.el" "muse/lisp/muse-xml-common.el"
-;;;;;;  "muse/lisp/muse-xml.el" "wcy-compose/wcy-compose.el") (21237
-;;;;;;  47631 589895))
+;;;### (autoloads nil nil ("el-get/el-get-autoloads.el" "el-get/el-get-build.el"
+;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
+;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
+;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
+;;;;;;  "el-get/el-get-status.el") (21250 10201 593853 695000))
 
 ;;;***
 
