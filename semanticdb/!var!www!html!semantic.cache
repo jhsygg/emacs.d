@@ -1,0 +1,27 @@
+;; Object html/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "html/"
+  :tables (list 
+   (semanticdb-table "jlgl-sbgl.html"
+    :major-mode 'html-mode
+    :tags nil
+    :file "jlgl-sbgl.html"
+    :pointmax 26862
+    :fsize 40445
+    :lastmodtime '(21159 53489)
+    :unmatched-syntax 'nil
+    )
+   (semanticdb-table "index.html"
+    :major-mode 'html-mode
+    :tags nil
+    :file "index.html"
+    :pointmax 42693
+    :fsize 49492
+    :lastmodtime '(21159 52957)
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!var!www!html!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

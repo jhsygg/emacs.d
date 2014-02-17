@@ -1,0 +1,16 @@
+;; Object jdp/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "jdp/"
+  :tables (list 
+   (semanticdb-table "cp_8_4.c"
+    :major-mode 'c-mode
+    :tags nil
+    :file "cp_8_4.c"
+    :pointmax 1
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "!home!jdp!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.0"
+  )

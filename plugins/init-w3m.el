@@ -1,0 +1,13 @@
+(require 'w3m-load)
+(require 'mime-w3m)
+(setq w3m-display-inline-image t)
+(setq w3m-use-mule-ucs t)
+(setq w3m-use-toolbar t)
+(setq w3m-use-cookies t)
+(setq w3m-tab-width 8)
+(setq w3m-home-page "http://www.google.com.hk")
+(setq browse-url-browser-function 'w3m-browse-url)
+(autoload 'w3m-browse-url "w3m" "Ask a WWW browser to show a URL." t)
+(global-set-key "\C-xm" 'browse-url-at-point)
+
+(provide 'init-w3m)
