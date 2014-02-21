@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Feb 17 23:38:35 2014
+;; Created Fri Feb 21 07:11:08 2014
 ;; Desktop file format version 206
 ;; Emacs version 24.3.1
 
@@ -12,7 +12,18 @@
 (setq tags-table-list nil)
 (setq search-ring '("mmm"))
 (setq regexp-search-ring nil)
-(setq register-alist nil)
-(setq file-name-history '("~/org/gtd.org.gpg" "~/.emacs"))
+(setq register-alist '((48 "\221\241\274131 \221\241\275" "\221\241\274134 \221\241\275" "\221\241\274138 \221\241\275")))
+(setq file-name-history '("~/org/‘Ê®‘½²‘Ê®‘ÖØ‘Ê®‘×ö‘µ½.org" "~/org/finished.org" "~/org/study.org" "~/org/notes.org" "~/.emacs.d/bookmarks" "~/org/journal.org.gpg" "~/org/gtd.org.gpg" "~/" "~/myworks/FM_dot.org" "~/myworks/FirstManagement.tex" "~/myworks/" "~/myworks/FirstManagement.org" "~/Documents/FirstManagement.txt" "~/Documents/" "~/mystudy/" "~/Downloads/" "~/org" "~/mytest/" \.\.\.))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/jdp/org/‘Ê®‘½²‘Ê®‘ÖØ‘Ê®‘×ö‘µ½.org"
+  "‘Ê®‘½²‘Ê®‘ÖØ‘Ê®‘×ö‘µ½.org"
+  'org-mode
+  '(linum-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (fill-column . 70) (truncate-lines)))
+
