@@ -55,7 +55,16 @@
 
 (require 'qq-mode)
 
+(require 'semantic/analyze)
+(provide 'semantic-analyze)
+(provide 'semantic-ctxt)
+(provide 'semanticdb)
+(provide 'semanticdb-find)
+(provide 'semanticdb-mode)
+(provide 'semantic-load)
+
 (require 'semantic)
+
 (require 'css-mode)
 
 (require 'unicad)
