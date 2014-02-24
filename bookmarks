@@ -15,8 +15,8 @@
 ("org-capture-last-stored"
  (filename . "~/org/journal.org.gpg")
  (front-context-string . "**** 六盘水今日天气: 晴,")
- (rear-context-string . " 2014-02-21 星期五\n")
- (position . 84853))
+ (rear-context-string . " 2014-02-24 星期一\n")
+ (position . 85484))
 =======(front-context-string . "**** 六盘水今日天气: 阴转")
 (rear-context-string . " 2014-02-17 星期一\n")
 (position . 84511)

@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Feb 22 00:02:00 2014
+;; Created Mon Feb 24 13:05:39 2014
 ;; Desktop file format version 206
 ;; Emacs version 24.3.1
 
@@ -13,28 +13,17 @@
 (setq search-ring '("mmm"))
 (setq regexp-search-ring nil)
 (setq register-alist '((48 "\221\241\274131 \221\241\275" "\221\241\274134 \221\241\275" "\221\241\274138 \221\241\275")))
-(setq file-name-history '("~/myworks/‘Ð¡‘ºÓ‘ÄÜ‘·¢.tex" "~/myworks/‘§³\272\323\304œô°×\242.tex" "~/myworks" "~/org/" "~/org/101\270\366\326\370\303\373\265‚Å\334\300\355œô©§\274\260\320\304\300\355œô©§‘§¹œôªÆ.org" "~/org/\221 \221\275\262\221 \221\326  \221\327 .org" "~/org/finished.org" "~/org/study.org" "~/org/notes.org" "~/.emacs.d/bookmarks" "~/org/journal.org.gpg" "~/org/gtd.org.gpg" "~/" "~/myworks/FM_dot.org" "~/myworks/FirstManagement.tex" "~/myworks/" "~/myworks/FirstManagement.org" "~/Documents/FirstManagement.txt" "~/Documents/" "~/mystudy/" "~/Downloads/" "~/org" "~/mytest/" \.\.\.))
+(setq file-name-history '("~/.emacs.d/emacs.bak" "~/.emacs" "~/mytest/" "~/mytest/example1.c" "~/.emacs.d/bookmarks" "~/org/journal.org.gpg" "~/org/gtd.org.gpg" "~/mytest/cp_6_10.c" "~/" "~/myworks/    " "~/myworks/‘µÚ‘Ò»‘¹Ü‘Àí.org" "~/Documents/FirstManagement.txt" \.\.\.))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/jdp/myworks/‘Ð¡‘ºÓ‘ÄÜ‘·¢.tex"
-  "‘Ð¡‘ºÓ‘ÄÜ‘·¢.tex"
-  'latex-mode
-  '(auto-fill-mode auto-complete-mode yas/minor-mode reftex-mode linum-mode TeX-PDF-mode)
-  888
+  "/home/jdp/.emacs.d/emacs.bak"
+  "emacs.bak"
+  'emacs-lisp-mode
+  '(auto-complete-mode yas/minor-mode linum-mode)
+  1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
-
-(desktop-create-buffer 206
-  nil
-  "myworks"
-  'dired-mode
-  '(linum-mode TeX-PDF-mode)
-  11394
-  '(nil nil)
-  t
-  '("/home/jdp/myworks/")
-  nil)
+  '((buffer-file-coding-system . utf-8-unix)))
 
