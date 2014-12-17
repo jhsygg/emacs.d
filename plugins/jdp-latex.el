@@ -25,10 +25,10 @@
 	  (lambda () (setq truncate-lines nil)))
 
 ;; (require 'org-install)
-(require 'org-latex)
+;; (require 'org-latex)
 
-;;(unless (boundp 'org-export-latex-classes)
-;;  (setq org-export-latex-classes nil))
+(unless (boundp 'org-export-latex-classes)
+(setq org-export-latex-classes nil))
 
 (setq org-export-latex-listings t)
 (add-to-list 'org-export-latex-classes
@@ -36,6 +36,10 @@
                "\\documentclass[11pt,a4paper]{ctexart}
 \\usepackage[utf8]{inputenc}
 \\usepackage{abstract}
+\\usepackage{geometry}
+\\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\\usepackage{flafter}
+\\setlength{\\headheight}{15pt}
 \\usepackage[title]{appendix}
 \\usepackage{fixltx2e}
 \\usepackage{graphicx}
@@ -53,10 +57,9 @@
 \\usepackage{listings}
 \\usepackage{xcolor}
 \\usepackage{multirow,array,multicol,indentfirst}
-\\usepackage{SIunits,geometry,fancyhdr}
+\\usepackage{SIunits,fancyhdr}
 \\usepackage{tikz,pifont,footnote}
 \\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=green]{hyperref}
-\\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
 \\usepackage{enumerate,comment}
 \\usepackage{lastpage}
 \\usepackage{layout}
@@ -86,6 +89,10 @@
                "\\documentclass[11pt,a4paper,twoside,openany]{ctexbook}
 \\usepackage[utf8]{inputenc}
 \\usepackage{abstract}
+\\usepackage{geometry}
+\\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\\usepackage{flafter}
+\\setlength{\\headheight}{15pt}
 \\usepackage[title]{appendix}
 \\usepackage{fixltx2e}
 \\usepackage{graphicx}
@@ -101,10 +108,9 @@
 \\usepackage{bpchem}
 \\usepackage{mhchem}
 \\usepackage{multirow,array,multicol,indentfirst}
-\\usepackage{SIunits,geometry,fancyhdr}
+\\usepackage{SIunits,fancyhdr}
 \\usepackage{tikz,pifont,footnote}
 \\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=green]{hyperref}
-\\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
 \\usepackage{enumerate,comment}
 \\usepackage{lastpage}
 \\usepackage{layout}
@@ -152,7 +158,6 @@
                 "\\begin{frame}[fragile]\\frametitle{%s}"
                 "\\end{frame}")))
 
-
 (setq ps-paper-type 'a4
       ps-font-size 16.0
       ps-print-header nil
@@ -167,6 +172,9 @@
                "\\documentclass[11pt,a4paper]{ctexrep}
 \\usepackage[utf8]{inputenc}
 \\usepackage{abstract}
+\\usepackage{geometry}
+\\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\\usepackage{flafter}
 \\usepackage[title]{appendix}
 \\usepackage{fixltx2e}
 \\usepackage{graphicx}
@@ -184,13 +192,47 @@
 \\usepackage{listings}
 \\usepackage{xcolor}
 \\usepackage{multirow,array,multicol,indentfirst}
-\\usepackage{SIunits,geometry,fancyhdr}
+\\usepackage{SIunits,fancyhdr}
 \\usepackage{tikz,pifont,footnote}
 \\usepackage[draft=false,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=blue]{hyperref}
-\\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2.5cm]{geometry}
+\\usepackage[margin=2cm]{geometry}
 \\usepackage{enumerate,comment}
 \\usepackage{lastpage}
 \\usepackage{layout}
+\\newtheorem{thm}{{定理}}
+\\newtheorem{proposition}{{命题}}
+\\newtheorem{lemma}{{引理}}
+\\newtheorem{corollary}{{推论}}
+\\newtheorem{definition}{{定义}}
+\\newtheorem{rules}{{规则}}
+\\newtheorem{suggest}{{建议}}
+\\newtheorem{example}{{例}}
+\\CTEXsetup[format={\\raggedright}]{part}
+\\CTEXsetup[format={\\raggedright}]{chapter}
+\\CTEXsetup[format={\\raggedright}]{section}
+\\CTEXsetup[format={\\raggedright}]{subsection}
+\\CTEXsetup[format={\\raggedright}]{subsubsection}
+\\CTEXsetup[format={\\raggedright}]{paragraph}
+\\CTEXsetup[format={\\raggedright}]{subparagraph}
+\\pagestyle{fancy}
+                 [NO-DEFAULT-PACKAGES]
+                 [EXTRA]"
+	       ("\\chapter{%s}" . "\\chapter*{%s}")
+
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;;==========================================================================
+
+;;ctextp 设置
+
+(add-to-list 'org-export-latex-classes
+             '("ctextp"
+               "\\documentclass[11pt,a4paper]{ctexart}
+\\usepackage[utf8]{inputenc}
 \\newtheorem{thm}{{定理}}
 \\newtheorem{proposition}{{命题}}
 \\newtheorem{lemma}{{引理}}
@@ -267,6 +309,19 @@
 ;;    (js . t)
 ;;    ))
 
+;;rules 
+(add-to-list 'org-export-latex-classes
+             '("rules"
+               "\\documentclass[11pt,a4paper]{rules}
+ [NO-DEFAULT-PACKAGES]
+ [PACKAGES]
+ [EXTRA]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 (require 'ac-math)
 
 (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
@@ -278,4 +333,4 @@
 
 (add-hook 'latex-mode-hook 'ac-latex-mode-setup)
 
-(provide 'init-latex)
+(provide 'jdp-latex)
