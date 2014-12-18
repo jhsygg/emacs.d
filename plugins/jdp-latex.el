@@ -83,7 +83,9 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+;;============================================================
 ;; ctexbook
+;;============================================================
 (add-to-list 'org-export-latex-classes
              '("ctexbook"
                "\\documentclass[11pt,a4paper,twoside,openany]{ctexbook}
