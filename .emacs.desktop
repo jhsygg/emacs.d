@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Feb 24 13:05:39 2014
+;; Created Sun Dec 14 23:11:09 2014
 ;; Desktop file format version 206
 ;; Emacs version 24.3.1
 
@@ -10,20 +10,42 @@
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("mmm"))
+(setq search-ring '("compan" "com" "company" "go" "auto-complete" "yank" "k" "page" "GB" "song" "hei" "latex" "ctex" "PS" "rules" "jianda"))
 (setq regexp-search-ring nil)
-(setq register-alist '((48 "\221\241\274131 \221\241\275" "\221\241\274134 \221\241\275" "\221\241\274138 \221\241\275")))
-(setq file-name-history '("~/.emacs.d/emacs.bak" "~/.emacs" "~/mytest/" "~/mytest/example1.c" "~/.emacs.d/bookmarks" "~/org/journal.org.gpg" "~/org/gtd.org.gpg" "~/mytest/cp_6_10.c" "~/" "~/myworks/    " "~/myworks/懙趹一懝軕理.org" "~/Documents/FirstManagement.txt" \.\.\.))
+(setq register-alist '((48 "\221\243\251" "\221\243\251" "\221\243\251")))
+(setq file-name-history '("~/Downloads/懲鎽的懢蛻是懶膽跳.org" "~/Downloads/懲鎽的懢蛻是懶膽跳.txt" "~/Downloads/懲鐟主.org" "~/Downloads/懲鐟主.txt" "~/Downloads/" "~/Downloads/懲鐟主.txt" "~/Downloads/" "~/Downloads/懗諔人.org" "~/Downloads/" "~/Downloads/懗諔人.org" "~/Downloads/懗諔人.txt" "~/Downloads/" "~/Downloads/懳迲人懞葢彩.org" "~/Downloads/" "~/Downloads/懳迲人懞葢彩.org" "~/Downloads/懳迲人懞葢彩.txt" "~/Downloads/" "~/Downloads/懶響爷.tex" "~/Downloads/懶響爷.org" "~/Downloads/" "~/Downloads/懶響爷.txt" "~/Downloads/" "~/Downloads/懶響爷.org" "~/Downloads/懶響爷.txt" "~/bh_regulations/tzsb-raw.org" "~/bh_regulations/" "~/org/finished.org" "~/org/study.org" "~/org/notes.org" "~/org/journal.org.gpg"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/jdp/.emacs.d/emacs.bak"
-  "emacs.bak"
-  'emacs-lisp-mode
-  '(auto-complete-mode yas/minor-mode linum-mode)
+  "/home/jdp/Downloads/懲鎽的懢蛻是懶膽跳.org"
+  "懲鎽的懢蛻是懶膽跳.org"
+  'org-mode
+  '(linum-mode TeX-PDF-mode)
+  111308
+  '(12 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (fill-column . 70) (truncate-lines)))
+
+(desktop-create-buffer 206
+  "/home/jdp/Downloads/懲鎽的懢蛻是懶膽跳.txt"
+  "懲鎽的懢蛻是懶膽跳.txt"
+  'text-mode
+  '(yas/minor-mode linum-mode TeX-PDF-mode)
   1
-  '(nil nil)
+  '(150940 nil)
   nil
   nil
-  '((buffer-file-coding-system . utf-8-unix)))
+  '((buffer-file-coding-system . chinese-iso-8bit-dos)))
+
+(desktop-create-buffer 206
+  nil
+  "Downloads"
+  'dired-mode
+  '(linum-mode TeX-PDF-mode)
+  16892
+  '(190 nil)
+  t
+  '("/home/jdp/Downloads/")
+  nil)
 

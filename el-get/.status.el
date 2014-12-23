@@ -49,6 +49,8 @@
 		    (:name chinese-chess-pvc :auto-generated t :type emacswiki :description "a chinese chess computer player -*- coding: utf-8 -*-" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chinese-chess-pvc.el"))
  (chm-view status "installed" recipe
 	   (:name chm-view :auto-generated t :type emacswiki :description "View CHM file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chm-view.el"))
+ (cl-lib status "installed" recipe
+	 (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
  (cscope status "installed" recipe
 	 (:name cscope :auto-generated t :type emacswiki :description "Interface to cscope browser" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/cscope.el"))
  (csv-mode status "removed" recipe nil)
@@ -56,7 +58,9 @@
 	    (:name date-calc :auto-generated t :type emacswiki :description "date calculation and parsing routines" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/date-calc.el"))
  (ecb status "removed" recipe nil)
  (el-get status "installed" recipe
-	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
+	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
+		("el-get.*\\.el$" "methods/")
+		:load "el-get.el"))
  (emacs-init status "installed" recipe
 	     (:name emacs-init :auto-generated t :type emacswiki :description "Drew Adams's Emacs init file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/emacs-init.el"))
  (emacs-w3m status "installed" recipe
@@ -73,7 +77,10 @@
 	   (:name facebook :auto-generated t :type emacswiki :description "Access the Facebook API from emacs" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/facebook.el"))
  (fuzzy status "installed" recipe
 	(:name fuzzy :website "https://github.com/auto-complete/fuzzy-el" :description "Fuzzy matching utilities for GNU Emacs" :type github :pkgname "auto-complete/fuzzy-el"))
- (git-emacs status "required" recipe nil)
+ (git-emacs status "installed" recipe
+	    (:name git-emacs :description "Yet another git emacs mode for newbies" :type github :pkgname "tsgates/git-emacs" :features git-emacs))
+ (git-modes status "installed" recipe
+	    (:name git-modes :description "GNU Emacs modes for various Git-related files" :type github :pkgname "magit/git-modes"))
  (go-mode status "installed" recipe
 	  (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el" :features go-mode :post-init
 		 (add-to-list 'auto-mode-alist
@@ -91,8 +98,17 @@
 		  (autoload 'js2-mode "js2-mode" nil t)))
  (json status "installed" recipe
        (:name json :description "JavaScript Object Notation parser / generator" :type http :url "http://edward.oconnor.cx/elisp/json.el" :features json))
- (latex-math-preview status "required" recipe nil)
- (magit status "required" recipe nil)
+ (latex-math-preview status "installed" recipe
+		     (:name latex-math-preview :auto-generated t :type emacswiki :description "preview LaTeX mathematical expressions." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/latex-math-preview.el"))
+ (magit status "installed" recipe
+	(:name magit :website "https://github.com/magit/magit#readme" :description "It's Magit! An Emacs mode for Git." :type github :pkgname "magit/magit" :depends
+	       (cl-lib git-modes)
+	       :info "." :compile "magit.*.el\\'" :build
+	       `(("make" "docs"))
+	       :build/berkeley-unix
+	       (("gmake docs"))
+	       :build/windows-nt
+	       (progn nil)))
  (mmm-mode status "installed" recipe
 	   (:name mmm-mode :description "Allow Multiple Major Modes in a buffer" :type github :pkgname "purcell/mmm-mode"))
  (muse status "installed" recipe
