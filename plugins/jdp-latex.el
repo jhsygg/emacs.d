@@ -25,10 +25,10 @@
 	  (lambda () (setq truncate-lines nil)))
 
 ;; (require 'org-install)
-(require 'org-latex)
+;; (require 'org-latex)
 
-;;(unless (boundp 'org-export-latex-classes)
-;;  (setq org-export-latex-classes nil))
+(unless (boundp 'org-export-latex-classes)
+(setq org-export-latex-classes nil))
 
 (setq org-export-latex-listings t)
 (add-to-list 'org-export-latex-classes
@@ -83,7 +83,9 @@
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 
+;;============================================================
 ;; ctexbook
+;;============================================================
 (add-to-list 'org-export-latex-classes
              '("ctexbook"
                "\\documentclass[11pt,a4paper,twoside,openany]{ctexbook}

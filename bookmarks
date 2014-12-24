@@ -4,9 +4,15 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/org/finished.org")
+<<<<<<< HEAD
  (front-context-string . "** DONE 石矿工艺计量标定")
  (rear-context-string . "销、存”管理流程与金蝶接口问题\n")
  (position . 2366))
+=======
+ (front-context-string . "** DONE 物资盘库工作\n ")
+ (rear-context-string . "-12-18 四 11:09]\n")
+ (position . 2407))
+>>>>>>> 3ce99bb932270a915fe1ab8872fd3230ca7de27c
 ("org-remember-last-stored"
  (filename . "~/org/task.org")
  (front-context-string . "** TODO 上交钟山区特种设")
