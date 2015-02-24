@@ -1,23 +1,28 @@
-((ac-math status "installed" recipe
-	  (:name ac-math :type http :website "http://code.google.com/p/ac-math/" :description "This is an add-on which defines three ac-sources for the auto-complete package" :url "https://ac-math.googlecode.com/svn/trunk/ac-math.el" :autoloads t))
+((ac-math status "required" recipe nil)
+ (ac-octave status "installed" recipe
+	    (:name ac-octave :type emacswiki :description "octave completions support for auto-complete"))
  (apache-mode status "installed" recipe
 	      (:name apache-mode :description "Major mode for editing Apache configuration files" :type github :pkgname "emacsmirror/apache-mode"))
  (ascii status "installed" recipe
 	(:name ascii :auto-generated t :type emacswiki :description "ASCII code display." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/ascii.el"))
  (ascii-table status "installed" recipe
 	      (:name ascii-table :auto-generated t :type emacswiki :description "simple ASCII table" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/ascii-table.el"))
- (auctex status "installed" recipe
-	 (:name auctex :website "http://www.gnu.org/software/auctex/" :description "AUCTeX is an extensible package for writing and formatting TeX files in GNU Emacs and XEmacs. It supports many different TeX macro packages, including AMS-TeX, LaTeX, Texinfo, ConTeXt, and docTeX (dtx files)." :type cvs :module "auctex" :url ":pserver:anonymous@cvs.sv.gnu.org:/sources/auctex" :build
-		`("./autogen.sh" ,(concat "./configure --without-texmf-dir --with-lispdir=`pwd` --with-emacs=" el-get-emacs)
-		  "make")
-		:load-path
-		("." "preview")
-		:load
-		("tex-site.el" "preview/preview-latex.el")
-		:info "doc"))
+ (auctex status "required" recipe nil)
  (auto-complete status "installed" recipe
-		(:name auto-complete :website "http://auto-complete.org/" :description "The most intelligent auto-completion extension." :type github :pkgname "auto-complete/auto-complete" :depends
-		       (popup fuzzy)))
+		(:name auto-complete :website "https://github.com/auto-complete/auto-complete" :description "The most intelligent auto-completion extension." :type github :pkgname "auto-complete/auto-complete" :depends
+		       (popup fuzzy)
+		       :features auto-complete-config :post-init
+		       (progn
+			 (add-to-list 'ac-dictionary-directories
+				      (expand-file-name "dict" default-directory))
+			 (ac-config-default))))
+ (auto-complete+ status "installed" recipe
+		 (:name auto-complete+ :auto-generated t :type emacswiki :description "Auto complete plus" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/auto-complete+.el"))
+ (auto-complete-clang status "installed" recipe
+		      (:name auto-complete-clang :website "https://github.com/brianjcj/auto-complete-clang" :description "Auto-complete sources for Clang. Combine the power of AC, Clang and Yasnippet." :type github :pkgname "brianjcj/auto-complete-clang" :depends auto-complete))
+ (auto-complete-css status "installed" recipe
+		    (:name auto-complete-css :description "Auto-complete sources for CSS" :type http :url "http://www.cx4a.org/pub/auto-complete-css.el" :depends auto-complete))
+ (auto-complete-latex status "required" recipe nil)
  (auto-complete-yasnippet status "installed" recipe
 			  (:name auto-complete-yasnippet :description "Auto-complete sources for YASnippet" :type http :url "http://www.cx4a.org/pub/auto-complete-yasnippet.el" :depends
 				 (auto-complete yasnippet)))
@@ -26,29 +31,18 @@
  (bzr-ui status "installed" recipe
 	 (:name bzr-ui :auto-generated t :type emacswiki :description "Utility functions to navigate a working copy of a bazaar repository" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/bzr-ui.el"))
  (cal-china-x status "installed" recipe
-	      (:name cal-china-x :auto-generated t :type emacswiki :description "Chinese calendar extras" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/cal-china-x.el"))
- (cedet status "installed" recipe
-	(:name cedet :website "http://cedet.sourceforge.net/" :description "CEDET is a Collection of Emacs Development Environment Tools written with the end goal of creating an advanced development environment in Emacs." :type git :url "http://git.randomsample.de/cedet.git" :build
-	       `(("sh" "-c" "touch `find . -name Makefile`")
-		 ("make" ,(format "EMACS=%s"
-				  (shell-quote-argument el-get-emacs))))
-	       :build/berkeley-unix
-	       `(("sh" "-c" "touch `find . -name Makefile`")
-		 ("gmake" ,(format "EMACS=%s"
-				   (shell-quote-argument el-get-emacs))))
-	       :build/windows-nt
-	       ("echo #!/bin/sh > tmp.sh & echo touch `/usr/bin/find . -name Makefile` >> tmp.sh & echo make FIND=/usr/bin/find >> tmp.sh" "sed 's/^M$//' tmp.sh  > tmp2.sh" "sh ./tmp2.sh" "rm ./tmp.sh ./tmp2.sh")
-	       :features nil :lazy nil :post-init
-	       (unless
-		   (featurep 'cedet-devel-load)
-		 (load
-		  (expand-file-name "cedet-devel-load.el" pdir)))))
+	      (:name cal-china-x :description "Chinese calendar extras" :type github :pkgname "xwl/cal-china-x" :features cal-china-x))
+ (cedet status "required" recipe nil)
  (chinese-chess status "installed" recipe
 		(:name chinese-chess :auto-generated t :type emacswiki :description "Chinese Chess Game   -*- coding: utf-8 -*-" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chinese-chess.el"))
  (chinese-chess-pvc status "installed" recipe
 		    (:name chinese-chess-pvc :auto-generated t :type emacswiki :description "a chinese chess computer player -*- coding: utf-8 -*-" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chinese-chess-pvc.el"))
  (chm-view status "installed" recipe
 	   (:name chm-view :auto-generated t :type emacswiki :description "View CHM file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chm-view.el"))
+ (cl-lib status "installed" recipe
+	 (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
+ (company-mode status "installed" recipe
+	       (:name company-mode :website "http://company-mode.github.io/" :description "Modular in-buffer completion framework for Emacs" :type github :pkgname "company-mode/company-mode"))
  (cscope status "installed" recipe
 	 (:name cscope :auto-generated t :type emacswiki :description "Interface to cscope browser" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/cscope.el"))
  (csv-mode status "removed" recipe nil)
@@ -56,7 +50,9 @@
 	    (:name date-calc :auto-generated t :type emacswiki :description "date calculation and parsing routines" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/date-calc.el"))
  (ecb status "removed" recipe nil)
  (el-get status "installed" recipe
-	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :load "el-get.el"))
+	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
+		("el-get.*\\.el$" "methods/")
+		:load "el-get.el"))
  (emacs-init status "installed" recipe
 	     (:name emacs-init :auto-generated t :type emacswiki :description "Drew Adams's Emacs init file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/emacs-init.el"))
  (emacs-w3m status "installed" recipe
@@ -73,7 +69,22 @@
 	   (:name facebook :auto-generated t :type emacswiki :description "Access the Facebook API from emacs" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/facebook.el"))
  (fuzzy status "installed" recipe
 	(:name fuzzy :website "https://github.com/auto-complete/fuzzy-el" :description "Fuzzy matching utilities for GNU Emacs" :type github :pkgname "auto-complete/fuzzy-el"))
- (git-emacs status "required" recipe nil)
+ (git-emacs status "installed" recipe
+	    (:name git-emacs :description "Yet another git emacs mode for newbies" :type github :pkgname "tsgates/git-emacs" :features git-emacs))
+ (git-modes status "installed" recipe
+	    (:name git-modes :description "GNU Emacs modes for various Git-related files" :type github :pkgname "magit/git-modes"))
+ (go-autocomplete status "installed" recipe
+		  (:name go-autocomplete :description "An autocompletion daemon for the Go programming language." :type github :pkgname "nsf/gocode" :depends
+			 (go-mode auto-complete)
+			 :load-path
+			 ("emacs")
+			 :post-init
+			 (progn
+			   (add-to-list 'exec-path
+					(expand-file-name "bin" default-directory))
+			   (eval-after-load 'go-mode
+			     '(require 'go-autocomplete)))))
+ (go-lint status "required" recipe nil)
  (go-mode status "installed" recipe
 	  (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el" :features go-mode :post-init
 		 (add-to-list 'auto-mode-alist
@@ -91,8 +102,17 @@
 		  (autoload 'js2-mode "js2-mode" nil t)))
  (json status "installed" recipe
        (:name json :description "JavaScript Object Notation parser / generator" :type http :url "http://edward.oconnor.cx/elisp/json.el" :features json))
- (latex-math-preview status "required" recipe nil)
- (magit status "required" recipe nil)
+ (latex-math-preview status "installed" recipe
+		     (:name latex-math-preview :auto-generated t :type emacswiki :description "preview LaTeX mathematical expressions." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/latex-math-preview.el"))
+ (magit status "installed" recipe
+	(:name magit :website "https://github.com/magit/magit#readme" :description "It's Magit! An Emacs mode for Git." :type github :pkgname "magit/magit" :depends
+	       (cl-lib git-modes)
+	       :info "." :compile "magit.*.el\\'" :build
+	       `(("make" "docs"))
+	       :build/berkeley-unix
+	       (("gmake docs"))
+	       :build/windows-nt
+	       (progn nil)))
  (mmm-mode status "installed" recipe
 	   (:name mmm-mode :description "Allow Multiple Major Modes in a buffer" :type github :pkgname "purcell/mmm-mode"))
  (muse status "installed" recipe
@@ -103,6 +123,7 @@
 	      :autoloads "muse-autoloads"))
  (org-blog status "installed" recipe
 	   (:name org-blog :auto-generated t :type emacswiki :description "create and publish a blog with org-mode" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/org-blog.el"))
+ (org-mode status "required" recipe nil)
  (org-website status "removed" recipe nil)
  (package status "installed" recipe
 	  (:name package :description "ELPA implementation (\"package.el\") from Emacs 24" :builtin 24 :type http :url "http://repo.or.cz/w/emacs.git/blob_plain/1a0a666f941c99882093d7bd08ced15033bc3f0c:/lisp/emacs-lisp/package.el" :shallow nil :features package :post-init

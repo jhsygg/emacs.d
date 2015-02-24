@@ -2586,7 +2586,7 @@
   "The base url to retrieve the weather forecast info.")
 
 (defconst cn-weather-realtime-url
-  "http://www.weather.com.cn/data/sk/%s.html"
+  "http://www.weather.com.cn/data/sk/%s.xhtml"
   "The base url to retrieve the realtime weather info.")
 
 (defvar cn-weather-mode-line-string nil
