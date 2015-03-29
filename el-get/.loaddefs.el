@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "ascii/ascii" "ascii/ascii.el" (21712 34234
-;;;;;;  468097 221000))
+;;;### (autoloads nil "ascii/ascii" "ascii/ascii.el" (21766 25755
+;;;;;;  522525 508000))
 ;;; Generated autoloads from ascii/ascii.el
 
 (autoload 'ascii-customize "ascii/ascii" "\
@@ -108,7 +108,7 @@ See `cal-china-x-solar-term-name' for a list of solar term names .
 ;;;***
 
 ;;;### (autoloads nil "company-mode/company" "company-mode/company.el"
-;;;;;;  (21712 34466 411928 62000))
+;;;;;;  (21766 25685 482868 934000))
 ;;; Generated autoloads from company-mode/company.el
 
 (autoload 'company-mode "company-mode/company" "\
@@ -241,7 +241,7 @@ comments or strings.
 ;;;***
 
 ;;;### (autoloads nil "company-mode/company-files" "company-mode/company-files.el"
-;;;;;;  (21712 34466 408928 116000))
+;;;;;;  (21766 25685 481868 953000))
 ;;; Generated autoloads from company-mode/company-files.el
 
 (autoload 'company-files "company-mode/company-files" "\
@@ -254,7 +254,7 @@ File paths with spaces are only supported inside strings.
 ;;;***
 
 ;;;### (autoloads nil "company-mode/company-gtags" "company-mode/company-gtags.el"
-;;;;;;  (21712 34466 408928 116000))
+;;;;;;  (21766 25685 481868 953000))
 ;;; Generated autoloads from company-mode/company-gtags.el
 
 (autoload 'company-gtags "company-mode/company-gtags" "\
@@ -303,18 +303,6 @@ File paths with spaces are only supported inside strings.
 
 (autoload 'company-oddmuse "company-mode/company-oddmuse" "\
 `company-mode' completion back-end for `oddmuse-mode'.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-pysmell" "company-mode/company-pysmell.el"
-;;;;;;  (21712 34466 409928 98000))
-;;; Generated autoloads from company-mode/company-pysmell.el
-
-(autoload 'company-pysmell "company-mode/company-pysmell" "\
-`company-mode' completion back-end for pysmell.
-This requires pysmell.el and pymacs.el.
 
 \(fn COMMAND &optional ARG &rest IGNORED)" t nil)
 
@@ -2542,17 +2530,16 @@ show the line number at left margine
 ;;;;;;  "bazaar/bazaar.el" "bzr-ui/bzr-ui.el" "chinese-chess-pvc/chinese-chess-pvc.el"
 ;;;;;;  "chinese-chess/chinese-chess.el" "chm-view/chm-view.el" "company-mode/company-capf.el"
 ;;;;;;  "company-mode/company-clang.el" "company-mode/company-cmake.el"
-;;;;;;  "company-mode/company-eclim.el" "company-mode/company-ropemacs.el"
-;;;;;;  "company-mode/company-template.el" "company-mode/company-tests.el"
-;;;;;;  "cscope/cscope.el" "date-calc/date-calc.el" "el-get/el-get-autoloads.el"
-;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;;;;  "company-mode/company-eclim.el" "company-mode/company-template.el"
+;;;;;;  "company-mode/company-tests.el" "cscope/cscope.el" "date-calc/date-calc.el"
+;;;;;;  "el-get/el-get-autoloads.el" "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
 ;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
 ;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
 ;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "emacs-init/emacs-init.el"
 ;;;;;;  "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
 ;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
 ;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "go-autocomplete/emacs/go-autocomplete.el")
-;;;;;;  (21712 34467 402177 269000))
+;;;;;;  (21766 25765 492518 518000))
 
 ;;;***
 
