@@ -3,8 +3,13 @@
 ;;; Code:
 
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "ascii/ascii" "ascii/ascii.el" (21766 25755
 ;;;;;;  522525 508000))
+=======
+;;;### (autoloads (ascii-off ascii-on ascii-display ascii-customize)
+;;;;;;  "ascii/ascii" "ascii/ascii.el" (21356 45146 457874 710000))
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 ;;; Generated autoloads from ascii/ascii.el
 
 (autoload 'ascii-customize "ascii/ascii" "\
@@ -33,6 +38,13 @@ Turn off ASCII code display.
 \(fn)" t nil)
 
 ;;;***
+<<<<<<< HEAD
+=======
+
+;;;### (autoloads (turn-on-bib-cite bib-cite-minor-mode) "auctex/bib-cite"
+;;;;;;  "auctex/bib-cite.el" (21356 45146 464874 572000))
+;;; Generated autoloads from auctex/bib-cite.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
 Major mode in AUCTeX for editing Japanese plain TeX files.
@@ -46,9 +58,17 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 \(fn)" t nil)
 
+<<<<<<< HEAD
 (autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
 Major mode in AUCTeX for editing Japanese plain TeX files.
 Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+=======
+;;;***
+
+;;;### (autoloads (context-mode) "auctex/context" "auctex/context.el"
+;;;;;;  (21356 45146 467874 513000))
+;;; Generated autoloads from auctex/context.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 \(fn)" t nil)
 
@@ -70,9 +90,15 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 \(fn)" t nil)
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el"
 ;;;;;;  (21711 3227 757074 885000))
 ;;; Generated autoloads from cal-china-x/cal-china-x.el
+=======
+;;;### (autoloads (context-en-mode) "auctex/context-en" "auctex/context-en.el"
+;;;;;;  (21356 45146 466874 532000))
+;;; Generated autoloads from auctex/context-en.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'cal-china-x-birthday-from-chinese "cal-china-x/cal-china-x" "\
 Return birthday date this year in Gregorian form.
@@ -85,10 +111,18 @@ calendar.
 (autoload 'holiday-lunar "cal-china-x/cal-china-x" "\
 Like `holiday-fixed', but with LUNAR-MONTH and LUNAR-DAY.
 
+<<<<<<< HEAD
 When there are multiple days(like Run Yue or 闰月, e.g.,
 2006-08-30, which is 07-07 in lunar calendar, the chinese
 valentine's day), we use NUM to define which day(s) as
 holidays. The rules are:
+=======
+;;;***
+
+;;;### (autoloads (context-nl-mode) "auctex/context-nl" "auctex/context-nl.el"
+;;;;;;  (21356 45146 466874 532000))
+;;; Generated autoloads from auctex/context-nl.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 NUM = 0, only the earlier day.
 NUM = 1, only the later day.
@@ -107,9 +141,15 @@ See `cal-china-x-solar-term-name' for a list of solar term names .
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company" "company-mode/company.el"
 ;;;;;;  (21766 25685 482868 934000))
 ;;; Generated autoloads from company-mode/company.el
+=======
+;;;### (autoloads (font-latex-setup) "auctex/font-latex" "auctex/font-latex.el"
+;;;;;;  (21356 45146 478874 295000))
+;;; Generated autoloads from auctex/font-latex.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-mode "company-mode/company" "\
 \"complete anything\"; is an in-buffer completion framework.
@@ -121,9 +161,17 @@ Completion can be controlled with the commands:
 `company-select-next', `company-select-previous'.  If these commands are
 called before `company-idle-delay', completion will also start.
 
+<<<<<<< HEAD
 Completions can be searched with `company-search-candidates' or
 `company-filter-candidates'.  These can be used while completion is
 inactive, as well.
+=======
+;;;***
+
+;;;### (autoloads (docTeX-mode TeX-latex-mode BibTeX-auto-store)
+;;;;;;  "auctex/latex" "auctex/latex.el" (21356 45146 482874 216000))
+;;; Generated autoloads from auctex/latex.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 The completion data is retrieved using `company-backends' and displayed
 using `company-frontends'.  If you want to start a specific back-end, call
@@ -161,9 +209,15 @@ See `company-mode' for more information on Company mode.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-abbrev" "company-mode/company-abbrev.el"
 ;;;;;;  (21712 34466 407928 134000))
 ;;; Generated autoloads from company-mode/company-abbrev.el
+=======
+;;;### (autoloads (multi-prompt-key-value multi-prompt) "auctex/multi-prompt"
+;;;;;;  "auctex/multi-prompt.el" (21356 45146 484874 177000))
+;;; Generated autoloads from auctex/multi-prompt.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-abbrev "company-mode/company-abbrev" "\
 `company-mode' completion back-end for abbrev.
@@ -194,9 +248,15 @@ See `company-mode' for more information on Company mode.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-dabbrev" "company-mode/company-dabbrev.el"
 ;;;;;;  (21712 34466 408928 116000))
 ;;; Generated autoloads from company-mode/company-dabbrev.el
+=======
+;;;### (autoloads (ams-tex-mode TeX-plain-tex-mode) "auctex/plain-tex"
+;;;;;;  "auctex/plain-tex.el" (21356 45146 484874 177000))
+;;; Generated autoloads from auctex/plain-tex.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-dabbrev "company-mode/company-dabbrev" "\
 dabbrev-like `company-mode' completion back-end.
@@ -229,9 +289,15 @@ comments or strings.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-etags" "company-mode/company-etags.el"
 ;;;;;;  (21712 34466 408928 116000))
 ;;; Generated autoloads from company-mode/company-etags.el
+=======
+;;;### (autoloads (LaTeX-install-toolbar TeX-install-toolbar) "auctex/tex-bar"
+;;;;;;  "auctex/tex-bar.el" (21356 45146 519873 486000))
+;;; Generated autoloads from auctex/tex-bar.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-etags "company-mode/company-etags" "\
 `company-mode' completion back-end for etags.
@@ -253,9 +319,16 @@ File paths with spaces are only supported inside strings.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-gtags" "company-mode/company-gtags.el"
 ;;;;;;  (21766 25685 481868 953000))
 ;;; Generated autoloads from company-mode/company-gtags.el
+=======
+;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (21356
+;;;;;;  45146 521873 446000))
+;;; Generated autoloads from auctex/tex-fold.el
+ (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-gtags "company-mode/company-gtags" "\
 `company-mode' completion back-end for GNU Global.
@@ -264,9 +337,15 @@ File paths with spaces are only supported inside strings.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-ispell" "company-mode/company-ispell.el"
 ;;;;;;  (21712 34466 409928 98000))
 ;;; Generated autoloads from company-mode/company-ispell.el
+=======
+;;;### (autoloads (tex-font-setup) "auctex/tex-font" "auctex/tex-font.el"
+;;;;;;  (21356 45146 521873 446000))
+;;; Generated autoloads from auctex/tex-font.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-ispell "company-mode/company-ispell" "\
 `company-mode' completion back-end using Ispell.
@@ -275,9 +354,15 @@ File paths with spaces are only supported inside strings.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-keywords" "company-mode/company-keywords.el"
 ;;;;;;  (21712 34466 409928 98000))
 ;;; Generated autoloads from company-mode/company-keywords.el
+=======
+;;;### (autoloads (TeX-texinfo-mode) "auctex/tex-info" "auctex/tex-info.el"
+;;;;;;  (21356 45146 522873 427000))
+;;; Generated autoloads from auctex/tex-info.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-keywords "company-mode/company-keywords" "\
 `company-mode' back-end for programming language keywords.
@@ -341,9 +426,16 @@ File paths with spaces are only supported inside strings.
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil "company-mode/company-yasnippet" "company-mode/company-yasnippet.el"
 ;;;;;;  (21712 34466 410928 80000))
 ;;; Generated autoloads from company-mode/company-yasnippet.el
+=======
+;;;### (autoloads (holiday-solar-term holiday-lunar cal-china-x-birthday-from-chinese)
+;;;;;;  "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el" (21356
+;;;;;;  45146 529873 288000))
+;;; Generated autoloads from cal-china-x/cal-china-x.el
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (autoload 'company-yasnippet "company-mode/company-yasnippet" "\
 `company-mode' back-end for `yasnippet'.
@@ -2524,6 +2616,7 @@ show the line number at left margine
 
 ;;;***
 
+<<<<<<< HEAD
 ;;;### (autoloads nil nil ("ac-octave/ac-octave.el" "ascii-table/ascii-table.el"
 ;;;;;;  "auto-complete+/auto-complete+.el" "auto-complete-clang/auto-complete-clang.el"
 ;;;;;;  "auto-complete-css/auto-complete-css.el" "auto-complete-yasnippet/auto-complete-yasnippet.el"
@@ -2540,6 +2633,16 @@ show the line number at left margine
 ;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
 ;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el" "go-autocomplete/emacs/go-autocomplete.el")
 ;;;;;;  (21766 25765 492518 518000))
+=======
+;;;### (autoloads nil nil ("el-get/el-get-autoloads.el" "el-get/el-get-build.el"
+;;;;;;  "el-get/el-get-byte-compile.el" "el-get/el-get-core.el" "el-get/el-get-custom.el"
+;;;;;;  "el-get/el-get-dependencies.el" "el-get/el-get-install.el"
+;;;;;;  "el-get/el-get-methods.el" "el-get/el-get-notify.el" "el-get/el-get-recipes.el"
+;;;;;;  "el-get/el-get-status.el" "git-emacs/git--test.el" "git-emacs/git-emacs-autoloads.el"
+;;;;;;  "git-emacs/git-emacs.el" "git-emacs/git-global-keys.el" "git-emacs/git-log.el"
+;;;;;;  "git-emacs/git-modeline.el" "git-emacs/git-status.el") (21575
+;;;;;;  19707 880499 125000))
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 ;;;***
 

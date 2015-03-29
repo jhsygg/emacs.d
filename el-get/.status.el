@@ -41,8 +41,11 @@
 	   (:name chm-view :auto-generated t :type emacswiki :description "View CHM file." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/chm-view.el"))
  (cl-lib status "installed" recipe
 	 (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
+<<<<<<< HEAD
  (company-mode status "installed" recipe
 	       (:name company-mode :website "http://company-mode.github.io/" :description "Modular in-buffer completion framework for Emacs" :type github :pkgname "company-mode/company-mode"))
+=======
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
  (cscope status "installed" recipe
 	 (:name cscope :auto-generated t :type emacswiki :description "Interface to cscope browser" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/cscope.el"))
  (csv-mode status "removed" recipe nil)
@@ -73,6 +76,7 @@
 	    (:name git-emacs :description "Yet another git emacs mode for newbies" :type github :pkgname "tsgates/git-emacs" :features git-emacs))
  (git-modes status "installed" recipe
 	    (:name git-modes :description "GNU Emacs modes for various Git-related files" :type github :pkgname "magit/git-modes"))
+<<<<<<< HEAD
  (go-autocomplete status "installed" recipe
 		  (:name go-autocomplete :description "An autocompletion daemon for the Go programming language." :type github :pkgname "nsf/gocode" :depends
 			 (go-mode auto-complete)
@@ -85,6 +89,8 @@
 			   (eval-after-load 'go-mode
 			     '(require 'go-autocomplete)))))
  (go-lint status "required" recipe nil)
+=======
+>>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
  (go-mode status "installed" recipe
 	  (:name go-mode :description "Major mode for the Go programming language" :type http :url "http://go.googlecode.com/hg/misc/emacs/go-mode.el?r=tip" :localname "go-mode.el" :features go-mode :post-init
 		 (add-to-list 'auto-mode-alist
