@@ -2,111 +2,40 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-<<<<<<< HEAD
-;; Created Sat Mar 28 19:52:33 2015
-=======
-<<<<<<< HEAD
-;; Created Sun Dec 14 23:11:09 2014
-=======
-;; Created Thu Dec 18 20:54:18 2014
->>>>>>> 3ce99bb932270a915fe1ab8872fd3230ca7de27c
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
+;; Created Fri Apr  3 00:58:54 2015
 ;; Desktop file format version 206
 ;; Emacs version 24.4.1
 
 ;; Global section:
-<<<<<<< HEAD
-(setq desktop-saved-frameset [frameset 1 (21782 38401 654215 29000) (desktop . "206") "jdp@jhsygg" nil nil ((((font-backend xft x) (font . "-microsoft-YaHei Consolas Hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (font-parameter . "-microsoft-yahei consolas hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . fullboth) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha 75 45) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "AB77-CA5E-269C-5C68") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 39) (width . 178) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 88) (min-pixel-width . 80) (min-pixel-height-ignore . 88) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 22) (min-pixel-width-safe . 16)) leaf (pixel-width . 1440) (pixel-height . 849) (total-width . 180) (total-height . 38) (normal-height . 1.0) (normal-width . 1.0) (buffer "*MATLAB*" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 2) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 768) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (21790 7694 504663 295000) (desktop . "206") "jdp@localhost.localdomain" nil nil ((((font-backend xft x) (font . "-microsoft-YaHei Consolas Hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (font-parameter . "-microsoft-yahei consolas hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . fullboth) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha 100 100) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "BC47-87F5-1DA6-3A87") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 33) (width . 168) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 88) (min-pixel-width . 80) (min-pixel-height-ignore . 88) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 22) (min-pixel-width-safe . 16)) leaf (pixel-width . 1366) (pixel-height . 717) (total-width . 171) (total-height . 32) (normal-height . 1.0) (normal-width . 1.0) (buffer "2014懱貞检.tex" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 315) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring '("-p" "interactive" "interactive-p" "inter" "inp" "go" "view" "dept_name" "detp" "user" "user_name" "gocode" "go-mode" "git-emacs" "git" ".go"))
 (setq regexp-search-ring nil)
-(setq register-alist '((48 "\221\243\251" "\221\243\251" "\221\243\251")))
-(setq file-name-history '("~/mymath/mymatlab/q.m" "~/goyard/listfile.go" "~/goyard/env.go" "~/myworks/懹蛻款懛謶配懳蕬题.org" "~/myworks/" "~/goyard/xqqp.go" "~/myworks/go懹飸言懗虘序懮钁计.org" "~/myworks/go懹飸言懗虘序懮钁计.go" "~/goyard/webtest.go" "~/goyard/web.go" "~/goyard/td_oa.sql" "~/webroot/" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/ecb-2.40/ecb.el" "~/.emacs.d/ecb-2.40/ecb-analyse.el" "~/goyard/cn_weather.go" "~/goyard/computerRB.go" "~/goyard/gzbh.sql" "~/org/finished.org" "~/org/study.org" "~/org/notes.org" "~/org/journal.org.gpg" "~/org/gtd.org.gpg" "~/goyard" "~/goyard/client.go" "~/goyard/server.go" "~/RAM/fdepartment.txt" "~/goyard/mysqlt.go" "~/goyard/" "~/goyard/ram_oa.sql"))
+(setq register-alist nil)
+(setq file-name-history '("~/myworks/2014懱貞检.tex" "~/myworks/" "~/mymath/matlab\221\265\347\221\301\246\221\267 \325\346.org" "~/mymath/" "~/mymath/cir3simu.m" "~/mymath/cir3.m" "~/mymath/cir2.m" "~/mymath/cir1.m" "~/mymath/cir1simu.m" "~/mymath/cir2simu.m" "~/.emacs" "~/Downloads/\221敥‐221伡.pdf" "~/mymath/mymatlab/q.m" "~/goyard/listfile.go" "~/goyard/env.go" "~/myworks/\221\323滛Ρ\277滙滛\305\344\221\316棲繺314\342.org" "~/myworks/" "~/goyard/xqqp.go" "~/myworks/go\221\323\357\221\321滛\263滛パ\320\362\221\311濛懒\306.org" "~/myworks/go\221\323\357\221\321滛\263滛パ\320\362\221\311濛懒\306.go" "~/goyard/webtest.go" "~/goyard/web.go" "~/goyard/td_oa.sql" "~/webroot/" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/ecb-2.40/ecb.el" "~/.emacs.d/ecb-2.40/ecb-analyse.el" "~/goyard/cn_weather.go" "~/goyard/computerRB.go"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 206
-  "/home/jdp/mymath/mymatlab/q.m"
-  "q.m"
-  'matlab-mode
-  '(auto-fill-mode linum-mode)
-  228
+  "/home/jdp/myworks/2014懱貞检.tex"
+  "2014懱貞检.tex"
+  'latex-mode
+  '(auto-fill-mode auto-complete-mode yas/minor-mode reftex-mode linum-mode TeX-PDF-mode)
+  315
+  '(95 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
+
+(desktop-create-buffer 206
+  nil
+  "myworks"
+  'dired-mode
+  '(linum-mode TeX-PDF-mode)
+  517
   '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (fill-column . 76)))
-=======
-(setq desktop-saved-frameset [frameset 1 (21650 52858 696160 36000) (desktop . "206") "jdp@jhsygg" nil nil ((((font-backend xft x) (font . "-unknown-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 9) (right-fringe . 9) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . fullboth) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha 100 100) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "ACFD-AF62-878C-5246") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 45) (width . 158) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 76) (min-pixel-width . 90) (min-pixel-height-ignore . 76) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 19) (min-pixel-width-safe . 18)) leaf (pixel-width . 1440) (pixel-height . 852) (total-width . 160) (total-height . 44) (normal-height . 1.0) (normal-width . 1.0) (buffer "mysqlt.go" (selected . t) (hscroll . 0) (fringes 9 9 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 321) (start . 1))))])
-(setq desktop-missing-file-warning nil)
-(setq tags-file-name nil)
-(setq tags-table-list nil)
-<<<<<<< HEAD
-(setq search-ring '("compan" "com" "company" "go" "auto-complete" "yank" "k" "page" "GB" "song" "hei" "latex" "ctex" "PS" "rules" "jianda"))
-(setq regexp-search-ring nil)
-(setq register-alist '((48 "\221\243\251" "\221\243\251" "\221\243\251")))
-(setq file-name-history '("~/Downloads/懲鎽的懢蛻是懶膽跳.org" "~/Downloads/懲鎽的懢蛻是懶膽跳.txt" "~/Downloads/懲鐟主.org" "~/Downloads/懲鐟主.txt" "~/Downloads/" "~/Downloads/懲鐟主.txt" "~/Downloads/" "~/Downloads/懗諔人.org" "~/Downloads/" "~/Downloads/懗諔人.org" "~/Downloads/懗諔人.txt" "~/Downloads/" "~/Downloads/懳迲人懞葢彩.org" "~/Downloads/" "~/Downloads/懳迲人懞葢彩.org" "~/Downloads/懳迲人懞葢彩.txt" "~/Downloads/" "~/Downloads/懶響爷.tex" "~/Downloads/懶響爷.org" "~/Downloads/" "~/Downloads/懶響爷.txt" "~/Downloads/" "~/Downloads/懶響爷.org" "~/Downloads/懶響爷.txt" "~/bh_regulations/tzsb-raw.org" "~/bh_regulations/" "~/org/finished.org" "~/org/study.org" "~/org/notes.org" "~/org/journal.org.gpg"))
-
-;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/jdp/Downloads/懲鎽的懢蛻是懶膽跳.org"
-  "懲鎽的懢蛻是懶膽跳.org"
-  'org-mode
-  '(linum-mode TeX-PDF-mode)
-  111308
-  '(12 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 70) (truncate-lines)))
-
-(desktop-create-buffer 206
-  "/home/jdp/Downloads/懲鎽的懢蛻是懶膽跳.txt"
-  "懲鎽的懢蛻是懶膽跳.txt"
-  'text-mode
-  '(yas/minor-mode linum-mode TeX-PDF-mode)
-  1
-  '(150940 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . chinese-iso-8bit-dos)))
-
-(desktop-create-buffer 206
-  nil
-  "Downloads"
-  'dired-mode
-  '(linum-mode TeX-PDF-mode)
-  16892
-  '(190 nil)
   t
-  '("/home/jdp/Downloads/")
-=======
-(setq search-ring '("侊伡\214" "jdp" "compan" "com" "company" "go" "auto-complete" "yank" "k" "page" "GB" "song" "hei" "latex" "ctex" "PS"))
-(setq regexp-search-ring nil)
-(setq register-alist '((48 "\221\243\251" "\221\243\251" "\221\243\251")))
-(setq file-name-history '("~/goyard/mysqlt.go" "~/goyard/" "~/.emacs.d/bookmarks" "~/org/finished.org" "~/org/gtd.org.gpg" "~/.emacs.d/elpa/org-20141201/org-loaddefs.el" "~/.emacs.d/elpa/org-20141201/org-autoloads.el" "~/.emacs.d/plugins/init-latex.el" "~/myworks/2014懱貞检.org" "~/.emacs" "~/myworks/" "~/.emacs.d/plugins/jdp-latex.el" "~/.emacs.d/plugins/org-latex.el" "~/myworks" "~/myworks/懫髴业懯龖学懡☉模.tex" "~/myworks/懝貞于懲陸善懠鞈修懓矐全懰鴳制懚葢的懲☉知.tex" "~/myworks/ppt.tex" "~/myworks/2014懱貞检.tex" "~/mytest/懜邞质懥縞++&c懕鄳程懼笐南.tex" "~/mytest/懙鐟动懞鶓芦懳瑧护懠鞈修懝鎽程.tex" "~/mytest/400t.tex" "~/mytest/" "~/Downloads/\221\315柺蓚餦276滛Ρ\312敧誠320傪\314\370.org" "~/Downloads/\221\315柺蓚餦276滛Ρ\312敧誠320傪\314\370.txt" "~/Downloads/\221\315\347\221\326\367.org" "~/Downloads/\221\315\347\221\326\367.txt" "~/Downloads/" "~/Downloads/\221\263滛\310\313.org" "~/Downloads/\221\263滛\310\313.txt" "~/Downloads/\221\316滛毖\310棲謀272滛Ⅰ\262\312.org"))
-
-;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/jdp/goyard/mysqlt.go"
-  "mysqlt.go"
-  'go-mode
-  '(auto-complete-mode linum-mode)
-  321
-  '(1 nil)
-  nil
-  nil
-  '((indent-tabs-mode . t) (buffer-file-coding-system . utf-8-unix)))
-
-(desktop-create-buffer 206
-  nil
-  "goyard"
-  'dired-mode
-  '(linum-mode)
-  1
-  '(176 nil)
-  t
-  '("/home/jdp/goyard/")
->>>>>>> 3ce99bb932270a915fe1ab8872fd3230ca7de27c
+  '("/home/jdp/myworks/")
   nil)
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
