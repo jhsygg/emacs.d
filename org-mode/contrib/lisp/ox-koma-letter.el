@@ -391,7 +391,7 @@ was not present."
     (:email "EMAIL" nil (org-koma-letter--get-value org-koma-letter-email) t)
     (:to-address "TO_ADDRESS" nil nil newline)
     (:place "PLACE" nil org-koma-letter-place)
-    (:subject "SUBJECT" nil nil space)
+    (:subject "SUBJECT" nil nil parse)
     (:opening "OPENING" nil org-koma-letter-opening)
     (:closing "CLOSING" nil org-koma-letter-closing)
     (:signature "SIGNATURE" nil org-koma-letter-signature newline)
@@ -412,6 +412,7 @@ was not present."
     (:with-place nil "place" org-koma-letter-use-place)
     (:with-subject nil "subject" org-koma-letter-subject-format)
     (:with-title-as-subject nil "title-subject" org-koma-letter-prefer-subject)
+    (:with-headline-opening nil nil org-koma-letter-headline-is-opening-maybe)
     ;; Special properties non-nil when a setting happened in buffer.
     ;; They are used to prioritize in-buffer settings over "lco"
     ;; files.  See `org-koma-letter-template'.
@@ -453,8 +454,8 @@ was not present."
 (defun org-koma-letter--get-tagged-contents (key)
   "Get contents from a headline tagged with KEY.
 The contents is stored in `org-koma-letter-special-contents'."
-  (cdr (assoc (org-koma-letter--get-value key)
-	      org-koma-letter-special-contents)))
+  (cdr (assoc-string (org-koma-letter--get-value key)
+		     org-koma-letter-special-contents)))
 
 (defun org-koma-letter--get-value (value)
   "Turn value into a string whenever possible.
@@ -553,19 +554,21 @@ Note that if a headline is tagged with a tag from
 `org-koma-letter-special-tags' it will not be exported, but
 stored in `org-koma-letter-special-contents' and included at the
 appropriate place."
-  (unless (let ((tag (car (org-export-get-tags headline info))))
-	    (and tag
-		 (member-ignore-case
-		  tag (mapcar #'symbol-name (plist-get info :special-tags)))
-		 ;; Store association for later use and bail out.
-		 (push (cons tag contents) org-koma-letter-special-contents)))
-    ;; Opening is not defined yet: use headline's title.
-    (when (and org-koma-letter-headline-is-opening-maybe
-	       (not (org-string-nw-p (plist-get info :opening))))
-      (plist-put info :opening
-		 (org-export-data (org-element-property :title headline) info)))
-    ;; In any case, insert contents in letter's body.
-    contents))
+  (let ((special-tag (org-koma-letter--special-tag headline info)))
+    (if (not special-tag)
+	contents
+      (push (cons special-tag contents) org-koma-letter-special-contents)
+      "")))
+
+(defun org-koma-letter--special-tag (headline info)
+  "Non-nil if HEADLINE is a special headline.
+INFO is a plist holding contextual information.  Return first
+special tag headline."
+  (let ((special-tags (plist-get info :special-tags)))
+    (catch 'exit
+      (dolist (tag (org-export-get-tags headline info))
+	(let ((tag (assoc-string tag special-tags)))
+	  (when tag (throw 'exit tag)))))))
 
 ;;;; Template
 
@@ -615,11 +618,9 @@ holding export options."
        (format "\\setkomavar{fromaddress}{%s}\n" from-address)))
    ;; Date.
    (format "\\date{%s}\n" (org-export-data (org-export-get-date info) info))
-   ;; Document start
-   "\\begin{document}\n\n"
-   ;; Subject and title
+   ;; Hyperref, document start, and subject and title.
    (let ((with-subject (plist-get info :with-subject)))
-     (when with-subject
+     (when (and with-subject (plist-get info :with-title))
        (concat
 	(unless (eq with-subject t)
 	  (format "\\KOMAoption{subject}{%s}\n"
@@ -632,16 +633,34 @@ holding export options."
 			    (org-string-nw-p
 			     (org-export-data (plist-get info :title) info))))
 	       (subject (if title-as-subject (or subject* title*) subject*))
-	       (title (if title-as-subject (and subject* title*) title*)))
+	       (title (if title-as-subject (and subject* title*) title*))
+	       (hyperref-template (plist-get info :latex-hyperref-template))
+	       (spec (append (list (cons ?t (or title subject "")))
+			     (org-latex--format-spec info))))
 	  (concat
-	   (and subject (format "\\setkomavar{subject}{%s}\n" subject))
-	   (and title (format "\\setkomavar{title}{%s}\n" title))
+	   ;; Hyperref.
+	   (format-spec hyperref-template spec)
+	   ;; Document start.
+	   "\\begin{document}\n\n"
+	   ;; Subject and title.
+	   (when subject (format "\\setkomavar{subject}{%s}\n" subject))
+	   (when title (format "\\setkomavar{title}{%s}\n" title))
 	   (when (or (org-string-nw-p title) (org-string-nw-p subject)) "\n"))))))
    ;; Letter start.
    (format "\\begin{letter}{%%\n%s}\n\n"
 	   (org-koma-letter--determine-to-and-from info 'to))
    ;; Opening.
-   (format "\\opening{%s}\n\n" (plist-get info :opening))
+   (format "\\opening{%s}\n\n"
+	   (org-export-data
+	    (or (org-string-nw-p (plist-get info :opening))
+		(when (plist-get info :with-headline-opening)
+		  (org-element-map (plist-get info :parse-tree) 'headline
+		    (lambda (head)
+		      (unless (org-koma-letter--special-tag head info)
+			(org-element-property :title head)))
+		    info t))
+		"")
+	    info))
    ;; Letter body.
    contents
    ;; Closing.

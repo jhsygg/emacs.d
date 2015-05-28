@@ -49,8 +49,6 @@
     (center-block . org-ascii-center-block)
     (clock . org-ascii-clock)
     (code . org-ascii-code)
-    (comment . (lambda (&rest args) ""))
-    (comment-block . (lambda (&rest args) ""))
     (drawer . org-ascii-drawer)
     (dynamic-block . org-ascii-dynamic-block)
     (entity . org-ascii-entity)
@@ -121,7 +119,8 @@
 				       org-ascii-filter-comment-spacing)
 		   (:filter-section . org-ascii-filter-headline-blank-lines))
   :options-alist
-  '((:ascii-bullets nil nil org-ascii-bullets)
+  '((:subtitle "SUBTITLE" nil nil parse)
+    (:ascii-bullets nil nil org-ascii-bullets)
     (:ascii-caption-above nil nil org-ascii-caption-above)
     (:ascii-charset nil nil org-ascii-charset)
     (:ascii-global-margin nil nil org-ascii-global-margin)
@@ -781,7 +780,7 @@ contents according to the current headline."
 	    (or (not (plist-get info :with-tags))
 		(eq (plist-get info :with-tags) 'not-in-toc))
 	    'toc))))
-      (org-export-collect-headlines info n keyword) "\n"))))
+      (org-export-collect-headlines info n (and local keyword)) "\n"))))
 
 (defun org-ascii--list-listings (keyword info)
   "Return a list of listings.
@@ -969,9 +968,11 @@ INFO is a plist used as a communication channel."
 	 ;; Links in the title will not be resolved later, so we make
 	 ;; sure their path is located right after them.
 	 (info (org-combine-plists info '(:ascii-links-to-notes nil)))
-	 (title (if (plist-get info :with-title)
-		    (org-export-data (plist-get info :title) info)
-		  ""))
+	 (with-title (plist-get info :with-title))
+	 (title (org-export-data
+		 (when with-title (plist-get info :title)) info))
+	 (subtitle (org-export-data
+		    (when with-title (plist-get info :subtitle)) info))
 	 (author (and (plist-get info :with-author)
 		      (let ((auth (plist-get info :author)))
 			(and auth (org-export-data auth info)))))
@@ -1014,8 +1015,14 @@ INFO is a plist used as a communication channel."
       (let* ((utf8p (eq (plist-get info :ascii-charset) 'utf-8))
 	     ;; Format TITLE.  It may be filled if it is too wide,
 	     ;; that is wider than the two thirds of the total width.
-	     (title-len (min (length title) (/ (* 2 text-width) 3)))
+	     (title-len (min (apply #'max
+				    (mapcar #'length
+					    (org-split-string
+					     (concat title "\n" subtitle) "\n")))
+			     (/ (* 2 text-width) 3)))
 	     (formatted-title (org-ascii--fill-string title title-len info))
+	     (formatted-subtitle (when (org-string-nw-p subtitle)
+				   (org-ascii--fill-string subtitle title-len info)))
 	     (line
 	      (make-string
 	       (min (+ (max title-len
@@ -1027,13 +1034,12 @@ INFO is a plist used as a communication channel."
 	 (concat line "\n"
 		 (unless utf8p "\n")
 		 (upcase formatted-title)
+		 (and formatted-subtitle (concat "\n" formatted-subtitle))
 		 (cond
 		  ((and (org-string-nw-p author) (org-string-nw-p email))
-		   (concat (if utf8p "\n\n\n" "\n\n") author "\n" email))
-		  ((org-string-nw-p author)
-		   (concat (if utf8p "\n\n\n" "\n\n") author))
-		  ((org-string-nw-p email)
-		   (concat (if utf8p "\n\n\n" "\n\n") email)))
+		   (concat "\n\n" author "\n" email))
+		  ((org-string-nw-p author) (concat "\n\n" author))
+		  ((org-string-nw-p email) (concat "\n\n" email)))
 		 "\n" line
 		 (when (org-string-nw-p date) (concat "\n\n\n" date))
 		 "\n\n\n") text-width 'center)))))
@@ -1097,7 +1103,7 @@ CONTENTS is the transcoded contents string.  INFO is a plist
 holding export options."
   (let ((global-margin (plist-get info :ascii-global-margin)))
     (concat
-     ;; 1. Build title block.
+     ;; Build title block.
      (org-ascii--indent-string
       (concat (org-ascii-template--document-title info)
 	      ;; 2. Table of contents.
@@ -1107,19 +1113,18 @@ holding export options."
 		   (org-ascii--build-toc info (and (wholenump depth) depth))
 		   "\n\n\n"))))
       global-margin)
-     ;; 3. Document's body.
+     ;; Document's body.
      contents
-     ;; 4. Creator.  Ignore `comment' value as there are no comments in
-     ;;    ASCII.  Justify it to the bottom right.
-     (org-ascii--indent-string
-      (let ((creator-info (plist-get info :with-creator))
-	    (text-width (- (plist-get info :ascii-text-width) global-margin)))
-	(unless (or (not creator-info) (eq creator-info 'comment))
-	  (concat
-	   "\n\n\n"
-	   (org-ascii--fill-string
-	    (plist-get info :creator) text-width info 'right))))
-      global-margin))))
+     ;; Creator.  Justify it to the bottom right.
+     (and (plist-get info :with-creator)
+	  (org-ascii--indent-string
+	   (let ((text-width
+		  (- (plist-get info :ascii-text-width) global-margin)))
+	     (concat
+	      "\n\n\n"
+	      (org-ascii--fill-string
+	       (plist-get info :creator) text-width info 'right)))
+	   global-margin)))))
 
 (defun org-ascii--translate (s info)
   "Translate string S according to specified language and charset.
@@ -2126,7 +2131,7 @@ Return output file name."
 
 ;; Local variables:
 ;; generated-autoload-file: "org-loaddefs.el"
-;; coding: utf-8-emacs
+;; coding: utf-8
 ;; End:
 
 ;;; ox-ascii.el ends here

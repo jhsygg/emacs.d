@@ -55,8 +55,6 @@
     (center-block . org-man-center-block)
     (clock . org-man-clock)
     (code . org-man-code)
-    (comment . (lambda (&rest args) ""))
-    (comment-block . (lambda (&rest args) ""))
     (drawer . org-man-drawer)
     (dynamic-block . org-man-dynamic-block)
     (entity . org-man-entity)
@@ -102,7 +100,7 @@
     (verse-block . org-man-verse-block))
   :export-block "MAN"
   :menu-entry
-  '(?m "Export to MAN"
+  '(?M "Export to MAN"
        ((?m "As MAN file" org-man-export-to-man)
 	(?p "As PDF file" org-man-export-to-pdf)
 	(?o "As PDF file and open"
@@ -653,8 +651,7 @@ INFO is a plist holding contextual information.  See
          (path (cond
                 ((member type '("http" "https" "ftp" "mailto"))
                  (concat type ":" raw-path))
-                ((and (string= type "file") (file-name-absolute-p raw-path))
-                 (concat "file:" raw-path))
+                ((string= type "file") (org-export-file-uri raw-path))
                 (t raw-path)))
          protocol)
     (cond
@@ -1075,8 +1072,7 @@ a communication channel."
   "Transcode a TARGET object from Org to Man.
 CONTENTS is nil.  INFO is a plist holding contextual
 information."
-  (format "\\fI%s\\fP"
-          (org-export-solidify-link-text (org-element-property :value target))))
+  (format "\\fI%s\\fP" (org-export-get-reference target info)))
 
 
 ;;; Timestamp

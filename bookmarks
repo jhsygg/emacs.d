@@ -2,40 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-refile-last-stored"
+(("org-capture-last-stored"
+ (filename . "~/org/study.org")
+ (front-context-string . "**** 今天开始使用dnf 不")
+ (rear-context-string . "05-20 Wednesday\n")
+ (position . 104965))
+("org-refile-last-stored"
  (filename . "~/org/finished.org")
-<<<<<<< HEAD
- (front-context-string . "** DONE 水泥年修\n   ")
- (rear-context-string . "用途，还是需要第三方进行检验。\n")
- (position . 1814))
-=======
-<<<<<<< HEAD
- (front-context-string . "** DONE 石矿工艺计量标定")
- (rear-context-string . "销、存”管理流程与金蝶接口问题\n")
- (position . 2366))
-=======
- (front-context-string . "** DONE 物资盘库工作\n ")
- (rear-context-string . "-12-18 四 11:09]\n")
- (position . 2407))
->>>>>>> 3ce99bb932270a915fe1ab8872fd3230ca7de27c
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
-("org-remember-last-stored"
- (filename . "~/org/task.org")
- (front-context-string . "** TODO 上交钟山区特种设")
- (rear-context-string . "-09-29 日 08:16]\n")
- (position . 1325))
-("org-capture-last-stored"
- (filename . "~/org/journal.org.gpg")
-<<<<<<< HEAD
- (front-context-string . "**** 调度会\n1、落实冷料厂")
- (rear-context-string . " 2015-02-03 星期二\n")
- (position . 90015))
-=======
- (front-context-string . "**** 陶哲轩教你学数学\n- ")
- (rear-context-string . " 2014-11-19 星期三\n")
- (position . 99826))
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
-=======(front-context-string . "**** 六盘水今日天气: 阴转")
-(rear-context-string . " 2014-02-17 星期一\n")
-(position . 84511)
+ (front-context-string . "** DONE 2015年春季三")
+ (rear-context-string . "4] \\\\\n     按时完成\n")
+ (position . 1986))
+=======<<<<<<<HEAD(front-context-string . "** DONE 石矿工艺计量标定")
+(rear-context-string . "销、存”管理流程与金蝶接口问题\n")
+(position . 2366)
 )

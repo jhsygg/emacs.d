@@ -39,8 +39,6 @@
     (center-block . org-texinfo-center-block)
     (clock . org-texinfo-clock)
     (code . org-texinfo-code)
-    (comment . (lambda (&rest args) ""))
-    (comment-block . (lambda (&rest args) ""))
     (drawer . org-texinfo-drawer)
     (dynamic-block . org-texinfo-dynamic-block)
     (entity . org-texinfo-entity)
@@ -94,7 +92,7 @@
     (:texinfo-class "TEXINFO_CLASS" nil org-texinfo-default-class t)
     (:texinfo-header "TEXINFO_HEADER" nil nil newline)
     (:texinfo-post-header "TEXINFO_POST_HEADER" nil nil newline)
-    (:subtitle "SUBTITLE" nil nil newline)
+    (:subtitle "SUBTITLE" nil nil parse)
     (:subauthor "SUBAUTHOR" nil nil newline)
     (:texinfo-dircat "TEXINFO_DIR_CATEGORY" nil nil t)
     (:texinfo-dirtitle "TEXINFO_DIR_TITLE" nil nil t)
@@ -461,11 +459,9 @@ anchor name is unique."
     (or (cdr (assq blob cache))
 	(let ((name
 	       (org-texinfo--sanitize-node
-		(case (org-element-type blob)
-		  (headline
-		   (org-export-data (org-export-get-alt-title blob info) info))
-		  ((radio-target target) (org-element-property :value blob))
-		  (otherwise (or (org-element-property :name blob) ""))))))
+		(if (eq (org-element-type blob) 'headline)
+		    (org-export-data (org-export-get-alt-title blob info) info)
+		  (org-export-get-reference blob info)))))
 	  ;; Ensure NAME is unique.
 	  (while (rassoc name cache) (setq name (concat name "x")))
 	  (plist-put info :texinfo-node-cache (cons (cons blob name) cache))
@@ -572,9 +568,9 @@ holding export options."
        (concat
 	(format "@title %s\n" (or (plist-get info :texinfo-printed-title) title ""))
 	(let ((subtitle (plist-get info :subtitle)))
-	  (and subtitle
-	       (org-element-normalize-string
-		(replace-regexp-in-string "^" "@subtitle " subtitle))))))
+	  (when subtitle
+	    (format "@subtitle %s\n"
+		    (org-export-data subtitle info))))))
      (when (plist-get info :with-author)
        (concat
 	;; Primary author.
@@ -608,10 +604,8 @@ holding export options."
      ;; Document's body.
      contents "\n"
      ;; Creator.
-     (case (plist-get info :with-creator)
-       ((nil) nil)
-       (comment (format "@c %s\n" (plist-get info :creator)))
-       (otherwise (concat (plist-get info :creator) "\n")))
+     (and (plist-get info :with-creator)
+	  (concat (plist-get info :creator) "\n"))
      ;; Document end.
      "@bye")))
 
@@ -915,8 +909,7 @@ INFO is a plist holding contextual information.  See
 	 (path (cond
 		((member type '("http" "https" "ftp"))
 		 (concat type ":" raw-path))
-		((and (string= type "file") (file-name-absolute-p raw-path))
-		 (concat "file:" raw-path))
+		((string= type "file") (org-export-file-uri raw-path))
 		(t raw-path))))
     (cond
      ((org-export-custom-protocol-maybe link desc 'texinfo))
@@ -1209,8 +1202,7 @@ holding contextual information."
 TEXT is the text of the target.  INFO is a plist holding
 contextual information."
   (format "@anchor{%s}%s"
-	  (org-export-solidify-link-text
-	   (org-element-property :value radio-target))
+	  (org-export-get-reference radio-target info)
 	  text))
 
 ;;;; Section
@@ -1349,8 +1341,7 @@ a communication channel."
   "Transcode a TARGET object from Org to Texinfo.
 CONTENTS is nil.  INFO is a plist holding contextual
 information."
-  (format "@anchor{%s}"
-	  (org-export-solidify-link-text (org-element-property :value target))))
+  (format "@anchor{%s}" (org-export-get-reference target info)))
 
 ;;;; Timestamp
 

@@ -42,8 +42,6 @@
 ;; Brian Palmer for color-theme-library ideas and code
 ;; All the users that contributed their color themes.
 
-
-
 ;;; Code:
 (eval-when-compile
   (require 'easymenu)
@@ -313,7 +311,6 @@ of `color-theme-history-max-length'.")
 ;;   (setcdr (nthcdr 2 l) nil)
 ;;   l)
 
-
 
 ;; List of color themes used to create the *Color Theme Selection*
 ;; buffer.
@@ -599,7 +596,6 @@ Binds `color-theme-is-global' to nil and calls
   (let ((color-theme-is-global nil))
     (color-theme-install-at-point)))
 
-
 
 ;; Taking a snapshot of the current color theme and pretty printing it.
 
@@ -1237,7 +1233,7 @@ The snapshot is created via `color-theme-snapshot'."
 	      ;; remaining elements of snapshot: face specs
 	      ,@(color-theme-get-face-definitions))))))
 
-
+
 
 ;;; Handling the various parts of a color theme install
 
@@ -1409,7 +1405,7 @@ Called from `color-theme-install'."
 ;; of a color-theme in .emacs.  That's why we use the
 ;; `face-defface-spec' property.
 
-
+
 
 ;;; Theme accessor functions, canonicalization, merging, comparing
 
@@ -1515,7 +1511,7 @@ a difference."
 	  vars
 	  faces)))
 
-
+
 
 ;;; Installing a color theme
 ;;;###autoload
@@ -1560,7 +1556,6 @@ frame-parameter settings of previous color themes."
     (color-theme-add-to-history
      (car theme))))
 
-
 
 ;; Sharing your stuff
 ;;;###autoload
@@ -1617,7 +1612,6 @@ frame-parameter settings of previous color themes."
       (message "Enter a message and type %s to send or %s to abort."
 	       sendkey abortkey))))
 
-
 
 ;; Use this to define themes
 (defmacro define-color-theme (name author description &rest forms)

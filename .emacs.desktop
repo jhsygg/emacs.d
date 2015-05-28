@@ -2,40 +2,18 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri Apr  3 00:58:54 2015
+;; Created Thu May 28 22:17:15 2015
 ;; Desktop file format version 206
-;; Emacs version 24.4.1
+;; Emacs version 24.5.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (21790 7694 504663 295000) (desktop . "206") "jdp@localhost.localdomain" nil nil ((((font-backend xft x) (font . "-microsoft-YaHei Consolas Hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (font-parameter . "-microsoft-yahei consolas hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . fullboth) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 0) (alpha 100 100) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "BC47-87F5-1DA6-3A87") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 33) (width . 168) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 88) (min-pixel-width . 80) (min-pixel-height-ignore . 88) (min-pixel-width-ignore . 32) (min-pixel-height-safe . 22) (min-pixel-width-safe . 16)) leaf (pixel-width . 1366) (pixel-height . 717) (total-width . 171) (total-height . 32) (normal-height . 1.0) (normal-width . 1.0) (buffer "2014ëÃÿëºÏ.tex" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 315) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (21863 9067 814420 433000) (desktop . "206") "jdp@localhost.localdomain" nil nil ((((font-backend xft x) (font . "-microsoft-YaHei Consolas Hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (font-parameter . "-microsoft-YaHei Consolas Hybrid-normal-normal-normal-*-17-*-*-*-*-0-iso10646-1") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 12) (right-fringe . 12) (scroll-bar-foreground . "WhiteSmoke") (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (fullscreen . fullboth) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (alpha 85 50) (horizontal-scroll-bars . t) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "5E0F-B9C9-F8FD-50E0") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 33) (width . 167) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 5) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 88) (min-pixel-width . 80) (min-pixel-height-ignore . 88) (min-pixel-width-ignore . 40) (min-pixel-height-safe . 22) (min-pixel-width-safe . 16)) leaf (pixel-width . 1366) (pixel-height . 717) (total-width . 171) (total-height . 32) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected . t) (hscroll . 0) (fringes 12 12 nil) (margins nil) (scroll-bars 0 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("-p" "interactive" "interactive-p" "inter" "inp" "go" "view" "dept_name" "detp" "user" "user_name" "gocode" "go-mode" "git-emacs" "git" ".go"))
+(setq search-ring '("lisp" "slime" "auto" "ox-" "export-cu" "org" "websocket" "sl" "el-get" "k" "u" "read" "js" "gocode" "theme" "pri"))
 (setq regexp-search-ring nil)
 (setq register-alist nil)
-(setq file-name-history '("~/myworks/2014ëÃÿëºÏ.tex" "~/myworks/" "~/mymath/matlab\221\265\347\221\301\246\221\267 \325\346.org" "~/mymath/" "~/mymath/cir3simu.m" "~/mymath/cir3.m" "~/mymath/cir2.m" "~/mymath/cir1.m" "~/mymath/cir1simu.m" "~/mymath/cir2simu.m" "~/.emacs" "~/Downloads/\221î©©\221Åº.pdf" "~/mymath/mymatlab/q.m" "~/goyard/listfile.go" "~/goyard/env.go" "~/myworks/\221\323úÙ¶±\277úÛ´˜úÙ¨±\305\344\221\316ó´¿\314\342.org" "~/myworks/" "~/goyard/xqqp.go" "~/myworks/go\221\323\357\221\321úÙ™Ò\263úÙ•—\320\362\221\311ù˜¿¡\306.org" "~/myworks/go\221\323\357\221\321úÙ™Ò\263úÙ•—\320\362\221\311ù˜¿¡\306.go" "~/goyard/webtest.go" "~/goyard/web.go" "~/goyard/td_oa.sql" "~/webroot/" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/ecb-2.40/ecb.el" "~/.emacs.d/ecb-2.40/ecb-analyse.el" "~/goyard/cn_weather.go" "~/goyard/computerRB.go"))
+(setq file-name-history '("~/code/lisp/CommonLispë±‡ë≥Ã.org" "~/code/lisp/mycd.lisp" "~/code/lisp/cd.lisp" "~/code/lisp/make-cd.lisp" "~/code/lisp/" "~/code/lisp/CommonLispë±‡ë≥Ã.org" "~/.emacs" ".emacs" "~/code/lisp/compress.lisp" "~/code/lisp/hello.lisp" "~/code/lisp/cd-read.lisp" "~/code/lisp/ANSI Common Lisp.org" "~/code/lisp" "~/code/lisp/*slime-repl sbcl*" "~/code/lisp/ANSI commonlisp.org" "~/.emacs.d/bookmarks" "~/org/study.org" "~/org/gtd.org.gpg" "/usr/share/emacs/24.5/etc/TODO" "~/mytest/cd-read.lisp" "~/mytest/cd.lisp" "~/mytest/hello.lisp" "~/mytest/make-cd.lisp" "~/mytest/h1.el" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/plugins/jdp-latex.el" "~/org/123.md" "~/org/123.org" "~/org/2014ë≤©ë∫Íë∑÷ëπ‹.org" "~/org/" "~/.emacs.d/org-mode/lisp/ox-odt.el" "~/.emacs.d/org-mode" "~/org/GTDë—ßëœ∞.org" "~/org" "~/" "~/org/phpë—ßëœ∞.org" "~/org/note.org" "~/org/2014ë–°ë∫”ëƒ‹ë‘¥ë…Ëë±∏.org" "~/org/ajaxë—ßëœ∞.org" "~/org/66ë¥Ûëª·ë—ßëœ∞ë–ƒëµ√.org" "~/.emacs.d/el-get/org-mode/local.mk" "~/.emacs.d/el-get/org-mode/README" "~/.emacs.d/el-get/org-mode/" "~/org/ë–°ë∫”ëµÁë¡¶ëœµëÕ≥ëπ ë’œ.org" "~/org/ë◊°ë∑øëΩë»⁄ë∫Õë“Ωë±£.org" "~/org/ë»´ë‘±ë÷¥ë––ë¡¶.org" "~/org/ë»´ë‘±ë÷¥ë––ë∞Ï.org" "~/org/ëøŒë≥Ãë±Ì.org" "~/org/ë≤∆ëŒÒëøºë ‘.org" "~/org/ë»´ë‘±ë…Ëë±∏ëπ‹ë¿Ì.md" "~/org/README.md" "/usr/share/emacs/site-lisp/site-start.d/slime-autoloads.el" "/usr/share/emacs/site-lisp/" "/usr/lib/golang/src/io/io.go" "/usr/lib/golang/src/io/" "~/gotest/src/effect.go" "~/gotest/src/hello_world.go" "~/gotest/src/arr1.go" "~/gotest/src/" "~/gotest/src/The Way to Go.org" "~/gotest/src/presuffix.go" "~/gotest/src/local_scope.go" "~/gotest/src/goos.go" "~/gotest/src/map3.go" "~/gotest/src/slice3.go" "~/gotest/src/arr3.go" "~/gotest/src/fibonacci.go" "~/sorter/src/algorithms/qsort/qsort.go" "~/goyard/pointt.go" "~/org/journal.org.gpg" "~/org/finished.org" "~/stock/src/greedysnake.go" "~/stock/src/l_5_3.go" "~/stock/src/rcwm.go" "~/stock/src/" "~/stock/src/mysqlt.go" "~/stock/src/j_3_2.go" "~/stock/src/j_3_1.go" "~/goyard/src/github.com/beego/bee/run.go" "~/goyard/src/github.com/beego/bee/bee.go" "~/goyard/src/github.com/beego/bee/apiapp.go" "~/goyard/src/github.com/" "~/mytest/2014-2015\221\261\270\221\274\376\221\270\250\221\262Ç\317\373\221\272Ç\267úÙ¨±\316\366.org" "/usr/lib/golang/src/errors/errors.go" "/usr/lib/golang/src/errors/" "~/org/test.js" "~/stock/src/test.js" "/usr/lib/golang/src/make.bash" "/usr/lib/golang/src/clean.bash" "/usr/lib/golang/src/all.bash" "/usr/lib/golang" "/usr/lib" "~/stock/src/l_1_1.go" "~/stock/src/even" "~/stock/src/l_3_12.go"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 206
-  "/home/jdp/myworks/2014ëÃÿëºÏ.tex"
-  "2014ëÃÿëºÏ.tex"
-  'latex-mode
-  '(auto-fill-mode auto-complete-mode yas/minor-mode reftex-mode linum-mode TeX-PDF-mode)
-  315
-  '(95 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (case-fold-search . t)))
-
-(desktop-create-buffer 206
-  nil
-  "myworks"
-  'dired-mode
-  '(linum-mode TeX-PDF-mode)
-  517
-  '(nil nil)
-  t
-  '("/home/jdp/myworks/")
-  nil)
-

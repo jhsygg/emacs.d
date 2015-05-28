@@ -578,16 +578,21 @@
 
 (ert-deftest test-org/indent-line ()
   "Test `org-indent-line' specifications."
-  ;; Do not indent footnote definitions or headlines.
+  ;; Do not indent diary sexps, footnote definitions or headlines.
   (should
    (zerop
-    (org-test-with-temp-text "* H"
+    (org-test-with-temp-text "%%(org-calendar-holiday)"
       (org-indent-line)
       (org-get-indentation))))
   (should
    (zerop
     (org-test-with-temp-text "[fn:1] fn"
       (let ((org-adapt-indentation t)) (org-indent-line))
+      (org-get-indentation))))
+  (should
+   (zerop
+    (org-test-with-temp-text "* H"
+      (org-indent-line)
       (org-get-indentation))))
   ;; Do not indent before first headline.
   (should
@@ -630,8 +635,9 @@
 	(let ((org-adapt-indentation t)) (org-indent-line))
 	(org-get-indentation))))
   ;; On blank lines at the end of a list, indent like last element
-  ;; within it if the line is still in the list.  Otherwise, indent
-  ;; like the whole list.
+  ;; within it if the line is still in the list.  If the last element
+  ;; is an item, indent like its contents.  Otherwise, indent like the
+  ;; whole list.
   (should
    (= 4
       (org-test-with-temp-text "* H\n- A\n  - AA\n"
@@ -644,6 +650,12 @@
       (goto-char (point-max))
       (let ((org-adapt-indentation t)) (org-indent-line))
       (org-get-indentation))))
+  (should
+   (= 4
+      (org-test-with-temp-text "* H\n- A\n  - \n"
+	(goto-char (point-max))
+	(let ((org-adapt-indentation t)) (org-indent-line))
+	(org-get-indentation))))
   ;; Likewise, on a blank line at the end of a footnote definition,
   ;; indent at column 0 if line belongs to the definition.  Otherwise,
   ;; indent like the definition itself.
@@ -1160,6 +1172,16 @@
 	  (org-test-with-temp-text "#+TAGS: { A : B C }"
 	    (org-mode-restart)
 	    org-tag-groups-alist)))
+  (should
+   (equal '((:startgrouptag) ("A") (:grouptags) ("B") ("C") (:endgrouptag))
+	  (org-test-with-temp-text "#+TAGS: [ A : B C ]"
+	    (org-mode-restart)
+	    org-tag-alist)))
+  (should
+   (equal '(("A" "B" "C"))
+	  (org-test-with-temp-text "#+TAGS: [ A : B C ]"
+	    (org-mode-restart)
+	    org-tag-groups-alist)))
   ;; FILETAGS keyword.
   (should
    (equal '("A" "B" "C")
@@ -1313,6 +1335,13 @@
        "* H1\n:PROPERTIES:\n:CUSTOM_ID: custom\n:END:\n* H2\n[[#custom]]"
      (goto-char (point-max))
      (org-open-at-point)
+     (org-looking-at-p "\\* H1")))
+  ;; Ignore false positives.
+  (should-not
+   (org-test-with-temp-text
+       "* H1\n:DRAWER:\n:CUSTOM_ID: custom\n:END:\n* H2\n[[#custom]]<point>"
+     (goto-char (point-max))
+     (let (org-link-search-must-match-exact-headline) (org-open-at-point))
      (org-looking-at-p "\\* H1"))))
 
 ;;;; Fuzzy Links
@@ -1372,6 +1401,11 @@
        (let ((org-link-search-must-match-exact-headline nil)
 	     (org-todo-regexp "TODO"))
 	 (org-open-at-point)))))
+  ;; Heading match ignores COMMENT keyword.
+  (should
+   (org-test-with-temp-text "[[*Test]]\n* COMMENT Test"
+     (org-open-at-point)
+     (looking-at "\\* COMMENT Test")))
   ;; Correctly un-hexify fuzzy links.
   (should
    (org-test-with-temp-text "* With space\n[[*With%20space][With space]]"
@@ -1469,15 +1503,22 @@ drops support for Emacs 24.1 and 24.2."
 
 ;;;; Open at point
 
+(ert-deftest test-org/open-at-point-in-keyword ()
+  "Does `org-open-at-point' open link in a keyword line?"
+  (should
+   (org-test-with-temp-text
+       "#+KEYWORD: <point>[[info:emacs#Top]]"
+     (org-open-at-point) t)))
+
 (ert-deftest test-org/open-at-point-in-property ()
   "Does `org-open-at-point' open link in property drawer?"
   (should
    (org-test-with-temp-text
-    "* Headline
+       "* Headline
 :PROPERTIES:
 :URL: <point>[[info:emacs#Top]]
 :END:"
-    (org-open-at-point) t)))
+     (org-open-at-point) t)))
 
 (ert-deftest test-org/open-at-point-in-comment ()
   "Does `org-open-at-point' open link in a commented line?"
@@ -1721,6 +1762,65 @@ drops support for Emacs 24.1 and 24.2."
        (org-hide-block-toggle)
        (org-end-of-line)
        (eobp)))))
+
+(ert-deftest test-org/forward-sentence ()
+  "Test `org-forward-sentence' specifications."
+  ;; At the end of a table cell, move to the end of the next one.
+  (should
+   (org-test-with-temp-text "| a<point> | b |"
+     (org-forward-sentence)
+     (looking-at " |$")))
+  ;; Elsewhere in a cell, move to its end.
+  (should
+   (org-test-with-temp-text "| a<point>c | b |"
+     (org-forward-sentence)
+     (looking-at " | b |$")))
+  ;; Otherwise, simply call `forward-sentence'.
+  (should
+   (org-test-with-temp-text "Sentence<point> 1.  Sentence 2."
+     (org-forward-sentence)
+     (looking-at "  Sentence 2.")))
+  (should
+   (org-test-with-temp-text "Sentence<point> 1.  Sentence 2."
+     (org-forward-sentence)
+     (org-forward-sentence)
+     (eobp)))
+  ;; At the end of an element, jump to the next one, without stopping
+  ;; on blank lines in-between.
+  (should
+   (org-test-with-temp-text "Paragraph 1.<point>\n\nParagraph 2."
+     (org-forward-sentence)
+     (eobp))))
+
+(ert-deftest test-org/backward-sentence ()
+  "Test `org-backward-sentence' specifications."
+  ;; At the beginning of a table cell, move to the beginning of the
+  ;; previous one.
+  (should
+   (org-test-with-temp-text "| a | <point>b |"
+     (org-backward-sentence)
+     (looking-at "a | b |$")))
+  ;; Elsewhere in a cell, move to its beginning.
+  (should
+   (org-test-with-temp-text "| a | b<point>c |"
+     (org-backward-sentence)
+     (looking-at "bc |$")))
+  ;; Otherwise, simply call `backward-sentence'.
+  (should
+   (org-test-with-temp-text "Sentence 1.  Sentence<point> 2."
+     (org-backward-sentence)
+     (looking-at "Sentence 2.")))
+  (should
+   (org-test-with-temp-text "Sentence 1.  Sentence<point> 2."
+     (org-backward-sentence)
+     (org-backward-sentence)
+     (bobp)))
+  ;; Make sure to hit the beginning of a sentence on the same line as
+  ;; an item.
+  (should
+   (org-test-with-temp-text "- Line 1\n  line <point>2."
+     (org-backward-sentence)
+     (looking-at "Line 1"))))
 
 (ert-deftest test-org/forward-paragraph ()
   "Test `org-forward-paragraph' specifications."
@@ -2216,6 +2316,92 @@ Text.
       (mapcar (lambda (ov) (cons (overlay-start ov) (overlay-end ov)))
 	      (overlays-in (point-min) (point-max)))))))
 
+(ert-deftest test-org/next-block ()
+  "Test `org-next-block' specifications."
+  ;; Regular test.
+  (should
+   (org-test-with-temp-text "Paragraph\n#+BEGIN_CENTER\ncontents\n#+END_CENTER"
+     (org-next-block 1)
+     (looking-at "#\\+BEGIN_CENTER")))
+  ;; Ignore case.
+  (should
+   (org-test-with-temp-text "Paragraph\n#+begin_center\ncontents\n#+end_center"
+     (let ((case-fold-search nil))
+       (org-next-block 1)
+       (looking-at "#\\+begin_center"))))
+  ;; Ignore current line.
+  (should
+   (org-test-with-temp-text
+       "#+BEGIN_QUOTE\n#+END_QUOTE\n#+BEGIN_CENTER\n#+END_CENTER"
+     (org-next-block 1)
+     (looking-at "#\\+BEGIN_CENTER")))
+  ;; Throw an error when no block is found.
+  (should-error
+   (org-test-with-temp-text "Paragraph"
+     (org-next-block 1)))
+  ;; With an argument, skip many blocks at once.
+  (should
+   (org-test-with-temp-text
+       "Start\n#+BEGIN_CENTER\nA\n#+END_CENTER\n#+BEGIN_QUOTE\nB\n#+END_QUOTE"
+     (org-next-block 2)
+     (looking-at "#\\+BEGIN_QUOTE")))
+  ;; With optional argument BLOCK-REGEXP, filter matched blocks.
+  (should
+   (org-test-with-temp-text
+       "Start\n#+BEGIN_CENTER\nA\n#+END_CENTER\n#+BEGIN_QUOTE\nB\n#+END_QUOTE"
+     (org-next-block 1 nil "^[ \t]*#\\+BEGIN_QUOTE")
+     (looking-at "#\\+BEGIN_QUOTE")))
+  ;; Optional argument is also case-insensitive.
+  (should
+   (org-test-with-temp-text
+       "Start\n#+BEGIN_CENTER\nA\n#+END_CENTER\n#+begin_quote\nB\n#+end_quote"
+     (let ((case-fold-search nil))
+       (org-next-block 1 nil "^[ \t]*#\\+BEGIN_QUOTE")
+       (looking-at "#\\+begin_quote")))))
+
+(ert-deftest test-org/previous-block ()
+  "Test `org-previous-block' specifications."
+  ;; Regular test.
+  (should
+   (org-test-with-temp-text "#+BEGIN_CENTER\ncontents\n#+END_CENTER\n<point>"
+     (org-previous-block 1)
+     (looking-at "#\\+BEGIN_CENTER")))
+  ;; Ignore case.
+  (should
+   (org-test-with-temp-text "#+begin_center\ncontents\n#+end_center\n<point>"
+     (let ((case-fold-search nil))
+       (org-previous-block 1)
+       (looking-at "#\\+begin_center"))))
+  ;; Ignore current line.
+  (should
+   (org-test-with-temp-text
+       "#+BEGIN_QUOTE\n#+END_QUOTE\n#+BEGIN_CENTER<point>\n#+END_CENTER"
+     (org-previous-block 1)
+     (looking-at "#\\+BEGIN_QUOTE")))
+  ;; Throw an error when no block is found.
+  (should-error
+   (org-test-with-temp-text "Paragraph<point>"
+     (org-previous-block 1)))
+  ;; With an argument, skip many blocks at once.
+  (should
+   (org-test-with-temp-text
+       "#+BEGIN_CENTER\nA\n#+END_CENTER\n#+BEGIN_QUOTE\nB\n#+END_QUOTE\n<point>"
+     (org-previous-block 2)
+     (looking-at "#\\+BEGIN_CENTER")))
+  ;; With optional argument BLOCK-REGEXP, filter matched blocks.
+  (should
+   (org-test-with-temp-text
+       "#+BEGIN_CENTER\nA\n#+END_CENTER\n#+BEGIN_QUOTE\nB\n#+END_QUOTE\n<point>"
+     (org-previous-block 1 "^[ \t]*#\\+BEGIN_QUOTE")
+     (looking-at "#\\+BEGIN_QUOTE")))
+  ;; Optional argument is also case-insensitive.
+  (should
+   (org-test-with-temp-text
+       "#+BEGIN_CENTER\nA\n#+END_CENTER\n#+begin_quote\nB\n#+end_quote\n<point>"
+     (let ((case-fold-search nil))
+       (org-next-block 1 "^[ \t]*#\\+BEGIN_QUOTE")
+       (looking-at "#\\+begin_quote")))))
+
 
 ;;; Outline structure
 
@@ -2642,6 +2828,48 @@ Text.
 	  (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:A+: 2\n:END:"
 	    (org-property-values "A")))))
 
+(ert-deftest test-org/find-property ()
+  "Test `org-find-property' specifications."
+  ;; Regular test.
+  (should
+   (= 1
+      (org-test-with-temp-text "* H\n:PROPERTIES:\n:PROP: value\n:END:"
+	(org-find-property "prop"))))
+  ;; Ignore false positives.
+  (should
+   (= 27
+      (org-test-with-temp-text
+	  "* H1\n:DRAWER:\n:A: 1\n:END:\n* H2\n:PROPERTIES:\n:A: 1\n:END:"
+	(org-find-property "A"))))
+  ;; Return first entry found in buffer.
+  (should
+   (= 1
+      (org-test-with-temp-text
+	  "* H1\n:PROPERTIES:\n:A: 1\n:END:\n* H2\n:PROPERTIES:\n:<point>A: 1\n:END:"
+	(org-find-property "A"))))
+  ;; Only search visible part of the buffer.
+  (should
+   (= 31
+      (org-test-with-temp-text
+	  "* H1\n:PROPERTIES:\n:A: 1\n:END:\n* H2\n:PROPERTIES:\n:<point>A: 1\n:END:"
+	(org-narrow-to-subtree)
+	(org-find-property "A"))))
+  ;; With optional argument, only find entries with a specific value.
+  (should-not
+   (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:END:"
+     (org-find-property "A" "2")))
+  (should
+   (= 31
+      (org-test-with-temp-text
+	  "* H1\n:PROPERTIES:\n:A: 1\n:END:\n* H2\n:PROPERTIES:\n:A: 2\n:END:"
+	(org-find-property "A" "2"))))
+  ;; Use "nil" for explicit nil values.
+  (should
+   (= 31
+      (org-test-with-temp-text
+	  "* H1\n:PROPERTIES:\n:A: 1\n:END:\n* H2\n:PROPERTIES:\n:A: nil\n:END:"
+	(org-find-property "A" "nil")))))
+
 (ert-deftest test-org/entry-delete ()
   "Test `org-entry-delete' specifications."
   ;; Regular test.
@@ -2651,13 +2879,27 @@ Text.
     (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:B: 2\n:END:"
       (org-entry-delete (point) "A")
       (buffer-string))))
+  ;; Also remove accumulated properties.
+  (should-not
+   (string-match
+    ":A"
+    (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:A+: 2\n:B: 3\n:END:"
+      (org-entry-delete (point) "A")
+      (buffer-string))))
   ;; When last property is removed, remove the property drawer.
   (should-not
    (string-match
     ":PROPERTIES:"
     (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:END:\nParagraph"
       (org-entry-delete (point) "A")
-      (buffer-string)))))
+      (buffer-string))))
+  ;; Return a non-nil value when some property was removed.
+  (should
+   (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:B: 2\n:END:"
+     (org-entry-delete (point) "A")))
+  (should-not
+   (org-test-with-temp-text "* H\n:PROPERTIES:\n:A: 1\n:B: 2\n:END:"
+     (org-entry-delete (point) "C"))))
 
 (ert-deftest test-org/entry-get ()
   "Test `org-entry-get' specifications."
@@ -2860,6 +3102,13 @@ Text.
    (equal "cat"
 	  (org-test-with-temp-text "* H\n:PROPERTIES:\n:CATEGORY: cat\n:END:"
 	    (cdr (assoc "CATEGORY" (org-entry-properties nil "CATEGORY"))))))
+  (should
+   (equal "cat2"
+	  (org-test-with-temp-text
+	      (concat "* H\n:PROPERTIES:\n:CATEGORY: cat1\n:END:"
+		      "\n"
+		      "** H2\n:PROPERTIES:\n:CATEGORY: cat2\n:END:<point>")
+	    (cdr (assoc "CATEGORY" (org-entry-properties nil "CATEGORY"))))))
   ;; Get standard properties.
   (should
    (equal "1"
@@ -2951,6 +3200,12 @@ Text.
 		 (org-test-with-temp-text "* H\nDEADLINE: <2014-03-04 tue.>"
 		   (org-entry-put (point) "DEADLINE" "later")
 		   (buffer-string))))
+  ;; Set "CATEGORY" property
+  (should
+   (string-match "^ *:CATEGORY: cat"
+		 (org-test-with-temp-text "* H"
+		   (org-entry-put (point) "CATEGORY" "cat")
+		   (buffer-string))))
   ;; Regular properties, with or without pre-existing drawer.
   (should
    (string-match "^ *:A: +2$"
@@ -2965,9 +3220,9 @@ Text.
   ;; Special case: two consecutive headlines.
   (should
    (string-match "\\* A\n *:PROPERTIES:"
-    (org-test-with-temp-text "* A\n** B"
-      (org-entry-put (point) "A" "1")
-      (buffer-string)))))
+		 (org-test-with-temp-text "* A\n** B"
+		   (org-entry-put (point) "A" "1")
+		   (buffer-string)))))
 
 
 ;;; Radio Targets
@@ -3075,6 +3330,42 @@ Text.
        "#+TAGS: { work : lab }\n* H\n** H1 :work:\n** H2 :lab:"
      (org-match-sparse-tree nil "work")
      (search-forward "H2")
+     (org-invisible-p2)))
+  ;; Match group tags with hard brackets.
+  (should-not
+   (org-test-with-temp-text
+       "#+TAGS: [ work : lab ]\n* H\n** H1 :work:\n** H2 :lab:"
+     (org-match-sparse-tree nil "work")
+     (search-forward "H1")
+     (org-invisible-p2)))
+  (should-not
+   (org-test-with-temp-text
+       "#+TAGS: [ work : lab ]\n* H\n** H1 :work:\n** H2 :lab:"
+     (org-match-sparse-tree nil "work")
+     (search-forward "H2")
+     (org-invisible-p2)))
+  ;; Match tags in hierarchies
+  (should-not
+   (org-test-with-temp-text
+       "#+TAGS: [ Lev_1 : Lev_2 ]\n
+#+TAGS: [ Lev_2 : Lev_3 ]\n
+#+TAGS: { Lev_3 : Lev_4 }\n
+* H\n** H1 :Lev_1:\n** H2 :Lev_2:\n** H3 :Lev_3:\n** H4 :Lev_4:"
+     (org-match-sparse-tree nil "Lev_1")
+     (search-forward "H4")
+     (org-invisible-p2)))
+  ;; Match regular expressions in tags
+  (should-not
+   (org-test-with-temp-text
+       "#+TAGS: [ Lev : {Lev_[0-9]} ]\n* H\n** H1 :Lev_1:"
+     (org-match-sparse-tree nil "Lev")
+     (search-forward "H1")
+     (org-invisible-p2)))
+  (should
+   (org-test-with-temp-text
+       "#+TAGS: [ Lev : {Lev_[0-9]} ]\n* H\n** H1 :Lev_n:"
+     (org-match-sparse-tree nil "Lev")
+     (search-forward "H1")
      (org-invisible-p2)))
   ;; Match properties.
   (should

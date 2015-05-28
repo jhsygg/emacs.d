@@ -25,11 +25,8 @@
 	  (lambda () (setq truncate-lines nil)))
 
 ;; (require 'org-install)
-<<<<<<< HEAD
+
 (require 'ox-latex)
-=======
-;; (require 'org-latex)
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
 
 (unless (boundp 'org-export-latex-classes)
 (setq org-export-latex-classes nil))

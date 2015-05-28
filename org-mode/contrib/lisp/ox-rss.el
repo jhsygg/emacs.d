@@ -122,7 +122,9 @@ When nil, Org will create ids using `org-icalendar-create-uid'."
 	      (if a (org-rss-export-to-rss t s v)
 		(org-open-file (org-rss-export-to-rss nil s v)))))))
   :options-alist
-  '((:with-toc nil nil nil) ;; Never include HTML's toc
+  '((:description "DESCRIPTION" nil nil newline)
+    (:keywords "KEYWORDS" nil nil space)
+    (:with-toc nil nil nil) ;; Never include HTML's toc
     (:rss-extension "RSS_EXTENSION" nil org-rss-extension)
     (:rss-image-url "RSS_IMAGE_URL" nil org-rss-image-url)
     (:rss-categories nil nil org-rss-categories))
@@ -235,10 +237,7 @@ communication channel."
 	   (hl-home (file-name-as-directory (plist-get info :html-link-home)))
 	   (hl-pdir (plist-get info :publishing-directory))
 	   (hl-perm (org-element-property :RSS_PERMALINK headline))
-	   (anchor
-	    (org-export-solidify-link-text
-	     (or (org-element-property :CUSTOM_ID headline)
-		 (concat "sec-" (mapconcat 'number-to-string hl-number "-")))))
+	   (anchor (org-export-get-reference headline info))
 	   (category (org-rss-plain-text
 		      (or (org-element-property :CATEGORY headline) "") info))
 	   (pubdate0 (org-element-property :PUBDATE headline))

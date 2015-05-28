@@ -1,10 +1,11 @@
 ;; Object mytest/
 ;; SEMANTICDB Tags save file
 (semanticdb-project-database-file "mytest/"
-  :tables (list 
-   (semanticdb-table "j1_1.java"
-    :major-mode 'jde-mode
-    :tags 
+  :tables
+  (list
+    (semanticdb-table "j1_1.java"
+      :major-mode 'jde-mode
+      :tags 
         '( ("j1_1" type
                (:typemodifiers ("public")
                 :members 
@@ -19,15 +20,14 @@
                         (reparse-symbol class_member_declaration) [25 119]))                  
                 :type "class")
                 nil [1 121]))          
-    :file "j1_1.java"
-    :pointmax 122
-    :fsize 121
-    :lastmodtime '(21160 29506)
-    :unmatched-syntax '((PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) (PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) ($EOI 18 . 18) ($EOI 15 . 15) ($EOI 14 . 14) ($EOI 24 . 24) ($EOI 20 . 20) ($EOI 18 . 18) ($EOI 13 . 13) ($EOI 7 . 7))
-    )
-   (semanticdb-table "cp_8_4.c"
-    :major-mode 'c-mode
-    :tags 
+      :file "j1_1.java"
+      :pointmax 122
+      :fsize 121
+      :lastmodtime '(21646 62265 667867 0)
+      :unmatched-syntax '((PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) (PAREN_BLOCK 156 . 171) (IDENTIFIER 151 . 155) (PUBLIC 132 . 138) (VOID 146 . 150) ($EOI 18 . 18) ($EOI 15 . 15) ($EOI 14 . 14) ($EOI 24 . 24) ($EOI 20 . 20) ($EOI 18 . 18) ($EOI 13 . 13) ($EOI 7 . 7)))
+    (semanticdb-table "cp_8_4.c"
+      :major-mode 'c-mode
+      :tags 
         '( ("stdio.h" include (:system-flag t) nil [1 19])
             ("stdlib.h" include (:system-flag t) nil [20 39])
             ("string.h" include (:system-flag t) nil [40 59])
@@ -41,14 +41,30 @@
                         (reparse-symbol arg-sub-list) [80 93]))                  
                 :type "int")
                 nil [61 525]))          
-    :file "cp_8_4.c"
-    :pointmax 541
-    :fsize 540
-    :lastmodtime '(21242 62988)
-    :unmatched-syntax 'nil
-    )
-   )
+      :file "cp_8_4.c"
+      :pointmax 541
+      :fsize 515
+      :lastmodtime '(21646 62265 634867 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "bljs.c"
+      :major-mode 'c-mode
+      :tags 
+        '( ("gtk/gtk.h" include (:system-flag t) nil [2 22])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [35 44])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [45 58]))                  
+                :type "int")
+                nil [25 240]))          
+      :file "bljs.c"
+      :pointmax 241
+      :fsize 243
+      :lastmodtime '(21646 62265 603868 0)
+      :unmatched-syntax nil))
   :file "!home!jdp!mytest!semantic.cache"
   :semantic-tag-version "2.0"
-  :semanticdb-version "2.0"
-  )
+  :semanticdb-version "2.0")

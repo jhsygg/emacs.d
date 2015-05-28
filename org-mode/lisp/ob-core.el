@@ -187,14 +187,6 @@ This string must include a \"%s\" which will be replaced by the results."
   "^[ \t]*#\\+headers?:[ \t]*\\([^\n]*\\)$"
   "Regular expression used to match multi-line header arguments.")
 
-(defvar org-babel-src-name-w-name-regexp
-  (concat org-babel-src-name-regexp
-	  "\\("
-	  org-babel-multi-line-header-regexp
-	  "\\)*"
-	  "\\([^()\f\t\n\r\v]+\\)")
-  "Regular expression matching source name lines with a name.")
-
 (defvar org-babel-src-block-regexp
   (concat
    ;; (1) indentation                 (2) lang
@@ -271,8 +263,8 @@ Returns a list
 		  (org-babel-merge-params
 		   (nth 2 info)
 		   (org-babel-parse-header-arguments (match-string 1)))))
-	  (when (looking-at org-babel-src-name-w-name-regexp)
-	    (setq name (org-no-properties (match-string 3)))))
+	  (when (looking-at (org-babel-named-src-block-regexp-for-name))
+	    (setq name (org-match-string-no-properties 9))))
       ;; inline source block
       (when (org-babel-get-inline-src-block-matches)
 	(setq head (match-beginning 0))
@@ -461,7 +453,7 @@ then run `org-babel-switch-to-session'."
     (colnames	. ((nil no yes)))
     (comments	. ((no link yes org both noweb)))
     (dir	. :any)
-    (eval	. ((never query)))
+    (eval	. ((yes no no-export strip-export eval never query)))
     (exports	. ((code results both none)))
     (epilogue   . :any)
     (file	. :any)
@@ -592,10 +584,15 @@ to raise errors for all languages.")
 (defvar org-babel-after-execute-hook nil
   "Hook for functions to be called after `org-babel-execute-src-block'")
 
-(defun org-babel-named-src-block-regexp-for-name (name)
-  "This generates a regexp used to match a src block named NAME."
-  (concat org-babel-src-name-regexp (regexp-quote name)
-	  "[ \t(]*[\r\n]\\(?:^[[:space:]]*#.*[\r\n]\\)*"
+(defun org-babel-named-src-block-regexp-for-name (&optional name)
+  "This generates a regexp used to match a src block named NAME.
+If NAME is nil, match any name.  Matched name is then put in
+match group 9.  Other match groups are defined in
+`org-babel-src-block-regexp'."
+  (concat org-babel-src-name-regexp
+	  (concat (if name (regexp-quote name) "\\(?9:.*?\\)") "[ \t]*" )
+	  "\\(?:\n[ \t]*#\\+\\S-+:.*\\)*?"
+	  "\n"
 	  (substring org-babel-src-block-regexp 1)))
 
 (defun org-babel-named-data-regexp-for-name (name)
@@ -1758,23 +1755,22 @@ If the point is not on a source block then return nil."
 (defun org-babel-find-named-block (name)
   "Find a named source-code block.
 Return the location of the source block identified by source
-NAME, or nil if no such block exists.  Set match data according to
-org-babel-named-src-block-regexp."
+NAME, or nil if no such block exists.  Set match data according
+to `org-babel-named-src-block-regexp'."
   (save-excursion
-    (let ((case-fold-search t)
-	  (regexp (org-babel-named-src-block-regexp-for-name name)) msg)
-      (goto-char (point-min))
-      (when (or (re-search-forward regexp nil t)
-		(re-search-backward regexp nil t))
-        (match-beginning 0)))))
+    (goto-char (point-min))
+    (ignore-errors
+      (org-next-block 1 nil (org-babel-named-src-block-regexp-for-name name)))))
 
 (defun org-babel-src-block-names (&optional file)
   "Returns the names of source blocks in FILE or the current buffer."
+  (when file (find-file file))
   (save-excursion
-    (when file (find-file file)) (goto-char (point-min))
-    (let ((case-fold-search t) names)
-      (while (re-search-forward org-babel-src-name-w-name-regexp nil t)
-	(setq names (cons (match-string 3) names)))
+    (goto-char (point-min))
+    (let ((re (org-babel-named-src-block-regexp-for-name))
+	  names)
+      (while (ignore-errors (org-next-block 1 nil re))
+	(push (org-match-string-no-properties 9) names))
       names)))
 
 ;;;###autoload
@@ -2055,7 +2051,7 @@ If the path of the link is a file path it is expanded using
       (funcall echo-res result))))
 
 (defun org-babel-insert-result
-  (result &optional result-params info hash indent lang)
+    (result &optional result-params info hash indent lang)
   "Insert RESULT into the current buffer.
 
 By default RESULT is inserted after the end of the current source
@@ -2198,7 +2194,7 @@ INFO may provide the values of these header arguments (in the
 	      (setq results-switches
 		    (if results-switches (concat " " results-switches) ""))
 	      (let ((wrap (lambda (start finish &optional no-escape no-newlines
-					 inline-start inline-finish)
+				    inline-start inline-finish)
 			    (when inlinep
 			      (setq start inline-start)
 			      (setq finish inline-finish)
@@ -2212,7 +2208,15 @@ INFO may provide the values of these header arguments (in the
 			    (goto-char end)
 			    (unless no-newlines (goto-char (point-at-eol)))
 			    (setq end (point-marker))))
-		    (proper-list-p (lambda (it) (and (listp it) (null (cdr (last it)))))))
+		    (tabulablep
+		     (lambda (r)
+		       ;; Non-nil when result R can be turned into
+		       ;; a table.
+		       (and (listp r)
+			    (null (cdr (last r)))
+			    (org-every
+			     (lambda (e) (or (atom e) (null (cdr (last e)))))
+			     result)))))
 		;; insert results based on type
 		(cond
 		 ;; Do nothing for an empty result.
@@ -2233,10 +2237,7 @@ INFO may provide the values of these header arguments (in the
 		   "\n"))
 		 ;; Try hard to print RESULT as a table.  Give up if
 		 ;; it contains an improper list.
-		 ((and (funcall proper-list-p result)
-		       (org-every (lambda (e)
-				    (or (atom e) (funcall proper-list-p e)))
-				  result))
+		 ((funcall tabulablep result)
 		  (goto-char beg)
 		  (insert (concat (orgtbl-to-orgtbl
 				   (if (org-every
@@ -2299,7 +2300,7 @@ INFO may provide the values of these header arguments (in the
 			   "{{{results(" ")}}}"))
 		 ((and inlinep (member "file" result-params))
 		  (funcall wrap nil nil nil nil "{{{results(" ")}}}"))
-		 ((and (not (funcall proper-list-p result))
+		 ((and (not (funcall tabulablep result))
 		       (not (member "file" result-params)))
 		  (let ((org-babel-inline-result-wrap
 			 ;; Hard code {{{results(...)}}} on top of customization.
