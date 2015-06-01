@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads nil "ac-math/ac-math" "ac-math/ac-math.el" (21844
-;;;;;;  46500 409794 638000))
+;;;### (autoloads nil "ac-math/ac-math" "ac-math/ac-math.el" (21867
+;;;;;;  43583 58021 473000))
 ;;; Generated autoloads from ac-math/ac-math.el
 
 (defvar ac-source-latex-commands '((candidates . math-symbol-list-latex-commands) (symbol . "c") (prefix . ac-math-prefix)))
@@ -16,7 +16,7 @@
 ;;;***
 
 ;;;### (autoloads nil "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (21844 46496 419793 715000))
+;;;;;;  (21867 43579 979019 87000))
 ;;; Generated autoloads from auto-complete/auto-complete.el
 
 (autoload 'auto-complete "auto-complete/auto-complete" "\
@@ -53,7 +53,7 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 ;;;***
 
 ;;;### (autoloads nil "auto-complete/auto-complete-config" "auto-complete/auto-complete-config.el"
-;;;;;;  (21844 46496 418793 715000))
+;;;;;;  (21867 43579 978019 87000))
 ;;; Generated autoloads from auto-complete/auto-complete-config.el
 
 (autoload 'ac-config-default "auto-complete/auto-complete-config" "\
@@ -63,434 +63,169 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 
 ;;;***
 
-;;;### (autoloads nil "company-mode/company" "company-mode/company.el"
-;;;;;;  (21844 46368 833764 206000))
-;;; Generated autoloads from company-mode/company.el
-
-(autoload 'company-mode "company-mode/company" "\
-\"complete anything\"; is an in-buffer completion framework.
-Completion starts automatically, depending on the values
-`company-idle-delay' and `company-minimum-prefix-length'.
-
-Completion can be controlled with the commands:
-`company-complete-common', `company-complete-selection', `company-complete',
-`company-select-next', `company-select-previous'.  If these commands are
-called before `company-idle-delay', completion will also start.
-
-Completions can be searched with `company-search-candidates' or
-`company-filter-candidates'.  These can be used while completion is
-inactive, as well.
-
-The completion data is retrieved using `company-backends' and displayed
-using `company-frontends'.  If you want to start a specific back-end, call
-it interactively or use `company-begin-backend'.
-
-regular keymap (`company-mode-map'):
-
-\\{company-mode-map}
-keymap during active completions (`company-active-map'):
-
-\\{company-active-map}
-
-\(fn &optional ARG)" t nil)
-
-(defvar global-company-mode nil "\
-Non-nil if Global-Company mode is enabled.
-See the command `global-company-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `global-company-mode'.")
-
-(custom-autoload 'global-company-mode "company-mode/company" nil)
-
-(autoload 'global-company-mode "company-mode/company" "\
-Toggle Company mode in all buffers.
-With prefix ARG, enable Global-Company mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Company mode is enabled in all buffers where
-`company-mode-on' would do it.
-See `company-mode' for more information on Company mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-abbrev" "company-mode/company-abbrev.el"
-;;;;;;  (21844 46368 827764 205000))
-;;; Generated autoloads from company-mode/company-abbrev.el
-
-(autoload 'company-abbrev "company-mode/company-abbrev" "\
-`company-mode' completion back-end for abbrev.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-bbdb" "company-mode/company-bbdb.el"
-;;;;;;  (21844 46368 827764 205000))
-;;; Generated autoloads from company-mode/company-bbdb.el
-
-(autoload 'company-bbdb "company-mode/company-bbdb" "\
-`company-mode' completion back-end for BBDB.
-
-\(fn COMMAND &optional ARG &rest IGNORE)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-css" "company-mode/company-css.el"
-;;;;;;  (21844 46368 829764 205000))
-;;; Generated autoloads from company-mode/company-css.el
-
-(autoload 'company-css "company-mode/company-css" "\
-`company-mode' completion back-end for `css-mode'.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-dabbrev" "company-mode/company-dabbrev.el"
-;;;;;;  (21844 46368 829764 205000))
-;;; Generated autoloads from company-mode/company-dabbrev.el
-
-(autoload 'company-dabbrev "company-mode/company-dabbrev" "\
-dabbrev-like `company-mode' completion back-end.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-dabbrev-code" "company-mode/company-dabbrev-code.el"
-;;;;;;  (21844 46368 829764 205000))
-;;; Generated autoloads from company-mode/company-dabbrev-code.el
-
-(autoload 'company-dabbrev-code "company-mode/company-dabbrev-code" "\
-dabbrev-like `company-mode' back-end for code.
-The back-end looks for all symbols in the current buffer that aren't in
-comments or strings.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-elisp" "company-mode/company-elisp.el"
-;;;;;;  (21844 46368 829764 205000))
-;;; Generated autoloads from company-mode/company-elisp.el
-
-(autoload 'company-elisp "company-mode/company-elisp" "\
-`company-mode' completion back-end for Emacs Lisp.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-etags" "company-mode/company-etags.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-etags.el
-
-(autoload 'company-etags "company-mode/company-etags" "\
-`company-mode' completion back-end for etags.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-files" "company-mode/company-files.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-files.el
-
-(autoload 'company-files "company-mode/company-files" "\
-`company-mode' completion back-end existing file names.
-Completions works for proper absolute and relative files paths.
-File paths with spaces are only supported inside strings.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-gtags" "company-mode/company-gtags.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-gtags.el
-
-(autoload 'company-gtags "company-mode/company-gtags" "\
-`company-mode' completion back-end for GNU Global.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-ispell" "company-mode/company-ispell.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-ispell.el
-
-(autoload 'company-ispell "company-mode/company-ispell" "\
-`company-mode' completion back-end using Ispell.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-keywords" "company-mode/company-keywords.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-keywords.el
-
-(autoload 'company-keywords "company-mode/company-keywords" "\
-`company-mode' back-end for programming language keywords.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-nxml" "company-mode/company-nxml.el"
-;;;;;;  (21844 46368 830764 205000))
-;;; Generated autoloads from company-mode/company-nxml.el
-
-(autoload 'company-nxml "company-mode/company-nxml" "\
-`company-mode' completion back-end for `nxml-mode'.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-oddmuse" "company-mode/company-oddmuse.el"
-;;;;;;  (21844 46368 831764 206000))
-;;; Generated autoloads from company-mode/company-oddmuse.el
-
-(autoload 'company-oddmuse "company-mode/company-oddmuse" "\
-`company-mode' completion back-end for `oddmuse-mode'.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-semantic" "company-mode/company-semantic.el"
-;;;;;;  (21844 46368 831764 206000))
-;;; Generated autoloads from company-mode/company-semantic.el
-
-(autoload 'company-semantic "company-mode/company-semantic" "\
-`company-mode' completion back-end using CEDET Semantic.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-tempo" "company-mode/company-tempo.el"
-;;;;;;  (21844 46368 831764 206000))
-;;; Generated autoloads from company-mode/company-tempo.el
-
-(autoload 'company-tempo "company-mode/company-tempo" "\
-`company-mode' completion back-end for tempo.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-xcode" "company-mode/company-xcode.el"
-;;;;;;  (21844 46368 832764 206000))
-;;; Generated autoloads from company-mode/company-xcode.el
-
-(autoload 'company-xcode "company-mode/company-xcode" "\
-`company-mode' completion back-end for Xcode projects.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "company-mode/company-yasnippet" "company-mode/company-yasnippet.el"
-;;;;;;  (21844 46368 832764 206000))
-;;; Generated autoloads from company-mode/company-yasnippet.el
-
-(autoload 'company-yasnippet "company-mode/company-yasnippet" "\
-`company-mode' back-end for `yasnippet'.
-
-This back-end should be used with care, because as long as there are
-snippets defined for the current major mode, this back-end will always
-shadow back-ends that come after it.  Recommended usages:
-
-* In a buffer-local value of `company-backends', grouped with a back-end or
-  several that provide actual text completions.
-
-  (add-hook 'js-mode-hook
-            (lambda ()
-              (set (make-local-variable 'company-backends)
-                   '((company-dabbrev-code company-yasnippet)))))
-
-* After keyword `:with', grouped with other back-ends.
-
-  (push '(company-semantic :with company-yasnippet) company-backends)
-
-* Not in `company-backends', just bound to a key.
-
-  (global-set-key (kbd \"C-c y\") 'company-yasnippet)
-
-\(fn COMMAND &optional ARG &rest IGNORE)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "csv-mode/csv-mode" "csv-mode/csv-mode.el"
-;;;;;;  (21356 45146 783868 0))
-;;; Generated autoloads from csv-mode/csv-mode.el
-
-(autoload 'csv-mode "csv-mode/csv-mode" "\
-Major mode for editing files of comma-separated value type.
-
-CSV mode is derived from `text-mode', and runs `text-mode-hook' before
-running `csv-mode-hook'.  It turns `auto-fill-mode' off by default.
-CSV mode can be customized by user options in the CSV customization
-group.  The separators are specified by the value of `csv-separators'.
-
-CSV mode commands ignore blank lines and comment lines beginning with
-the value of `csv-comment-start', which delimit \"paragraphs\".
-\"Sexp\" is re-interpreted to mean \"field\", so that `forward-sexp'
-\(\\[forward-sexp]), `kill-sexp' (\\[kill-sexp]), etc. all apply to fields.
-Standard comment commands apply, such as `comment-dwim' (\\[comment-dwim]).
-
-If `font-lock-mode' is enabled then separators, quoted values and
-comment lines are highlighted using respectively `csv-separator-face',
-`font-lock-string-face' and `font-lock-comment-face'.
-
-The user interface (UI) for CSV mode commands is similar to that of
-the standard commands `sort-fields' and `sort-numeric-fields', except
-that if there is no prefix argument then the UI prompts for the field
-index or indices.  In `transient-mark-mode' only: if the region is not
-set then the UI attempts to set it to include all consecutive CSV
-records around point, and prompts for confirmation; if there is no
-prefix argument then the UI prompts for it, offering as a default the
-index of the field containing point if the region was not set
-explicitly.  The region set automatically is delimited by blank lines
-and comment lines, and the number of header lines at the beginning of
-the region given by the value of `csv-header-lines' are skipped.
-
-Sort order is controlled by `csv-descending'.
-
-CSV mode provides the following specific keyboard key bindings:
-
-\\{csv-mode-map}
+;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (21867 43397
+;;;;;;  982841 141000))
+;;; Generated autoloads from el-get/el-get.el
+
+(autoload 'el-get-version "el-get/el-get" "\
+Message the current el-get version
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'el-get-install "el-get/el-get" "\
+Cause the named PACKAGE to be installed after all of its
+dependencies (if any).
 
-;;;***
-
-;;;### (autoloads nil "csv-nav/csv-nav" "csv-nav/csv-nav.el" (21846
-;;;;;;  50885 736288 647000))
-;;; Generated autoloads from csv-nav/csv-nav.el
+PACKAGE may be either a string or the corresponding symbol.
 
-(autoload 'csv-nav-mode "csv-nav/csv-nav" "\
-Major mode for viewing and editing CSV files.
+\(fn PACKAGE)" t nil)
 
-\(fn)" t nil)
+(autoload 'el-get-update "el-get/el-get" "\
+Update PACKAGE.
 
-;;;***
-
-;;;### (autoloads nil "db-sql/db-sql" "db-sql/db-sql.el" (21846 40626
-;;;;;;  417419 612000))
-;;; Generated autoloads from db-sql/db-sql.el
+\(fn PACKAGE)" t nil)
 
-(autoload 'db-sql "db-sql/db-sql" "\
-Connect to sql database as defined by TYPE on server HOST.
+(autoload 'el-get-update-all "el-get/el-get" "\
+Performs update of all installed packages.
 
-Database types are defined in `sql-product-alist'.
+\(fn &optional NO-PROMPT)" t nil)
 
-Wrapper functions such as `sql-db-postgres' or `sql-db-mysql' are
-also defined for quick access to `db-sql'.
+(autoload 'el-get-update-packages-of-type "el-get/el-get" "\
+Update all installed packages of type TYPE.
 
-If some database access need a special work directory, it could
-be defined in `db-sql-workdirs'.
+\(fn TYPE)" t nil)
 
-\(fn &optional TYPE HOST)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "go-mode/go-mode" "go-mode/go-mode.el" (21844
-;;;;;;  47644 264059 195000))
-;;; Generated autoloads from go-mode/go-mode.el
-
-(autoload 'go-mode "go-mode/go-mode" "\
-Major mode for editing Go source text.
-
-This mode provides (not just) basic editing capabilities for
-working with Go code. It offers almost complete syntax
-highlighting, indentation that is almost identical to gofmt and
-proper parsing of the buffer content to allow features such as
-navigation by function, manipulation of comments or detection of
-strings.
-
-In addition to these core features, it offers various features to
-help with writing Go code. You can directly run buffer content
-through gofmt, read godoc documentation from within Emacs, modify
-and clean up the list of package imports or interact with the
-Playground (uploading and downloading pastes).
-
-The following extra functions are defined:
-
-- `gofmt'
-- `godoc'
-- `go-import-add'
-- `go-remove-unused-imports'
-- `go-goto-imports'
-- `go-play-buffer' and `go-play-region'
-- `go-download-play'
-- `godef-describe' and `godef-jump'
-- `go-coverage'
-
-If you want to automatically run `gofmt' before saving a file,
-add the following hook to your emacs configuration:
-
-\(add-hook 'before-save-hook #'gofmt-before-save)
-
-If you want to use `godef-jump' instead of etags (or similar),
-consider binding godef-jump to `M-.', which is the default key
-for `find-tag':
-
-\(add-hook 'go-mode-hook (lambda ()
-                          (local-set-key (kbd \"M-.\") #'godef-jump)))
-
-Please note that godef is an external dependency. You can install
-it with
-
-go get code.google.com/p/rog-go/exp/cmd/godef
-
-
-If you're looking for even more integration with Go, namely
-on-the-fly syntax checking, auto-completion and snippets, it is
-recommended that you look at flycheck
-\(see URL `https://github.com/flycheck/flycheck') or flymake in combination
-with goflymake (see URL `https://github.com/dougm/goflymake'), gocode
-\(see URL `https://github.com/nsf/gocode'), go-eldoc
-\(see URL `github.com/syohex/emacs-go-eldoc') and yasnippet-go
-\(see URL `https://github.com/dominikh/yasnippet-go')
+(autoload 'el-get-self-update "el-get/el-get" "\
+Update el-get itself.  The standard recipe takes care of reloading the code.
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist (cons "\\.go\\'" 'go-mode))
+(autoload 'el-get-remove "el-get/el-get" "\
+Remove any PACKAGE that is know to be installed or required.
 
-(autoload 'gofmt-before-save "go-mode/go-mode" "\
-Add this to .emacs to run gofmt on the current buffer when saving:
- (add-hook 'before-save-hook 'gofmt-before-save).
+\(fn PACKAGE)" t nil)
 
-Note that this will cause go-mode to get loaded the first time
-you save any file, kind of defeating the point of autoloading.
+(autoload 'el-get-reinstall "el-get/el-get" "\
+Remove PACKAGE and then install it again.
+
+\(fn PACKAGE)" t nil)
+
+(autoload 'el-get-cd "el-get/el-get" "\
+Open dired in the package directory.
+
+\(fn PACKAGE)" t nil)
+
+(autoload 'el-get-make-recipes "el-get/el-get" "\
+Loop over `el-get-sources' and write a recipe file for each
+entry which is not a symbol and is not already a known recipe.
+
+\(fn &optional DIR)" t nil)
+
+(autoload 'el-get-checksum "el-get/el-get" "\
+Compute the checksum of the given package, and put it in the kill-ring
+
+\(fn PACKAGE)" t nil)
+
+(autoload 'el-get-self-checksum "el-get/el-get" "\
+Compute the checksum of the running version of el-get itself.
+
+Also put the checksum in the kill-ring.
 
 \(fn)" t nil)
 
-(autoload 'godoc "go-mode/go-mode" "\
-Show Go documentation for QUERY, much like M-x man.
+(autoload 'el-get "el-get/el-get" "\
+Ensure that packages have been downloaded once and init them as needed.
 
-\(fn QUERY)" t nil)
+This will not update the sources by using `apt-get install' or
+`git pull', but it will ensure that:
 
-(autoload 'go-download-play "go-mode/go-mode" "\
-Download a paste from the playground and insert it in a Go buffer.
-Tries to look for a URL at point.
+* the packages have been installed
+* load-path is set so their elisp files can be found
+* Info-directory-list is set so their info files can be found
+* Autoloads have been prepared and evaluated for each package
+* Any post-installation setup (e.g. `(require 'feature)') happens
 
-\(fn URL)" t nil)
+When SYNC is nil (the default), all installations run
+concurrently, in the background.
+
+When SYNC is 'sync, each package will be installed synchronously,
+and any error will stop it all.
+
+Please note that the `el-get-init' part of `el-get' is always
+done synchronously. There's `byte-compile' support though, and
+the packages you use are welcome to use `autoload' too.
+
+PACKAGES is expected to be a list of packages you want to install
+or init.  When PACKAGES is omited (the default), the list of
+already installed packages is considered.
+
+\(fn &optional SYNC &rest PACKAGES)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "el-get/el-get-bundle" "el-get/el-get-bundle.el"
+;;;;;;  (21867 43397 980841 138000))
+;;; Generated autoloads from el-get/el-get-bundle.el
+
+(autoload 'el-get-bundle-el-get "el-get/el-get-bundle" "\
+
+
+\(fn SRC)" nil nil)
+
+(autoload 'el-get-bundle "el-get/el-get-bundle" "\
+Install PACKAGE and run initialization FORM.
+
+PACKAGE can be either a simple package name or a package name
+with a modifier before the name to specify local recipe source
+information:
+
+* `<owner>/' : specifies a Github owner name
+* `gist:<id>' : specifies a Gist ID
+* `<type>:' : specifies a type of the package source
+
+If `FEATURE in PACKAGE' form is used instead of PACKAGE, then
+that FEATURE is `require'd after installing PACKAGE.  You can
+also use `el-get-bundle!' macro if FEATURE and PACKAGE are the
+same.  If you wish to `require' more than one feature, then use
+`:features' property in FORM.
+
+The initialization FORM may start with a property list that
+describes a local recipe.  The FORM after the property list is
+treated as initialization code, which is actually an `:after'
+property of the local recipe.
+
+A copy of the initialization code is stored in a directory
+specified by `el-get-bundle-init-directory' and its byte-compiled
+version is used if `el-get-bundle-byte-compile' is non-nil.
+
+\(fn PACKAGE &rest FORM)" nil t)
+
+(put 'el-get-bundle 'lisp-indent-function 'defun)
+
+(autoload 'el-get-bundle! "el-get/el-get-bundle" "\
+Install PACKAGE and run initialization form.
+It is the same as `el-get-bundle' except that PACKAGE is explicitly
+required.
+
+\(fn PACKAGE &rest ARGS)" nil t)
+
+(put 'el-get-bundle! 'lisp-indent-function 'defun)
+
+;;;***
+
+;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
+;;;;;;  (21867 43397 981841 139000))
+;;; Generated autoloads from el-get/el-get-list-packages.el
+
+(autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
+Display a list of packages.
+
+\(fn)" t nil)
 
 ;;;***
 
 ;;;### (autoloads nil "graphviz-dot-mode/graphviz-dot-mode" "graphviz-dot-mode/graphviz-dot-mode.el"
-;;;;;;  (21844 46516 837798 437000))
+;;;;;;  (21867 54076 856012 883000))
 ;;; Generated autoloads from graphviz-dot-mode/graphviz-dot-mode.el
 
 (autoload 'graphviz-dot-mode "graphviz-dot-mode/graphviz-dot-mode" "\
@@ -547,294 +282,13 @@ Turning on Graphviz Dot mode calls the value of the variable
 
 ;;;***
 
-;;;### (autoloads nil "json-mode/json-mode" "json-mode/json-mode.el"
-;;;;;;  (21846 40931 873810 813000))
-;;; Generated autoloads from json-mode/json-mode.el
-
-(autoload 'json-mode "json-mode/json-mode" "\
-Major mode for editing JSON files
-
-\(fn)" t nil)
-
-(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
-
-(autoload 'json-mode-show-path "json-mode/json-mode" "\
-
-
-\(fn)" t nil)
-
-(autoload 'json-mode-beautify "json-mode/json-mode" "\
-Beautify / pretty-print the active region (or the entire buffer if no active region).
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "json-reformat/json-reformat" "json-reformat/json-reformat.el"
-;;;;;;  (21846 40926 305805 348000))
-;;; Generated autoloads from json-reformat/json-reformat.el
-
-(autoload 'json-reformat-region "json-reformat/json-reformat" "\
-Reformat the JSON in the specified region.
-
-If you want to customize the reformat style,
-please see the documentation of `json-reformat:indent-width'
-and `json-reformat:pretty-string?'.
-
-\(fn BEGIN END)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "json-snatcher/json-snatcher" "json-snatcher/json-snatcher.el"
-;;;;;;  (21846 40905 557784 982000))
-;;; Generated autoloads from json-snatcher/json-snatcher.el
-
-(autoload 'jsons-print-path "json-snatcher/json-snatcher" "\
-Print the path to the JSON value under point, and save it in the kill ring.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "markdown-mode/markdown-mode" "markdown-mode/markdown-mode.el"
-;;;;;;  (21845 21795 764580 917000))
-;;; Generated autoloads from markdown-mode/markdown-mode.el
-
-(autoload 'markdown-mode "markdown-mode/markdown-mode" "\
-Major mode for editing Markdown files.
-
-\(fn)" t nil)
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-
-(autoload 'gfm-mode "markdown-mode/markdown-mode" "\
-Major mode for editing GitHub Flavored Markdown files.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/cedet-matlab" "matlab-mode/cedet-matlab.el"
-;;;;;;  (20826 10926 0 0))
-;;; Generated autoloads from matlab-mode/cedet-matlab.el
-
-(autoload 'matlab-cedet-setup "matlab-mode/cedet-matlab" "\
-Update various paths to get SRecode to identify our macros.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/company-matlab-shell" "matlab-mode/company-matlab-shell.el"
-;;;;;;  (19026 24680 0 0))
-;;; Generated autoloads from matlab-mode/company-matlab-shell.el
-
-(autoload 'company-matlab-shell "matlab-mode/company-matlab-shell" "\
-A `company-mode' completion back-end for Matlab-Shell.
-
-\(fn COMMAND &optional ARG &rest IGNORED)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/linemark" "matlab-mode/linemark.el"
-;;;;;;  (20826 11080 0 0))
-;;; Generated autoloads from matlab-mode/linemark.el
-
-(autoload 'enable-visual-studio-bookmarks "matlab-mode/linemark" "\
-Bind the viss bookmark functions to F2 related keys.
-\\<global-map>
-\\[viss-bookmark-toggle]     - To=ggle a bookmark on this line.
-\\[viss-bookmark-next-buffer]   - Move to the next bookmark.
-\\[viss-bookmark-prev-buffer]   - Move to the previous bookmark.
-\\[viss-bookmark-clear-all-buffer] - Clear all bookmarks.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/matlab" "matlab-mode/matlab.el"
-;;;;;;  (21662 42400 0 0))
-;;; Generated autoloads from matlab-mode/matlab.el
-
-(add-to-list 'auto-mode-alist '("\\.m$" . matlab-mode))
-
-(autoload 'matlab-mode "matlab-mode/matlab" "\
-MATLAB(R) mode is a major mode for editing MATLAB dot-m files.
-\\<matlab-mode-map>
-Convenient editing commands are:
- \\[matlab-comment-region]   - Comment/Uncomment out a region of code.
- \\[matlab-fill-comment-line] - Fill the current comment line.
- \\[matlab-fill-region] - Fill code and comments in region.
- \\[matlab-fill-paragraph]     - Refill the current command or comment.
- \\[matlab-complete-symbol]   - Symbol completion of matlab symbolsbased on the local syntax.
- \\[matlab-indent-sexp] - Indent syntactic block of code.
-
-Convenient navigation commands are:
- \\[matlab-beginning-of-command]   - Move to the beginning of a command.
- \\[matlab-end-of-command]   - Move to the end of a command.
- \\[matlab-beginning-of-defun] - Move to the beginning of a function.
- \\[matlab-end-of-defun] - Move do the end of a function.
- \\[matlab-forward-sexp] - Move forward over a syntactic block of code.
- \\[matlab-backward-sexp] - Move backwards over a syntactic block of code.
-
-Convenient template insertion commands:
- \\[tempo-template-matlab-function] - Insert a function definition.
- \\[tempo-template-matlab-if] - Insert an IF END block.
- \\[tempo-template-matlab-for] - Insert a FOR END block.
- \\[tempo-template-matlab-switch] - Insert a SWITCH END statement.
- \\[matlab-insert-next-case] - Insert the next CASE condition in a SWITCH.
- \\[matlab-insert-end-block] - Insert a matched END statement.  With optional ARG, reindent.
- \\[matlab-stringify-region] - Convert plaintext in region to a string with correctly quoted chars.
-
-Variables:
-  `matlab-indent-level'		Level to indent blocks.
-  `matlab-cont-level'		Level to indent continuation lines.
-  `matlab-cont-requires-ellipsis' Does your MATLAB support implied elipsis.
-  `matlab-case-level'		Level to unindent case statements.
-  `matlab-indent-past-arg1-functions'
-                                Regexp of functions to indent past the first
-                                  argument on continuation lines.
-  `matlab-maximum-indents'      List of maximum indents during lineups.
-  `matlab-comment-column'       Goal column for on-line comments.
-  `fill-column'			Column used in auto-fill.
-  `matlab-indent-function-body' If non-nil, indents body of MATLAB functions.
-  `matlab-functions-have-end'	If non-nil, MATLAB functions terminate with end.
-  `matlab-return-function'	Customize RET handling with this function.
-  `matlab-auto-fill'            Non-nil, do auto-fill at startup.
-  `matlab-fill-code'            Non-nil, auto-fill code.
-  `matlab-fill-strings'         Non-nil, auto-fill strings.
-  `matlab-verify-on-save-flag'  Non-nil, enable code checks on save.
-  `matlab-highlight-block-match-flag'
-                                Enable matching block begin/end keywords.
-  `matlab-vers-on-startup'	If t, show version on start-up.
-  `matlab-handle-simulink'      If t, enable simulink keyword highlighting.
-
-All Key Bindings:
-\\{matlab-mode-map}
-
-\(fn)" t nil)
-
-(autoload 'matlab-shell "matlab-mode/matlab" "\
-Create a buffer with MATLAB running as a subprocess.
-
-MATLAB shell cannot work on the MS Windows platform because MATLAB is not
-a console application.
-
-\(fn)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/mlint" "matlab-mode/mlint.el"
-;;;;;;  (21274 21680 0 0))
-;;; Generated autoloads from matlab-mode/mlint.el
-
-(autoload 'mlint-minor-mode "matlab-mode/mlint" "\
-Toggle mlint minor mode, a mode for showing mlint errors.
-With prefix ARG, turn mlint minor mode on iff ARG is positive.
-\\{mlint-minor-mode-map\\}
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/semantic-matlab" "matlab-mode/semantic-matlab.el"
-;;;;;;  (21022 42740 0 0))
-;;; Generated autoloads from matlab-mode/semantic-matlab.el
-
-(autoload 'semantic-default-matlab-setup "matlab-mode/semantic-matlab" "\
-Set up a buffer for parsing of MATLAB files.
-
-\(fn)" nil nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/srecode-matlab" "matlab-mode/srecode-matlab.el"
-;;;;;;  (21662 42183 0 0))
-;;; Generated autoloads from matlab-mode/srecode-matlab.el
-
-(autoload 'srecode-semantic-handle-:matlab "matlab-mode/srecode-matlab" "\
-Add macros into the dictionary DICT based on the current MATLAB buffer.
-Adds the following:
-FILE_SYMBOL - The file name as a symbol.
-FILE_DOC_SYMBOL - The file name as a symbol for doc strings.
-PACKAGE - The package this file is in, or empty if none.
-FILE_CLASS - Show section if filename should be a class.
-FILE_FUNCTION - Show setion if filename is a function.
-
-On class prediction - when filling in an empty file, if the filename and directory it is in
-match, for example @foo/foo.m then foo should be a classdef.
-
-\(fn DICT)" nil nil)
-
-;;;***
-
-;;;### (autoloads nil "matlab-mode/tlc" "matlab-mode/tlc.el" (17295
-;;;;;;  18976 0 0))
-;;; Generated autoloads from matlab-mode/tlc.el
-
-(autoload 'tlc-mode "matlab-mode/tlc" "\
-Major mode for editing Tlc files, or files found in tlc directories.
-
-\(fn)" t nil)
-(add-to-list 'auto-mode-alist '("\\.tlc$" .tlc-mode))
-
-;;;***
-
-;;;### (autoloads nil "yasnippet/yasnippet" "yasnippet/yasnippet.el"
-;;;;;;  (21846 46965 430652 878000))
-;;; Generated autoloads from yasnippet/yasnippet.el
-
-(autoload 'yas-minor-mode "yasnippet/yasnippet" "\
-Toggle YASnippet mode.
-
-When YASnippet mode is enabled, `yas-expand', normally bound to
-the TAB key, expands snippets of code depending on the major
-mode.
-
-With no argument, this command toggles the mode.
-positive prefix argument turns on the mode.
-Negative prefix argument turns off the mode.
-
-Key bindings:
-\\{yas-minor-mode-map}
-
-\(fn &optional ARG)" t nil)
-
-(defvar yas-global-mode nil "\
-Non-nil if Yas-Global mode is enabled.
-See the command `yas-global-mode' for a description of this minor mode.
-Setting this variable directly does not take effect;
-either customize it (see the info node `Easy Customization')
-or call the function `yas-global-mode'.")
-
-(custom-autoload 'yas-global-mode "yasnippet/yasnippet" nil)
-
-(autoload 'yas-global-mode "yasnippet/yasnippet" "\
-Toggle Yas minor mode in all buffers.
-With prefix ARG, enable Yas-Global mode if ARG is positive;
-otherwise, disable it.  If called from Lisp, enable the mode if
-ARG is omitted or nil.
-
-Yas minor mode is enabled in all buffers where
-`yas-minor-mode-on' would do it.
-See `yas-minor-mode' for more information on Yas minor mode.
-
-\(fn &optional ARG)" t nil)
-
-;;;***
-
-;;;### (autoloads nil nil ("auto-complete/auto-complete-pkg.el" "company-mode/company-capf.el"
-;;;;;;  "company-mode/company-clang.el" "company-mode/company-cmake.el"
-;;;;;;  "company-mode/company-eclim.el" "company-mode/company-template.el"
-;;;;;;  "company-mode/company-tests.el" "csv-mode/csv-mode-autoloads.el"
-;;;;;;  "csv-mode/csv-mode-pkg.el" "fuzzy/fuzzy.el" "go-autocomplete/emacs/go-autocomplete.el"
-;;;;;;  "go-mode/go-mode-autoloads.el" "markdown-preview-mode/markdown-preview-mode.el"
-;;;;;;  "math-symbol-lists/math-symbol-lists.el" "matlab-mode/matlab-load.el"
-;;;;;;  "matlab-mode/matlab-publish.el" "matlab-mode/semanticdb-matlab.el"
-;;;;;;  "popup/popup.el" "websocket/websocket-functional-test.el"
-;;;;;;  "websocket/websocket-test.el" "websocket/websocket.el" "yasnippet/yasnippet-debug.el"
-;;;;;;  "yasnippet/yasnippet-tests.el") (21846 50885 968362 19000))
+;;;### (autoloads nil nil ("auto-complete/auto-complete-pkg.el" "el-get/el-get-autoloading.el"
+;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
+;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
+;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
+;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "fuzzy/fuzzy.el"
+;;;;;;  "math-symbol-lists/math-symbol-lists.el" "popup/popup.el")
+;;;;;;  (21867 54077 87485 968000))
 
 ;;;***
 
