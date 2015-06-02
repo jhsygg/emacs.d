@@ -10,6 +10,8 @@
 			 (add-to-list 'ac-dictionary-directories
 				      (expand-file-name "dict" default-directory))
 			 (ac-config-default))))
+ (auto-complete-emacs-lisp status "installed" recipe
+			   (:name auto-complete-emacs-lisp :description "Auto-complete sources for emacs lisp" :type http :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" :depends auto-complete))
  (cedet status "required" recipe nil)
  (cl-lib status "installed" recipe
 	 (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
@@ -44,4 +46,17 @@
  (mmm-mode status "required" recipe nil)
  (popup status "installed" recipe
 	(:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :pkgname "auto-complete/popup-el"))
- (slime status "required" recipe nil))
+ (slime status "required" recipe nil)
+ (slime-loads status "installed" recipe
+	      (:name slime-loads :auto-generated t :type emacswiki :description "this is slime-loads-GNU.el --- stub to indirect slime/swank configs on GNU" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/slime-loads.el"))
+ (yasnippet status "installed" recipe
+	    (:name yasnippet :website "https://github.com/capitaomorte/yasnippet.git" :description "YASnippet is a template system for Emacs." :type github :pkgname "capitaomorte/yasnippet" :compile "yasnippet.el" :submodule nil :build
+		   (("git" "submodule" "update" "--init" "--" "snippets"))))
+ (yasnippet-config status "installed" recipe
+		   (:name yasnippet-config :auto-generated t :type emacswiki :description "Configuration of yasnippet.el" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/yasnippet-config.el"))
+ (yasnippet-snippets status "installed" recipe
+		     (:name yasnippet-snippets :description "A collection of yasnippet snippets for many languages" :type github :pkgname "AndreaCrotti/yasnippet-snippets" :depends
+			    (yasnippet)))
+ (yasnippets status "installed" recipe
+	     (:name yasnippets :description "Comprehensive collection of yasnippets" :type github :pkgname "rejeep/yasnippets" :depends
+		    (yasnippet))))

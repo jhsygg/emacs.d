@@ -1,5 +1,5 @@
 ;;打开自动补全
-(add-to-list 'load-path "~/.emacs.d/plugins")
+(add-to-list 'load-path "~/.emacs.d/el-get/auto-complete")
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (define-key ac-complete-mode-map "\C-n" 'ac-next)
@@ -10,7 +10,7 @@
 (define-key ac-complete-mode-map "\t" 'ac-complete)
 (define-key ac-complete-mode-map "\r" nil)
 (require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/plugins/ac-dict")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/el-get/dict")
 (ac-config-default)
 
 ;; -*- Emacs-Lisp -*-
