@@ -1,3 +1,7 @@
+(add-to-list 'load-path "~/.emacs.d/auctex-11.88")
+(load "auctex.el" nil t t)
+(load "preview-latex.el" nil t t)
+
 (mapc (lambda (mode)
 	(add-hook 'LaTeX-mode-hook mode))
       (list 'auto-fill-mode
@@ -15,6 +19,7 @@
             (imenu-add-menubar-index)
             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)))
 
+
 (setq TeX-view-program-list
       '(("Okular" "okular --unique %o")
         ("Evince" "evince %o")
@@ -23,15 +28,35 @@
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-hook 'org-mode-hook 
 	  (lambda () (setq truncate-lines nil)))
-
-;; (require 'org-install)
-
+(require 'org-install)
 (require 'ox-latex)
+
+;;使用xelatex一步生成PDF
+(setq org-latex-to-pdf-process
+      '("xelatex -interaction nonstopmode %f"
+	"xelatex -interaction nonstopmode %f"))
+;;code执行免应答(eval code without confirm)
+(setq org-confirm-babel-evaluate nil)
+;; Auctex
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(defun org-mode-article-modes ()
+  (reftex-mode t)
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (if (member "REFTEX" org-todo-keywords-1)
+                (org-mode-article-modes))))
 
 (unless (boundp 'org-export-latex-classes)
 (setq org-export-latex-classes nil))
 
 (setq org-latex-listings t)
+
 (add-to-list 'org-latex-classes
              '("ctexart"
                "\\documentclass[11pt,a4paper]{ctexart}
@@ -86,12 +111,8 @@
 
 ;;============================================================
 ;; ctexbook
-<<<<<<< HEAD
-(add-to-list 'org-latex-classes
-=======
 ;;============================================================
-(add-to-list 'org-export-latex-classes
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
+(add-to-list 'org-latex-classes
              '("ctexbook"
                "\\documentclass[11pt,a4paper,twoside,openany]{ctexbook}
 \\usepackage[utf8]{inputenc}
@@ -235,12 +256,7 @@
 ;;==========================================================================
 
 ;;ctextp 设置
-
-<<<<<<< HEAD
 (add-to-list 'org-latex-classes
-=======
-(add-to-list 'org-export-latex-classes
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
              '("ctextp"
                "\\documentclass[11pt,a4paper]{ctexart}
 \\usepackage[utf8]{inputenc}
@@ -321,11 +337,7 @@
 ;;    ))
 
 ;;rules 
-<<<<<<< HEAD
 (add-to-list 'org-latex-classes
-=======
-(add-to-list 'org-export-latex-classes
->>>>>>> a13620c2c7aa1cbf079f64f7c008e9ec7f56cb39
              '("rules"
                "\\documentclass[11pt,a4paper]{rules}
  [NO-DEFAULT-PACKAGES]

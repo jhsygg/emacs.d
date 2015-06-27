@@ -2,6 +2,7 @@
 	  (:name ac-math :type github :website "https://github.com/vspinu/ac-math" :description "This is an add-on which defines three ac-sources for the auto-complete package" :depends
 		 (auto-complete math-symbol-lists)
 		 :pkgname "vspinu/ac-math"))
+ (auctex status "required" recipe nil)
  (auto-complete status "installed" recipe
 		(:name auto-complete :website "https://github.com/auto-complete/auto-complete" :description "The most intelligent auto-completion extension." :type github :pkgname "auto-complete/auto-complete" :depends
 		       (popup fuzzy)
