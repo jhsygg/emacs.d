@@ -1,1 +1,1 @@
-;; org-persist.el - jhsygg at <2015-06-26 五 23:06>
+;; org-persist.el - jhsygg at <2015-06-28 日 07:54>
