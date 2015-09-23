@@ -19,7 +19,6 @@
             (imenu-add-menubar-index)
             (define-key LaTeX-mode-map (kbd "TAB") 'TeX-complete-symbol)))
 
-
 (setq TeX-view-program-list
       '(("Okular" "okular --unique %o")
         ("Evince" "evince %o")
@@ -165,7 +164,7 @@
 (add-to-list 'org-latex-classes
              ;; beamer class, for presentations
              '("beamer"
-               "\\documentclass[professionalfont]{beamer}
+               "\\documentclass[professionalfonts]{beamer}
 \\usepackage[utf8]{ctex,inputenc}
 \\usetheme{Warsaw}
 \\usepackage{wrapfig}
@@ -178,6 +177,7 @@
 \\usepackage{polyglossia}
 \\usepackage{verbatim}
 \\usepackage{listings}
+\\subject{beamersubject}
                  [NO-DEFAULT-PACKAGES]
                  [EXTRA]"
                ("\\section{%s}" . "\\section*{%s}")
