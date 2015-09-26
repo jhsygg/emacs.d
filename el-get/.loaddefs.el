@@ -63,8 +63,8 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 
 ;;;***
 
-;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (21867 43397
-;;;;;;  982841 141000))
+;;;### (autoloads nil "el-get/el-get" "el-get/el-get.el" (22022 38399
+;;;;;;  301856 753000))
 ;;; Generated autoloads from el-get/el-get.el
 
 (autoload 'el-get-version "el-get/el-get" "\
@@ -213,8 +213,27 @@ required.
 
 ;;;***
 
+;;;### (autoloads nil "el-get/el-get-check" "el-get/el-get-check.el"
+;;;;;;  (22022 38399 299856 750000))
+;;; Generated autoloads from el-get/el-get-check.el
+
+(autoload 'el-get-check-recipe "el-get/el-get-check" "\
+Check the format of the recipe.
+Please run this command before sending a pull request.
+Usage: M-x el-get-check-recipe RET
+
+You can run this function from checker script like this:
+    test/check-recipe.el PATH/TO/RECIPE.rcp
+
+When used as a lisp function, FILE-OR-BUFFER must be a buffer
+object or a file path.
+
+\(fn FILE-OR-BUFFER)" t nil)
+
+;;;***
+
 ;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
-;;;;;;  (21867 43397 981841 139000))
+;;;;;;  (22022 38399 300856 752000))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
@@ -283,7 +302,7 @@ Turning on Graphviz Dot mode calls the value of the variable
 ;;;***
 
 ;;;### (autoloads nil "yasnippet/yasnippet" "yasnippet/yasnippet.el"
-;;;;;;  (21867 59561 895017 942000))
+;;;;;;  (22022 38403 854864 495000))
 ;;; Generated autoloads from yasnippet/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet/yasnippet" "\
@@ -334,7 +353,7 @@ See `yas-minor-mode' for more information on Yas minor mode.
 ;;;;;;  "math-symbol-lists/math-symbol-lists.el" "popup/popup.el"
 ;;;;;;  "slime-loads/slime-loads.el" "yasnippet-config/yasnippet-config.el"
 ;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el"
-;;;;;;  "yasnippets/yasnippets.el") (21903 19177 753133 982000))
+;;;;;;  "yasnippets/yasnippets.el") (22022 38404 574536 217000))
 
 ;;;***
 
