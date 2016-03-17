@@ -46,7 +46,7 @@
 		    (:name math-symbol-lists :description "Lists of Unicode mathematical symbols and latex commands" :website "https://github.com/vspinu/math-symbol-lists" :type github :depends nil :pkgname "vspinu/math-symbol-lists"))
  (mmm-mode status "required" recipe nil)
  (popup status "installed" recipe
-	(:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :pkgname "auto-complete/popup-el"))
+	(:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :depends cl-lib :pkgname "auto-complete/popup-el"))
  (slime status "required" recipe nil)
  (slime-loads status "installed" recipe
 	      (:name slime-loads :auto-generated t :type emacswiki :description "this is slime-loads-GNU.el --- stub to indirect slime/swank configs on GNU" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/slime-loads.el"))
