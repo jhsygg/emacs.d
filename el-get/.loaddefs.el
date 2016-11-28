@@ -15,8 +15,377 @@
 
 ;;;***
 
+;;;### (autoloads nil "ac-slime/ac-slime" "ac-slime/ac-slime.el"
+;;;;;;  (22337 38128 704699 396000))
+;;; Generated autoloads from ac-slime/ac-slime.el
+
+(defface ac-slime-menu-face '((t (:inherit ac-candidate-face))) "\
+Face for slime candidate menu." :group (quote auto-complete))
+
+(defface ac-slime-selection-face '((t (:inherit ac-selection-face))) "\
+Face for the slime selected candidate." :group (quote auto-complete))
+
+(defvar ac-source-slime-fuzzy '((init . ac-slime-init) (candidates . ac-source-slime-fuzzy-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (match lambda (prefix candidates) candidates) (document . ac-slime-documentation)) "\
+Source for fuzzy slime completion.")
+
+(defvar ac-source-slime-simple '((init . ac-slime-init) (candidates . ac-source-slime-simple-candidates) (candidate-face . ac-slime-menu-face) (selection-face . ac-slime-selection-face) (prefix . slime-symbol-start-pos) (symbol . "l") (document . ac-slime-documentation) (match . ac-source-slime-case-correcting-completions)) "\
+Source for slime completion.")
+
+(autoload 'set-up-slime-ac "ac-slime/ac-slime" "\
+Add an optionally FUZZY slime completion source to `ac-sources'.
+
+\(fn &optional FUZZY)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/bib-cite" "auctex/bib-cite.el" (22583
+;;;;;;  39584 99271 400000))
+;;; Generated autoloads from auctex/bib-cite.el
+
+(autoload 'bib-cite-minor-mode "auctex/bib-cite" "\
+Toggle bib-cite mode.
+When bib-cite mode is enabled, citations, labels and refs are highlighted
+when the mouse is over them.  Clicking on these highlights with [mouse-2]
+runs bib-find, and [mouse-3] runs bib-display.
+
+\(fn ARG)" t nil)
+
+(autoload 'turn-on-bib-cite "auctex/bib-cite" "\
+Unconditionally turn on Bib Cite mode.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/context" "auctex/context.el" (22511
+;;;;;;  14570 734899 239000))
+;;; Generated autoloads from auctex/context.el
+
+(defalias 'ConTeXt-mode 'context-mode)
+
+(autoload 'context-mode "auctex/context" "\
+Major mode in AUCTeX for editing ConTeXt files.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of ConTeXt-mode-hook.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/context-en" "auctex/context-en.el"
+;;;;;;  (22337 38400 764820 990000))
+;;; Generated autoloads from auctex/context-en.el
+
+(autoload 'context-en-mode "auctex/context-en" "\
+Major mode for editing files for ConTeXt using its english interface.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of TeX-mode-hook, and then the value
+of context-mode-hook.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/context-nl" "auctex/context-nl.el"
+;;;;;;  (22337 38400 764820 990000))
+;;; Generated autoloads from auctex/context-nl.el
+
+(autoload 'context-nl-mode "auctex/context-nl" "\
+Major mode for editing files for ConTeXt using its dutch interface.
+
+Special commands:
+\\{ConTeXt-mode-map}
+
+Entering `context-mode' calls the value of `text-mode-hook',
+then the value of TeX-mode-hook, and then the value
+of context-mode-hook.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/font-latex" "auctex/font-latex.el"
+;;;;;;  (22583 39584 100271 403000))
+;;; Generated autoloads from auctex/font-latex.el
+
+(autoload 'font-latex-setup "auctex/font-latex" "\
+Setup this buffer for LaTeX font-lock.  Usually called from a hook.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/latex" "auctex/latex.el" (22583 39584
+;;;;;;  102271 410000))
+;;; Generated autoloads from auctex/latex.el
+
+(autoload 'BibTeX-auto-store "auctex/latex" "\
+This function should be called from `bibtex-mode-hook'.
+It will setup BibTeX to store keys in an auto file.
+
+\(fn)" nil nil)
+
+(add-to-list 'auto-mode-alist '("\\.drv\\'" . latex-mode))
+
+(add-to-list 'auto-mode-alist '("\\.hva\\'" . latex-mode))
+
+(autoload 'TeX-latex-mode "auctex/latex" "\
+Major mode in AUCTeX for editing LaTeX files.
+See info under AUCTeX for full documentation.
+
+Special commands:
+\\{LaTeX-mode-map}
+
+Entering LaTeX mode calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `LaTeX-mode-hook'.
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.dtx\\'" . doctex-mode))
+
+(autoload 'docTeX-mode "auctex/latex" "\
+Major mode in AUCTeX for editing .dtx files derived from `LaTeX-mode'.
+Runs `LaTeX-mode', sets a few variables and
+runs the hooks in `docTeX-mode-hook'.
+
+\(fn)" t nil)
+
+(defalias 'TeX-doctex-mode 'docTeX-mode)
+
+;;;***
+
+;;;### (autoloads nil "auctex/multi-prompt" "auctex/multi-prompt.el"
+;;;;;;  (22583 39584 103271 413000))
+;;; Generated autoloads from auctex/multi-prompt.el
+
+(autoload 'multi-prompt "auctex/multi-prompt" "\
+Completing prompt for a list of strings.  
+The first argument SEPARATOR should be the string (of length 1) to
+separate the elements in the list.  The second argument UNIQUE should
+be non-nil, if each element must be unique.  The remaining elements
+are the arguments to `completing-read'.  See that.
+
+\(fn SEPARATOR UNIQUE PROMPT TABLE &optional MP-PREDICATE REQUIRE-MATCH INITIAL HISTORY)" nil nil)
+
+(autoload 'multi-prompt-key-value "auctex/multi-prompt" "\
+Read multiple strings, with completion and key=value support.
+PROMPT is a string to prompt with, usually ending with a colon
+and a space.  TABLE is an alist.  The car of each element should
+be a string representing a key and the optional cdr should be a
+list with strings to be used as values for the key.
+
+See the documentation for `completing-read' for details on the
+other arguments: PREDICATE, REQUIRE-MATCH, INITIAL-INPUT, HIST,
+DEF, and INHERIT-INPUT-METHOD.
+
+The return value is the string as entered in the minibuffer.
+
+\(fn PROMPT TABLE &optional PREDICATE REQUIRE-MATCH INITIAL-INPUT HIST DEF INHERIT-INPUT-METHOD)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/plain-tex" "auctex/plain-tex.el" (22337
+;;;;;;  38400 785820 999000))
+;;; Generated autoloads from auctex/plain-tex.el
+
+(autoload 'TeX-plain-tex-mode "auctex/plain-tex" "\
+Major mode in AUCTeX for editing plain TeX files.
+See info under AUCTeX for documentation.
+
+Special commands:
+\\{plain-TeX-mode-map}
+
+Entering `plain-tex-mode' calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of plain-TeX-mode-hook.
+
+\(fn)" t nil)
+
+(autoload 'ams-tex-mode "auctex/plain-tex" "\
+Major mode in AUCTeX for editing AmS-TeX files.
+See info under AUCTeX for documentation.
+
+Special commands:
+\\{AmSTeX-mode-map}
+
+Entering AmS-tex-mode calls the value of `text-mode-hook',
+then the value of `TeX-mode-hook', and then the value
+of `AmS-TeX-mode-hook'.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/preview" "auctex/preview.el" (22587
+;;;;;;  34599 376867 270000))
+;;; Generated autoloads from auctex/preview.el
+
+(autoload 'preview-install-styles "auctex/preview" "\
+Installs the TeX style files into a permanent location.
+This must be in the TeX search path.  If FORCE-OVERWRITE is greater
+than 1, files will get overwritten without query, if it is less
+than 1 or nil, the operation will fail.  The default of 1 for interactive
+use will query.
+
+Similarly FORCE-SAVE can be used for saving
+`preview-TeX-style-dir' to record the fact that the uninstalled
+files are no longer needed in the search path.
+
+\(fn DIR &optional FORCE-OVERWRITE FORCE-SAVE)" t nil)
+
+(autoload 'LaTeX-preview-setup "auctex/preview" "\
+Hook function for embedding the preview package into AUCTeX.
+This is called by `LaTeX-mode-hook' and changes AUCTeX variables
+to add the preview functionality.
+
+\(fn)" nil nil)
+
+(autoload 'preview-report-bug "auctex/preview" "\
+Report a bug in the preview-latex package.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/tex-bar" "auctex/tex-bar.el" (22337
+;;;;;;  38400 811821 11000))
+;;; Generated autoloads from auctex/tex-bar.el
+
+(autoload 'TeX-install-toolbar "auctex/tex-bar" "\
+Install toolbar buttons for TeX mode.
+
+\(fn)" t nil)
+
+(autoload 'LaTeX-install-toolbar "auctex/tex-bar" "\
+Install toolbar buttons for LaTeX mode.
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (22462
+;;;;;;  21758 236091 431000))
+;;; Generated autoloads from auctex/tex-fold.el
+ (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
+
+(defalias 'tex-fold-mode 'TeX-fold-mode)
+
+;;;***
+
+;;;### (autoloads nil "auctex/tex-font" "auctex/tex-font.el" (22337
+;;;;;;  38400 812821 11000))
+;;; Generated autoloads from auctex/tex-font.el
+
+(autoload 'tex-font-setup "auctex/tex-font" "\
+Setup font lock support for TeX.
+
+\(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "auctex/tex-info" "auctex/tex-info.el" (22337
+;;;;;;  38400 812821 11000))
+;;; Generated autoloads from auctex/tex-info.el
+
+(defalias 'Texinfo-mode 'texinfo-mode)
+
+(autoload 'TeX-texinfo-mode "auctex/tex-info" "\
+Major mode in AUCTeX for editing Texinfo files.
+
+Special commands:
+\\{Texinfo-mode-map}
+
+Entering Texinfo mode calls the value of `text-mode-hook'  and then the
+value of `Texinfo-mode-hook'.
+
+\(fn)" t nil)
+
+;;;***
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
 ;;;### (autoloads nil "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (22250 45382 918268 884000))
+;;;;;;  (22583 39593 945304 664000))
 ;;; Generated autoloads from auto-complete/auto-complete.el
 
 (autoload 'auto-complete "auto-complete/auto-complete" "\
@@ -30,8 +399,9 @@ AutoComplete mode
 \(fn &optional ARG)" t nil)
 
 (defvar global-auto-complete-mode nil "\
-Non-nil if Global-Auto-Complete mode is enabled.
-See the command `global-auto-complete-mode' for a description of this minor mode.
+Non-nil if Global Auto-Complete mode is enabled.
+See the `global-auto-complete-mode' command
+for a description of this minor mode.
 Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `global-auto-complete-mode'.")
@@ -40,7 +410,7 @@ or call the function `global-auto-complete-mode'.")
 
 (autoload 'global-auto-complete-mode "auto-complete/auto-complete" "\
 Toggle Auto-Complete mode in all buffers.
-With prefix ARG, enable Global-Auto-Complete mode if ARG is positive;
+With prefix ARG, enable Global Auto-Complete mode if ARG is positive;
 otherwise, disable it.  If called from Lisp, enable the mode if
 ARG is omitted or nil.
 
@@ -53,7 +423,7 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 ;;;***
 
 ;;;### (autoloads nil "auto-complete/auto-complete-config" "auto-complete/auto-complete-config.el"
-;;;;;;  (21867 43579 978019 87000))
+;;;;;;  (22407 37353 730649 133000))
 ;;; Generated autoloads from auto-complete/auto-complete-config.el
 
 (autoload 'ac-config-default "auto-complete/auto-complete-config" "\
@@ -233,13 +603,238 @@ object or a file path.
 ;;;***
 
 ;;;### (autoloads nil "el-get/el-get-list-packages" "el-get/el-get-list-packages.el"
-;;;;;;  (22022 38399 300856 752000))
+;;;;;;  (22336 30058 276553 325000))
 ;;; Generated autoloads from el-get/el-get-list-packages.el
 
 (autoload 'el-get-list-packages "el-get/el-get-list-packages" "\
 Display a list of packages.
 
 \(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "facebook/facebook" "facebook/facebook.el"
+;;;;;;  (22336 30037 320502 341000))
+;;; Generated autoloads from facebook/facebook.el
+
+(autoload 'facebook-login "facebook/facebook" "\
+
+
+\(fn)" t nil)
+
+(autoload 'facebook-users-set-status "facebook/facebook" "\
+
+
+\(fn STATUS_MESSAGE)" t nil)
+
+(autoload 'facebook-status "facebook/facebook" "\
+
+
+\(fn STATUS_MESSAGE)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "go-mode/go-guru" "go-mode/go-guru.el" (22583
+;;;;;;  39880 151269 715000))
+;;; Generated autoloads from go-mode/go-guru.el
+
+(autoload 'go-guru-set-scope "go-mode/go-guru" "\
+Set the scope for the Go guru, prompting the user to edit the previous scope.
+
+The scope restricts analysis to the specified packages.
+Its value is a comma-separated list of patterns of these forms:
+	golang.org/x/tools/cmd/guru     # a single package
+	golang.org/x/tools/...          # all packages beneath dir
+	...                             # the entire workspace.
+
+A pattern preceded by '-' is negative, so the scope
+	encoding/...,-encoding/xml
+matches all encoding packages except encoding/xml.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-callees "go-mode/go-guru" "\
+Show possible callees of the function call at the current point.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-callers "go-mode/go-guru" "\
+Show the set of callers of the function containing the current point.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-callstack "go-mode/go-guru" "\
+Show an arbitrary path from a root of the call graph to the
+function containing the current point.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-definition "go-mode/go-guru" "\
+Jump to the definition of the selected identifier.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-describe "go-mode/go-guru" "\
+Describe the selected syntax, its kind, type and methods.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-pointsto "go-mode/go-guru" "\
+Show what the selected expression points to.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-implements "go-mode/go-guru" "\
+Describe the 'implements' relation for types in the package
+containing the current point.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-freevars "go-mode/go-guru" "\
+Enumerate the free variables of the current selection.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-peers "go-mode/go-guru" "\
+Enumerate the set of possible corresponding sends/receives for
+this channel receive/send operation.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-referrers "go-mode/go-guru" "\
+Enumerate all references to the object denoted by the selected
+identifier.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-whicherrs "go-mode/go-guru" "\
+Show globals, constants and types to which the selected
+expression (of type 'error') may refer.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-unhighlight-identifiers "go-mode/go-guru" "\
+Remove highlights from previously highlighted identifier.
+
+\(fn)" nil nil)
+
+(autoload 'go-guru-hl-identifier "go-mode/go-guru" "\
+Highlight all instances of the identifier under point. Removes
+highlights from previously highlighted identifier.
+
+\(fn)" t nil)
+
+(autoload 'go-guru-hl-identifier-mode "go-mode/go-guru" "\
+Highlight instances of the identifier at point after a short
+timeout.
+
+\(fn &optional ARG)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "go-mode/go-mode" "go-mode/go-mode.el" (22583
+;;;;;;  39880 152269 718000))
+;;; Generated autoloads from go-mode/go-mode.el
+
+(autoload 'go-mode "go-mode/go-mode" "\
+Major mode for editing Go source text.
+
+This mode provides (not just) basic editing capabilities for
+working with Go code. It offers almost complete syntax
+highlighting, indentation that is almost identical to gofmt and
+proper parsing of the buffer content to allow features such as
+navigation by function, manipulation of comments or detection of
+strings.
+
+In addition to these core features, it offers various features to
+help with writing Go code. You can directly run buffer content
+through gofmt, read godoc documentation from within Emacs, modify
+and clean up the list of package imports or interact with the
+Playground (uploading and downloading pastes).
+
+The following extra functions are defined:
+
+- `gofmt'
+- `godoc' and `godoc-at-point'
+- `go-import-add'
+- `go-remove-unused-imports'
+- `go-goto-arguments'
+- `go-goto-docstring'
+- `go-goto-function'
+- `go-goto-function-name'
+- `go-goto-imports'
+- `go-goto-return-values'
+- `go-goto-method-receiver'
+- `go-play-buffer' and `go-play-region'
+- `go-download-play'
+- `godef-describe' and `godef-jump'
+- `go-coverage'
+- `go-set-project'
+- `go-reset-gopath'
+
+If you want to automatically run `gofmt' before saving a file,
+add the following hook to your emacs configuration:
+
+\(add-hook 'before-save-hook #'gofmt-before-save)
+
+If you want to use `godef-jump' instead of etags (or similar),
+consider binding godef-jump to `M-.', which is the default key
+for `find-tag':
+
+\(add-hook 'go-mode-hook (lambda ()
+                          (local-set-key (kbd \"M-.\") #'godef-jump)))
+
+Please note that godef is an external dependency. You can install
+it with
+
+go get github.com/rogpeppe/godef
+
+
+If you're looking for even more integration with Go, namely
+on-the-fly syntax checking, auto-completion and snippets, it is
+recommended that you look at flycheck
+\(see URL `https://github.com/flycheck/flycheck') or flymake in combination
+with goflymake (see URL `https://github.com/dougm/goflymake'), gocode
+\(see URL `https://github.com/nsf/gocode'), go-eldoc
+\(see URL `github.com/syohex/emacs-go-eldoc') and yasnippet-go
+\(see URL `https://github.com/dominikh/yasnippet-go')
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist (cons "\\.go\\'" 'go-mode))
+
+(autoload 'gofmt-before-save "go-mode/go-mode" "\
+Add this to .emacs to run gofmt on the current buffer when saving:
+ (add-hook 'before-save-hook 'gofmt-before-save).
+
+Note that this will cause go-mode to get loaded the first time
+you save any file, kind of defeating the point of autoloading.
+
+\(fn)" t nil)
+
+(autoload 'godoc "go-mode/go-mode" "\
+Show Go documentation for QUERY, much like M-x man.
+
+\(fn QUERY)" t nil)
+
+(autoload 'go-download-play "go-mode/go-mode" "\
+Download a paste from the playground and insert it in a Go buffer.
+Tries to look for a URL at point.
+
+\(fn URL)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "go-mode/go-rename" "go-mode/go-rename.el"
+;;;;;;  (22583 39880 152269 718000))
+;;; Generated autoloads from go-mode/go-rename.el
+
+(autoload 'go-rename "go-mode/go-rename" "\
+Rename the entity denoted by the identifier at point, using
+the `gorename' tool. With FORCE, call `gorename' with the
+`-force' flag.
+
+\(fn NEW-NAME &optional FORCE)" t nil)
 
 ;;;***
 
@@ -302,7 +897,7 @@ Turning on Graphviz Dot mode calls the value of the variable
 ;;;***
 
 ;;;### (autoloads nil "yasnippet/yasnippet" "yasnippet/yasnippet.el"
-;;;;;;  (22250 45391 858274 937000))
+;;;;;;  (22336 30058 771554 530000))
 ;;; Generated autoloads from yasnippet/yasnippet.el
 
 (autoload 'yas-minor-mode "yasnippet/yasnippet" "\
@@ -342,18 +937,15 @@ See `yas-minor-mode' for more information on Yas minor mode.
 
 \(fn &optional ARG)" t nil)
 
+(autoload 'snippet-mode "yasnippet/yasnippet" "\
+A mode for editing yasnippets
+
+\(fn)" t nil)
+
 ;;;***
 
-;;;### (autoloads nil nil ("auto-complete-emacs-lisp/auto-complete-emacs-lisp.el"
-;;;;;;  "auto-complete/auto-complete-pkg.el" "el-get/el-get-autoloading.el"
-;;;;;;  "el-get/el-get-build.el" "el-get/el-get-byte-compile.el"
-;;;;;;  "el-get/el-get-core.el" "el-get/el-get-custom.el" "el-get/el-get-dependencies.el"
-;;;;;;  "el-get/el-get-install.el" "el-get/el-get-methods.el" "el-get/el-get-notify.el"
-;;;;;;  "el-get/el-get-recipes.el" "el-get/el-get-status.el" "fuzzy/fuzzy.el"
-;;;;;;  "math-symbol-lists/math-symbol-lists.el" "math-symbol-lists/msl-build.el"
-;;;;;;  "popup/popup.el" "slime-loads/slime-loads.el" "yasnippet-config/yasnippet-config.el"
-;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el"
-;;;;;;  "yasnippets/yasnippets.el") (22250 45394 696193 752000))
+;;;### (autoloads nil nil ("auto-complete/auto-complete-pkg.el")
+;;;;;;  (21867 43579 978019 87000))
 
 ;;;***
 
