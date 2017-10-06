@@ -1,4 +1,4 @@
--4911
+-5118
 50
 Emacs tutorial.  See end for copying conditions.
 
@@ -218,7 +218,7 @@ For instance, C-u 8 C-f moves forward eight characters.
    to a line near this one with just one command.
 
 Most commands use the numeric argument as a repeat count, but some
-commands use it in some other way.  Several commands (but none of
+COMMANDS USE IT in some other way.  Several commands (but none of
 those you have learned so far) use it as a flag--the presence of a
 prefix argument, regardless of its value, makes the command do
 something different.

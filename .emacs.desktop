@@ -2,78 +2,18 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Nov 27 21:18:01 2016
+;; Created Tue Sep 26 15:23:06 2017
 ;; Desktop file format version 208
-;; Emacs version 25.1.1
+;; Emacs version 25.3.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (22586 56585 723854 849000) (desktop . "208") "jdp@jhsygg" nil nil ((((font-backend xft x) (font . "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 16) (scroll-bar-height . 0) (alpha 85 50) (fullscreen . fullboth) (hight . 70) (life . 30) (display-type . color) (background-mode . dark) (cursor-color . "green") (visibility . t) (sticky) (frameset--id . "3E1A-AE4D-FFF7-270D") (frameset--mini t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (height . 41) (width . 148) (left . 0) (top . 0)) ((min-height . 8) (min-width . 10) (min-height-ignore . 8) (min-width-ignore . 9) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 144) (min-pixel-width . 90) (min-pixel-height-ignore . 144) (min-pixel-width-ignore . 81) (min-pixel-height-safe . 36) (min-pixel-width-safe . 18)) vc (pixel-width . 1366) (pixel-height . 722) (total-width . 151) (total-height . 40) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1366) (pixel-height . 362) (total-width . 151) (total-height . 20) (normal-height . 0.5) (normal-width . 1.0) (buffer "ppt.tex" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))) (leaf (last . t) (pixel-width . 1366) (pixel-height . 360) (total-width . 151) (total-height . 20) (normal-height . 0.5) (normal-width . 1.0) (buffer "*~/myworks/ppt output*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 2 t nil 0 t) (vscroll . 0) (dedicated) (point . 38807) (start . 38382)))) (((font-backend xft x) (font . "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 9) (right-fringe . 9) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 1) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (visibility) (frameset--id . "7943-E8AF-3CA3-97C6") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (height . 48) (width . 130) (left . 20) (top . 30)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 54) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1188) (pixel-height . 846) (total-width . 132) (total-height . 47) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected) (hscroll . 0) (fringes 9 9 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (22986 90 599088 548000) (desktop . "208") "jdp@jhsygg" nil nil ((((font-backend xft x) (font . "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha 85 50) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "7346-B9A7-266F-7FA8") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":0") (explicit-name) (visibility . t) (height . 42) (width . 150) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 4) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 72) (min-pixel-width-ignore . 36) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1366) (pixel-height . 750) (total-width . 151) (total-height . 41) (normal-height . 1.0) (normal-width . 1.0) (buffer "*scratch*" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins nil) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 1) (start . 1))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("gtd.org.gpg" "gnupg" "slime" "cua" "reme" "ql" "org" "jdp" "calend" "kill-ring(defun mirror? (s)\n	   (let ((len (length s)))\n	     (and (evenp len)\n		  (do ((forward 0 (+ forward 1))\n		       (back (- len 1) (- back 1)))\n		      ((or (> forward back)\n			   (not (eql (elt s forward)\n				     (elt s back))))\n		       (> forward back))))))" "ido" "desk" "matlab" "evince" "xetex" "tex"))
+(setq search-ring '("sdcv" "ox-freemind" "calendar" "calen" "ca" "w3m" "gtd" "zh_CN" "xxx" "ecb" "git" "winner" "CPS" "C-SPC" "C-" "gtd.org.gpg"))
 (setq regexp-search-ring nil)
-(setq register-alist '((48 . "  ;;;;\n  ;;;;\n  ;;;;\n  ;;;;\n  ;;;;\n  ;;  \n  ;;  ")))
-(setq file-name-history '("~/myworks/ppt.tex" "~/myworks/" "~/myworks/ppt.org" "~/myworks/ppt.tex" "~/myworks/ppt.org" "~/myworks/" "~/code/lisp/mycd.lisp" "~/code/lisp/t1.lisp" "~/code/lisp/" "~/code/lisp/quicklisp.lisp" "~/org/gtd.org.gpg" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/el-get" "~/.emacs.d/" "~/.emacs" "~/org/GTD‘Ñ§‘Ï°.org" "~/.emacs.d/plugins/" "~/.emacs.d/bookmarks" "~/org/finished.org" "~/.emacs.d" "~/mystudy/‘»á‘¼Æ‘Ñ§‘»ù‘´¡.org" "~/mystudy/"))
+(setq register-alist '((48 . ";\n;\n;\n;\n;\n;\n;")))
+(setq file-name-history '("~/org/gtd.org.gpg" "~/myworks/\221\320—«Ö\301\372\221\311\372\221\262\372\221\317œô²±\270‚ð\324\354\221\317\356\221”©©\221\277—«¹\320‘§¢\320œôªñ\321‘§¢\276\277\221\261\250\221\270\346.tex" "~/myworks/" "~/myworks/\221\320—«Ö\301\372\221\311\372\221\262\372\221\317œô²±\270‚ð\324\354\221\317\356\221”©©\221\277—«¹\320‘§¢\320œôªñ\321‘§¢\276\277\221\261\250\221\270\346.org" "~/code/lisp/test.lisp" "~/org/gtd" "~/.emacs.d/el-get/.loaddefs.el" "~/code/lisp" "~/code/lisp/t1.lisp" "~/code/lisp/" "~/Downloads/font_zh-cn.txt" "~/test-project/test-project.asd" "~/test-project/" "~/test-project/test-project.lisp" "~/vpngate-with-proxy/config.ini" "~/org/finished.org" "~/org/" "~/org/gtd.org.gpg_archive" "~/myworks/\221\312œôªñ\276\355\221œô©§\221œô§ð.tex" "~/myworks/kkg.tex" "~/myworks" "~/" "~/org" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266\310.org" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266\310.tex" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266œô¢ñ\266\271\221\274\324.tex" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266\310.pdf" "~/org/\221\326œô¡Ñ\266\310.pdf" "~/org/\221\326œô¡Ñ\266\310.org" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266œô¢ñ\243\250\221\266\271\221\274œôªñ\243\251.org" "~/myworks/\221\271œô­Ñ\323œô®ñ\315\352\221\311œô¡Ñ\274\354\221\320œô±Ñ\260\262\221œô£«\221\313\370\221\326œô¡Ñ\266œô¢ñ\265‚ðœô¦È\221œô¬Ê.org" "~/myworks/\221\271œô­Ñ\323œô®ñ\315\352\221\311œô¡Ñ\274\354\221\320œô±Ñ\260\262\221œô£«\221\313\370\221\326œô¡Ñ\266œô¢ñ\265‚ðœô¦È\221œô¬Ê.tex" "~/myworks/2014\221\314œô­Ñ\274\354.tex" "~/mywork" "~/org/\221\277‘¦¡\263œô¥Ñ\261\355.org" "" "~/org/\221\262œô¡Ñ\316\361\221\271œô°±\300\355\221\326œô¡Ñ\266œô¢ñ\243\250\221\266\271\221\274œôªñ\243\251.tex" "~/org/simp1.dot" "~/org/simp3.png" "~/org/simp3.dot" "~/org/simp1.png" "~/org/SigmoundFreud.org" "~/org/\221\276\253\221\311\361\221\267œô¬±\316 \221\302\333.org" "~/org/\221\270\245\221\302\345\221\322\301\221\265\302.org" "~/org/\221\270\245\221\302\345\221\322\301\221\265\302" "~/Downloads/texlive-zh-cn.tex" "~/org/simp1" "~/myworks/\221\303\234\364\245\321\272\234\364\247\321\275 \221\311\221\264\320\270\221\206\334\221\273\244\221\274\354\221\320\234\364\261\321\263\221\247\242\260\374\221\267\275\221\260\270.org" "~/code/golang/hello world1.go" "~/.emacs" "~/myworks/2014\221\314\234\364\255\321\274\354.ics" "~/myworks/2014\221\314\234\364\255\321\274\354.org" "~/org/GTD\221\234\364\251\247\221\234\364\247\360.org" "~/org/journal.org.gpg" "~/org/Robinsom Crusoe.org" "~/org/Robinsom Crusoe.tex" "~/.emacs.d/plugins/chinese-calendar.el" "~/.emacs.d/plugins/c-calendar.el" "~/.emacs.d/plugins/" "~/.emacs.d/el-get/" "~/.emacs.d/plugins" "~/.emacs.d/bookmarks" "~/org/inbox.org" "~/org/task.org" "~/Downloads/Tunnello_VPN_Unblock_websites_and_secure_your_browsing (2).crx" "~/Downloads/Tunnello_VPN_Unblock_websites_and_secure_your_browsing (1).crx" "~/.emacs.d/plugins/init-w3m.el" "~/myworks/2014\221\314\234\364\255\321\274\354.tex" "~/.emacs.d/el-get/ac-slime/ac-slime.el" "~/.emacs.d/plugins/org-latex.el" "~/.emacs.d/plugins/jdp-latex.el" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.tex" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.org" "~/myworks/\221\314\234\364\255\321\326\234\364\254\261\311\221\264\320\270\221\260\262\221\234\364\243\253\221\267\250.org" "~/myworks/kkg.org" "~/.bashrc" "~/Downloads/Tunnello_VPN_Unblock_websites_and_secure_your_browsing.crx" "~/org/\221\221\247\263\221\272\234\364\252\261\265\347\221\301\246\221\234\364\247\365\221\234\364\246\323\221\271\227\253\300\325\317.org"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 208
-  "/home/jdp/myworks/ppt.tex"
-  "ppt.tex"
-  'latex-mode
-  '(auto-fill-mode auto-complete-mode yas-minor-mode reftex-mode linum-mode TeX-PDF-mode)
-  1
-  '(nil nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (TeX-master . t))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "myworks"
-  'dired-mode
-  '(yas-minor-mode linum-mode TeX-PDF-mode)
-  2401
-  '(nil nil)
-  t
-  '("/home/jdp/myworks/")
-  nil
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/jdp/myworks/ppt.org"
-  "ppt.org"
-  'org-mode
-  '(yas-minor-mode linum-mode org-beamer-mode TeX-PDF-mode)
-  1756
-  '(1756 nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (fill-column . 70) (truncate-lines))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "code"
-  'dired-mode
-  '(yas-minor-mode linum-mode TeX-PDF-mode)
-  259
-  '(nil nil)
-  t
-  '("/home/jdp/code/")
-  nil
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  nil
-  "lisp"
-  'dired-mode
-  '(yas-minor-mode linum-mode TeX-PDF-mode)
-  493
-  '(nil nil)
-  t
-  '("/home/jdp/code/lisp/")
-  nil
-  '((mark-ring nil)))
-

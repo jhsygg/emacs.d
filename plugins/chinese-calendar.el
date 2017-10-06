@@ -35,7 +35,7 @@
 				 (holiday-lunar 12 30 "除夕，年三十" 0)
 				 ))
 
-(add-to-list 'load-path "~/.emacs.d/el-get/cal-china-x")
+;; (add-to-list 'load-path "~/.emacs.d/el-get/cal-china-x")
 (require 'cal-china-x)
 
 (setq calendar-holidays holiday-general-holidays)

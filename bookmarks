@@ -9,9 +9,9 @@
  (position . 104965))
 ("org-refile-last-stored"
  (filename . "~/org/finished.org")
- (front-context-string . "** TODO 兴盛源周经营生产")
- (rear-context-string . "9:56]\n   :END: \n")
- (position . 3884))
+ (front-context-string)
+ (rear-context-string . "* 计量安装\n*** 搭火接电\n")
+ (position . 4047))
 =======<<<<<<<HEAD(front-context-string . "** DONE 石矿工艺计量标定")
 (rear-context-string . "销、存”管理流程与金蝶接口问题\n")
 (position . 2366)

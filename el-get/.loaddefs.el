@@ -57,8 +57,8 @@ Unconditionally turn on Bib Cite mode.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/context" "auctex/context.el" (22511
-;;;;;;  14570 734899 239000))
+;;;### (autoloads nil "auctex/context" "auctex/context.el" (22955
+;;;;;;  51180 872476 140000))
 ;;; Generated autoloads from auctex/context.el
 
 (defalias 'ConTeXt-mode 'context-mode)
@@ -114,7 +114,7 @@ of context-mode-hook.
 ;;;***
 
 ;;;### (autoloads nil "auctex/font-latex" "auctex/font-latex.el"
-;;;;;;  (22583 39584 100271 403000))
+;;;;;;  (22955 51180 874476 146000))
 ;;; Generated autoloads from auctex/font-latex.el
 
 (autoload 'font-latex-setup "auctex/font-latex" "\
@@ -124,8 +124,8 @@ Setup this buffer for LaTeX font-lock.  Usually called from a hook.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/latex" "auctex/latex.el" (22583 39584
-;;;;;;  102271 410000))
+;;;### (autoloads nil "auctex/latex" "auctex/latex.el" (22955 51180
+;;;;;;  875476 150000))
 ;;; Generated autoloads from auctex/latex.el
 
 (autoload 'BibTeX-auto-store "auctex/latex" "\
@@ -194,8 +194,8 @@ The return value is the string as entered in the minibuffer.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/plain-tex" "auctex/plain-tex.el" (22337
-;;;;;;  38400 785820 999000))
+;;;### (autoloads nil "auctex/plain-tex" "auctex/plain-tex.el" (22788
+;;;;;;  18154 387602 875000))
 ;;; Generated autoloads from auctex/plain-tex.el
 
 (autoload 'TeX-plain-tex-mode "auctex/plain-tex" "\
@@ -226,8 +226,8 @@ of `AmS-TeX-mode-hook'.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/preview" "auctex/preview.el" (22587
-;;;;;;  34599 376867 270000))
+;;;### (autoloads nil "auctex/preview" "auctex/preview.el" (22955
+;;;;;;  51187 197498 145000))
 ;;; Generated autoloads from auctex/preview.el
 
 (autoload 'preview-install-styles "auctex/preview" "\
@@ -273,8 +273,8 @@ Install toolbar buttons for LaTeX mode.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (22462
-;;;;;;  21758 236091 431000))
+;;;### (autoloads nil "auctex/tex-fold" "auctex/tex-fold.el" (22955
+;;;;;;  51180 879476 164000))
 ;;; Generated autoloads from auctex/tex-fold.el
  (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
 
@@ -293,8 +293,8 @@ Setup font lock support for TeX.
 
 ;;;***
 
-;;;### (autoloads nil "auctex/tex-info" "auctex/tex-info.el" (22337
-;;;;;;  38400 812821 11000))
+;;;### (autoloads nil "auctex/tex-info" "auctex/tex-info.el" (22955
+;;;;;;  51180 879476 164000))
 ;;; Generated autoloads from auctex/tex-info.el
 
 (defalias 'Texinfo-mode 'texinfo-mode)
@@ -383,9 +383,141 @@ Major mode in AUCTeX for editing Japanese LaTeX files.
 Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 \(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-plain-tex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese plain TeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-plain-tex-mode'.
+
+\(fn)" t nil)
+
+(autoload 'japanese-latex-mode "auctex/tex-jp" "\
+Major mode in AUCTeX for editing Japanese LaTeX files.
+Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
+
+\(fn)" t nil)
 
 ;;;### (autoloads nil "auto-complete/auto-complete" "auto-complete/auto-complete.el"
-;;;;;;  (22583 39593 945304 664000))
+;;;;;;  (22695 46899 235069 89000))
 ;;; Generated autoloads from auto-complete/auto-complete.el
 
 (autoload 'auto-complete "auto-complete/auto-complete" "\
@@ -430,6 +562,185 @@ See `auto-complete-mode' for more information on Auto-Complete mode.
 
 
 \(fn)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "cal-china-x/cal-china-x" "cal-china-x/cal-china-x.el"
+;;;;;;  (22726 41277 574719 689000))
+;;; Generated autoloads from cal-china-x/cal-china-x.el
+
+(autoload 'cal-china-x-birthday-from-chinese "cal-china-x/cal-china-x" "\
+Return birthday date this year in Gregorian form.
+
+LUNAR-MONTH and LUNAR-DAY are date number used in chinese lunar
+calendar.
+
+\(fn LUNAR-MONTH LUNAR-DAY)" t nil)
+
+(autoload 'holiday-lunar "cal-china-x/cal-china-x" "\
+Like `holiday-fixed', but with LUNAR-MONTH and LUNAR-DAY.
+
+When there are multiple days(like Run Yue or 闰月, e.g.,
+2006-08-30, which is 07-07 in lunar calendar, the chinese
+valentine's day), we use NUM to define which day(s) as
+holidays. The rules are:
+
+NUM = 0, only the earlier day.
+NUM = 1, only the later day.
+NUM with other values(default), all days(maybe one or two).
+
+emacs23 introduces a similar `holiday-chinese', a quick test
+shows that it does not recognize Run Yue at all.
+
+\(fn LUNAR-MONTH LUNAR-DAY STRING &optional NUM)" nil nil)
+
+(autoload 'holiday-solar-term "cal-china-x/cal-china-x" "\
+A holiday(STR) on SOLAR-TERM day.
+See `cal-china-x-solar-term-name' for a list of solar term names .
+
+\(fn SOLAR-TERM STR)" nil nil)
+
+;;;***
+
+;;;### (autoloads nil "clojure-mode/clojure-mode" "clojure-mode/clojure-mode.el"
+;;;;;;  (22963 22728 324164 493000))
+;;; Generated autoloads from clojure-mode/clojure-mode.el
+
+(autoload 'clojure-mode "clojure-mode/clojure-mode" "\
+Major mode for editing Clojure code.
+
+\\{clojure-mode-map}
+
+\(fn)" t nil)
+
+(autoload 'clojure-unwind "clojure-mode/clojure-mode" "\
+Unwind thread at point or above point by one level.
+Return nil if there are no more levels to unwind.
+
+\(fn)" t nil)
+
+(autoload 'clojure-unwind-all "clojure-mode/clojure-mode" "\
+Fully unwind thread at point or above point.
+
+\(fn)" t nil)
+
+(autoload 'clojure-thread "clojure-mode/clojure-mode" "\
+Thread by one more level an existing threading macro.
+
+\(fn)" t nil)
+
+(autoload 'clojure-thread-first-all "clojure-mode/clojure-mode" "\
+Fully thread the form at point using ->.
+
+When BUT-LAST is non-nil, the last expression is not threaded.
+Default value is `clojure-thread-all-but-last'.
+
+\(fn BUT-LAST)" t nil)
+
+(autoload 'clojure-thread-last-all "clojure-mode/clojure-mode" "\
+Fully thread the form at point using ->>.
+
+When BUT-LAST is non-nil, the last expression is not threaded.
+Default value is `clojure-thread-all-but-last'.
+
+\(fn BUT-LAST)" t nil)
+
+(autoload 'clojure-cycle-privacy "clojure-mode/clojure-mode" "\
+Make public the current private def, or vice-versa.
+See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-privacy
+
+\(fn)" t nil)
+
+(autoload 'clojure-convert-collection-to-list "clojure-mode/clojure-mode" "\
+Convert collection at (point) to list.
+
+\(fn)" t nil)
+
+(autoload 'clojure-convert-collection-to-quoted-list "clojure-mode/clojure-mode" "\
+Convert collection at (point) to quoted list.
+
+\(fn)" t nil)
+
+(autoload 'clojure-convert-collection-to-map "clojure-mode/clojure-mode" "\
+Convert collection at (point) to map.
+
+\(fn)" t nil)
+
+(autoload 'clojure-convert-collection-to-vector "clojure-mode/clojure-mode" "\
+Convert collection at (point) to vector.
+
+\(fn)" t nil)
+
+(autoload 'clojure-convert-collection-to-set "clojure-mode/clojure-mode" "\
+Convert collection at (point) to set.
+
+\(fn)" t nil)
+
+(autoload 'clojure-cycle-if "clojure-mode/clojure-mode" "\
+Change a surrounding if to if-not, or vice-versa.
+
+See: https://github.com/clojure-emacs/clj-refactor.el/wiki/cljr-cycle-if
+
+\(fn)" t nil)
+
+(autoload 'clojure-cycle-when "clojure-mode/clojure-mode" "\
+Change a surrounding when to when-not, or vice-versa.
+
+\(fn)" t nil)
+
+(autoload 'clojure-let-backward-slurp-sexp "clojure-mode/clojure-mode" "\
+Slurp the s-expression before the let form into the let form.
+With a numberic prefix argument slurp the previous N s-expression into the let form.
+
+\(fn &optional N)" t nil)
+
+(autoload 'clojure-let-forward-slurp-sexp "clojure-mode/clojure-mode" "\
+Slurp the next s-expression after the let form into the let form.
+With a numeric prefix argument slurp the next N s-expressions into the let form.
+
+\(fn &optional N)" t nil)
+
+(autoload 'clojure-introduce-let "clojure-mode/clojure-mode" "\
+Create a let form, binding the form at point.
+With a numeric prefix argument the let is introduced N lists up.
+
+\(fn &optional N)" t nil)
+
+(autoload 'clojure-move-to-let "clojure-mode/clojure-mode" "\
+Move the form at point to a binding in the nearest let.
+
+\(fn)" t nil)
+
+(autoload 'clojurescript-mode "clojure-mode/clojure-mode" "\
+Major mode for editing ClojureScript code.
+
+\\{clojurescript-mode-map}
+
+\(fn)" t nil)
+
+(autoload 'clojurec-mode "clojure-mode/clojure-mode" "\
+Major mode for editing ClojureC code.
+
+\\{clojurec-mode-map}
+
+\(fn)" t nil)
+
+(autoload 'clojurex-mode "clojure-mode/clojure-mode" "\
+Major mode for editing ClojureX code.
+
+\\{clojurex-mode-map}
+
+\(fn)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.\\(clj\\|dtm\\|edn\\)\\'" . clojure-mode))
+
+(add-to-list 'auto-mode-alist '("\\.cljc\\'" . clojurec-mode))
+
+(add-to-list 'auto-mode-alist '("\\.cljx\\'" . clojurex-mode))
+
+(add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojurescript-mode))
+
+(add-to-list 'auto-mode-alist '("\\(?:build\\|profile\\)\\.boot\\'" . clojure-mode))
 
 ;;;***
 
@@ -944,8 +1255,9 @@ A mode for editing yasnippets
 
 ;;;***
 
-;;;### (autoloads nil nil ("auto-complete/auto-complete-pkg.el")
-;;;;;;  (21867 43579 978019 87000))
+;;;### (autoloads nil nil ("anything-slime/anything-slime.el" "auto-complete/auto-complete-pkg.el"
+;;;;;;  "clojure-mode/clojure-mode-extra-font-locking.el") (22963
+;;;;;;  22728 322164 489000))
 
 ;;;***
 

@@ -6,6 +6,8 @@
 	   (:name ac-slime :website "https://github.com/purcell/ac-slime" :description "Emacs auto-complete plugin for Slime symbols" :type github :depends
 		  (slime)
 		  :pkgname "purcell/ac-slime"))
+ (anything-slime status "installed" recipe
+		 (:name anything-slime :auto-generated t :type emacswiki :description "anything-sources and some utilities for SLIME." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/anything-slime.el"))
  (auctex status "installed" recipe
 	 (:name auctex :website "http://www.gnu.org/software/auctex/" :description "AUCTeX is an extensible package for writing and formatting TeX files in GNU Emacs and XEmacs. It supports many different TeX macro packages, including AMS-TeX, LaTeX, Texinfo, ConTeXt, and docTeX (dtx files)." :type git :module "auctex" :url "git://git.savannah.gnu.org/auctex.git" :build
 		`(("./autogen.sh")
@@ -32,6 +34,8 @@
 			   (:name auto-complete-emacs-lisp :description "Auto-complete sources for emacs lisp" :type http :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" :depends auto-complete))
  (auto-complete-latex status "installed" recipe
 		      (:name auto-complete-latex :description "A LaTeX extention for auto-complete-mode" :website "https://bitbucket.org/tequilasunset/auto-complete-latex" :url "https://bitbucket.org/tequilasunset/auto-complete-latex" :type hg :depends auto-complete))
+ (cal-china-x status "installed" recipe
+	      (:name cal-china-x :description "Chinese calendar extras" :type github :pkgname "xwl/cal-china-x" :features cal-china-x))
  (cedet status "installed" recipe
 	(:name cedet :website "http://cedet.sourceforge.net/" :description "CEDET is a Collection of Emacs Development Environment Tools written with the end goal of creating an advanced development environment in Emacs." :type git :url "http://git.code.sf.net/p/cedet/git" :build
 	       `(("sh" "-c" "touch `find . -name Makefile`")
@@ -66,6 +70,9 @@
 		  (expand-file-name "cedet-devel-load.el" pdir)))))
  (cl-lib status "installed" recipe
 	 (:name cl-lib :builtin "24.3" :type elpa :description "Properly prefixed CL functions and macros" :url "http://elpa.gnu.org/packages/cl-lib.html"))
+ (clojure-mode status "installed" recipe
+	       (:name clojure-mode :website "https://github.com/clojure-emacs/clojure-mode" :description "Emacs support for the Clojure language." :type github :pkgname "clojure-emacs/clojure-mode"))
+ (company-mode status "required" recipe nil)
  (el-get status "installed" recipe
 	 (:name el-get :website "https://github.com/dimitri/el-get#readme" :description "Manage the external elisp bits and pieces you depend upon." :type github :branch "master" :pkgname "dimitri/el-get" :info "." :compile
 		("el-get.*\\.el$" "methods/")
@@ -92,6 +99,7 @@
 	   (:name facebook :auto-generated t :type emacswiki :description "Access the Facebook API from emacs" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/facebook.el"))
  (fuzzy status "installed" recipe
 	(:name fuzzy :website "https://github.com/auto-complete/fuzzy-el" :description "Fuzzy matching utilities for GNU Emacs" :type github :pkgname "auto-complete/fuzzy-el"))
+ (go-autocomplete status "required" recipe nil)
  (go-mode status "installed" recipe
 	  (:name go-mode :description "Major mode for the Go programming language" :type github :pkgname "dominikh/go-mode.el"))
  (graphviz-dot-mode status "installed" recipe
@@ -102,6 +110,8 @@
  (org-mode status "required" recipe nil)
  (popup status "installed" recipe
 	(:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :depends cl-lib :pkgname "auto-complete/popup-el"))
+ (sdcv status "installed" recipe
+       (:name sdcv :auto-generated t :type emacswiki :description "Interface for sdcv (StartDict console version)." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/sdcv.el"))
  (slime status "installed" recipe
 	(:name slime :description "Superior Lisp Interaction Mode for Emacs" :type github :autoloads "slime-autoloads" :info "doc" :pkgname "slime/slime" :depends cl-lib :load-path
 	       ("." "contrib")
