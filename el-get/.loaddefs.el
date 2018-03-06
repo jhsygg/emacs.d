@@ -1447,8 +1447,8 @@ Blocking version `jedi:install-server'.
 ;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
 ;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
 ;;;;;;  "git-emacs/git-status.el" "init-golang/init-golang.el" "jedi-core/test-jedi.el"
-;;;;;;  "jedi-core/tryout-jedi.el" "popup/popup.el") (23198 37686
-;;;;;;  222249 699000))
+;;;;;;  "jedi-core/tryout-jedi.el" "popup/popup.el") (23198 38209
+;;;;;;  557861 908000))
 
 ;;;***
 
