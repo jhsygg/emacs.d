@@ -1424,10 +1424,353 @@ Blocking version `jedi:install-server'.
 
 ;;;***
 
-;;;### (autoloads nil nil ("anything-slime/anything-slime.el" "auto-complete/auto-complete-pkg.el"
-;;;;;;  "chinese-fonts-setup/cnfonts-ui.el" "clojure-mode/clojure-mode-extra-font-locking.el"
-;;;;;;  "ctable/ctable.el" "ctable/test-ctable.el" "ein/lisp/debug-ein.el"
-;;;;;;  "ein/lisp/ein-ac.el" "ein/lisp/ein-cell-edit.el" "ein/lisp/ein-cell-output.el"
+;;;### (autoloads nil "python-mode/python-mode" "python-mode/python-mode.el"
+;;;;;;  (23202 41462 881034 277000))
+;;; Generated autoloads from python-mode/python-mode.el
+
+(autoload 'py-backward-class "python-mode/python-mode" "\
+Go to beginning of ‘class’ according to INDENT.
+
+If already at beginning, go one ‘class’ backward.
+Optional DECORATOR BOL
+
+Return beginning of ‘class’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR BOL)" t nil)
+
+(autoload 'py-backward-def "python-mode/python-mode" "\
+Go to beginning of ‘def’ according to INDENT.
+
+If already at beginning, go one ‘def’ backward.
+Optional DECORATOR BOL
+
+Return beginning of ‘def’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR BOL)" t nil)
+
+(autoload 'py-backward-def-or-class "python-mode/python-mode" "\
+Go to beginning of ‘def-or-class’ according to INDENT.
+
+If already at beginning, go one ‘def-or-class’ backward.
+Optional DECORATOR BOL
+
+Return beginning of ‘def-or-class’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR BOL)" t nil)
+
+(autoload 'py-backward-class-bol "python-mode/python-mode" "\
+Go to beginning of ‘class’ according to INDENT, go to BOL.
+Optional DECORATOR BOL
+
+If already at beginning, go one ‘class’ backward.
+Return beginning of ‘class’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR)" t nil)
+
+(autoload 'py-backward-def-bol "python-mode/python-mode" "\
+Go to beginning of ‘def’ according to INDENT, go to BOL.
+Optional DECORATOR BOL
+
+If already at beginning, go one ‘def’ backward.
+Return beginning of ‘def’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR)" t nil)
+
+(autoload 'py-backward-def-or-class-bol "python-mode/python-mode" "\
+Go to beginning of ‘def-or-class’ according to INDENT, go to BOL.
+Optional DECORATOR BOL
+
+If already at beginning, go one ‘def-or-class’ backward.
+Return beginning of ‘def-or-class’ if successful, nil otherwise
+
+\(fn &optional INDENT DECORATOR)" t nil)
+
+(autoload 'py-forward-class "python-mode/python-mode" "\
+Go to end of class.
+
+Return end of class if successful, nil otherwise
+Optional arg DECORATOR is used if form supports one
+With optional BOL, go to beginning of line following match.
+
+\(fn &optional DECORATOR BOL)" t nil)
+
+(autoload 'py-forward-def-or-class "python-mode/python-mode" "\
+Go to end of def-or-class.
+
+Return end of def-or-class if successful, nil otherwise
+Optional arg DECORATOR is used if form supports one
+With optional BOL, go to beginning of line following match.
+
+\(fn &optional DECORATOR BOL)" t nil)
+
+(autoload 'py-forward-def "python-mode/python-mode" "\
+Go to end of def.
+
+Return end of def if successful, nil otherwise
+Optional arg DECORATOR is used if form supports one
+With optional BOL, go to beginning of line following match.
+
+\(fn &optional DECORATOR BOL)" t nil)
+
+(autoload 'py-shell "python-mode/python-mode" "\
+Start an interactive Python interpreter in another window.
+Interactively, \\[universal-argument] prompts for a new ‘buffer-name’.
+  \\[universal-argument] 2 prompts for ‘py-python-command-args’.
+  If ‘default-directory’ is a remote file name, it is also prompted
+  to change if called with a prefix arg.
+  Optional ARGPROMPT DEDICATED
+  Optional string SHELL overrides default ‘py-shell-name’.
+  Returns py-shell's ‘buffer-name’.
+  BUFFER allows specifying a name, the Python process is connected to
+  FAST process not in ‘comint-mode’ buffer
+  EXCEPTION-BUFFER point to error
+  SPLIT see var ‘py-split-window-on-execute’
+  SWITCH see var ‘py-switch-buffers-on-execute-p’
+
+\(fn &optional ARGPROMPT DEDICATED SHELL BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'ipython "python-mode/python-mode" "\
+Start an IPython interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'ipython2\.7 "python-mode/python-mode" "\
+Start an IPython2.7 interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'ipython3 "python-mode/python-mode" "\
+Start an IPython3 interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'jython "python-mode/python-mode" "\
+Start an Jython interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'python "python-mode/python-mode" "\
+Start an Python interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'python2 "python-mode/python-mode" "\
+Start an Python2 interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'python3 "python-mode/python-mode" "\
+Start an Python3 interpreter.
+
+Optional ARG \\[universal-argument] prompts for path to the interpreter.
+
+\(fn &optional ARGPROMPT BUFFER FAST EXCEPTION-BUFFER SPLIT SWITCH)" t nil)
+
+(autoload 'py-auto-completion-mode "python-mode/python-mode" "\
+Run auto-completion
+
+\(fn)" t nil)
+
+(autoload 'python-mode "python-mode/python-mode" "\
+Major mode for editing Python files.
+
+To submit a problem report, enter `\\[py-submit-bug-report]' from a
+`python-mode' buffer.  Do `\\[py-describe-mode]' for detailed
+documentation.  To see what version of `python-mode' you are running,
+enter `\\[py-version]'.
+
+This mode knows about Python indentation, tokens, comments and
+continuation lines.  Paragraphs are separated by blank lines only.
+
+COMMANDS
+
+`py-shell'	Start an interactive Python interpreter in another window
+`py-execute-statement'	Send statement at point to Python default interpreter
+`py-backward-statement'	Go to the initial line of a simple statement
+
+etc.
+
+See available commands listed in files commands-python-mode at directory doc
+
+VARIABLES
+
+`py-indent-offset'	indentation increment
+`py-shell-name'		shell command to invoke Python interpreter
+`py-split-window-on-execute'		When non-nil split windows
+`py-switch-buffers-on-execute-p'	When non-nil switch to the Python output buffer
+
+See available customizations listed in files variables-python-mode at directory doc
+
+\\{python-mode-map}
+
+\(fn)" t nil)
+
+(autoload 'py-python-shell-mode "python-mode/python-mode" "\
+Major mode for interacting with a Python process.
+A Python process can be started with \\[py-shell].
+
+You can send text to the Python process from other buffers
+containing Python source.
+ * \\[py-execute-region] sends the current region to the Python process.
+
+Sets basic comint variables, see also versions-related stuff in `py-shell'.
+\\{py-python-shell-mode-map}
+
+\(fn)" t nil)
+
+(autoload 'py-ipython-shell-mode "python-mode/python-mode" "\
+Major mode for interacting with a Python process.
+A Python process can be started with \\[py-shell].
+
+You can send text to the Python process from other buffers
+containing Python source.
+ * \\[py-execute-region] sends the current region to the Python process.
+
+Sets basic comint variables, see also versions-related stuff in `py-shell'.
+\\{py-ipython-shell-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "python-mode/test/doctest-mode" "python-mode/test/doctest-mode.el"
+;;;;;;  (23202 41462 882034 278000))
+;;; Generated autoloads from python-mode/test/doctest-mode.el
+
+(autoload 'doctest-register-mmm-classes "python-mode/test/doctest-mode" "\
+Register doctest's mmm classes, allowing doctest to be used as a
+submode region in other major modes, such as python-mode and rst-mode.
+Two classes are registered:
+
+`doctest-docstring'
+
+    Used to edit docstrings containing doctest examples in python-
+    mode.  Docstring submode regions start and end with triple-quoted
+    strings (\"\"\").  In order to avoid confusing start-string
+    markers and end-string markers, all triple-quote strings in the
+    buffer are treated as submode regions (even if they're not
+    actually docstrings).  Use (C-c % C-d) to insert a new doctest-
+    docstring region.  When `doctest-execute' (C-c C-c) is called
+    inside a doctest-docstring region, it executes just the current
+    docstring.  The globals for this execution are constructed by
+    importing the current buffer's contents in Python.
+
+`doctest-example'
+
+    Used to edit doctest examples in text-editing modes, such as
+    `rst-mode' or `text-mode'.  Docstring submode regions start with
+    optionally indented prompts (>>>) and end with blank lines.  Use
+    (C-c % C-e) to insert a new doctest-example region.  When
+    `doctest-execute' (C-c C-c) is called inside a doctest-example
+    region, it executes all examples in the buffer.
+
+If ADD-MODE-EXT-CLASSES is true, then register the new classes in
+`mmm-mode-ext-classes-alist', which will cause them to be used by
+default in the following modes:
+
+    doctest-docstring:  python-mode
+    doctest-example:    rst-mode
+
+If FIX-MMM-FONTIFY-REGION-BUG is true, then register a hook that will
+fix a bug in `mmm-fontify-region' that affects some (but not all)
+versions of emacs.  (See `doctest-fixed-mmm-fontify-region' for more
+info.)
+
+\(fn &optional ADD-MODE-EXT-CLASSES FIX-MMM-FONTIFY-REGION-BUG)" t nil)
+
+(add-to-list 'auto-mode-alist '("\\.doctest$" . doctest-mode))
+
+(autoload 'doctest-mode "python-mode/test/doctest-mode" "\
+A major mode for editing text files that contain Python
+doctest examples.  Doctest is a testing framework for Python that
+emulates an interactive session, and checks the result of each
+command.  For more information, see the Python library reference:
+<http://docs.python.org/lib/module-doctest.html>
+
+`doctest-mode' defines three kinds of line, each of which is
+treated differently:
+
+  - 'Source lines' are lines consisting of a Python prompt
+    ('>>>' or '...'), followed by source code.  Source lines are
+    colored (similarly to `python-mode') and auto-indented.
+
+  - 'Output lines' are non-blank lines immediately following
+    source lines.  They are colored using several doctest-
+    specific output faces.
+
+  - 'Text lines' are any other lines.  They are not processed in
+    any special way.
+
+\\{doctest-mode-map}
+
+\(fn)" t nil)
+
+;;;***
+
+;;;### (autoloads nil "yasnippet/yasnippet" "yasnippet/yasnippet.el"
+;;;;;;  (23223 5262 32228 674000))
+;;; Generated autoloads from yasnippet/yasnippet.el
+
+(autoload 'yas-minor-mode "yasnippet/yasnippet" "\
+Toggle YASnippet mode.
+
+When YASnippet mode is enabled, `yas-expand', normally bound to
+the TAB key, expands snippets of code depending on the major
+mode.
+
+With no argument, this command toggles the mode.
+positive prefix argument turns on the mode.
+Negative prefix argument turns off the mode.
+
+Key bindings:
+\\{yas-minor-mode-map}
+
+\(fn &optional ARG)" t nil)
+
+(defvar yas-global-mode nil "\
+Non-nil if Yas-Global mode is enabled.
+See the `yas-global-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `yas-global-mode'.")
+
+(custom-autoload 'yas-global-mode "yasnippet/yasnippet" nil)
+
+(autoload 'yas-global-mode "yasnippet/yasnippet" "\
+Toggle Yas minor mode in all buffers.
+With prefix ARG, enable Yas-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Yas minor mode is enabled in all buffers where
+`yas-minor-mode-on' would do it.
+See `yas-minor-mode' for more information on Yas minor mode.
+
+\(fn &optional ARG)" t nil)
+(autoload 'snippet-mode "yasnippet" "A mode for editing yasnippets" t nil)
+
+;;;***
+
+;;;### (autoloads nil nil ("ac-anything/ac-anything.el" "ac-anything2/ac-anything2.el"
+;;;;;;  "ac-company/ac-company.el" "ac-python-async/ac-python-async.el"
+;;;;;;  "ac-python/ac-python.el" "anything-slime/anything-slime.el"
+;;;;;;  "auto-complete/auto-complete-pkg.el" "chinese-fonts-setup/cnfonts-ui.el"
+;;;;;;  "clojure-mode/clojure-mode-extra-font-locking.el" "ctable/ctable.el"
+;;;;;;  "ctable/test-ctable.el" "ein/lisp/debug-ein.el" "ein/lisp/ein-ac.el"
+;;;;;;  "ein/lisp/ein-cell-edit.el" "ein/lisp/ein-cell-output.el"
 ;;;;;;  "ein/lisp/ein-cell.el" "ein/lisp/ein-classes.el" "ein/lisp/ein-completer.el"
 ;;;;;;  "ein/lisp/ein-contents-api.el" "ein/lisp/ein-core.el" "ein/lisp/ein-events.el"
 ;;;;;;  "ein/lisp/ein-file.el" "ein/lisp/ein-ipdb.el" "ein/lisp/ein-kernelinfo.el"
@@ -1447,8 +1790,23 @@ Blocking version `jedi:install-server'.
 ;;;;;;  "git-emacs/git-emacs-autoloads.el" "git-emacs/git-emacs.el"
 ;;;;;;  "git-emacs/git-global-keys.el" "git-emacs/git-log.el" "git-emacs/git-modeline.el"
 ;;;;;;  "git-emacs/git-status.el" "init-golang/init-golang.el" "jedi-core/test-jedi.el"
-;;;;;;  "jedi-core/tryout-jedi.el" "popup/popup.el") (23198 38209
-;;;;;;  557861 908000))
+;;;;;;  "jedi-core/tryout-jedi.el" "latex-frame-mode/latex-frame-mode.el"
+;;;;;;  "popup/popup.el" "python-mode/python-mode-pkg.el" "python-mode/test/py-bug-numbered-tests.el"
+;;;;;;  "python-mode/test/py-completion-tests.el" "python-mode/test/py-ert-always-split-lp-1361531-tests.el"
+;;;;;;  "python-mode/test/py-ert-beginning-tests.el" "python-mode/test/py-ert-end-tests.el"
+;;;;;;  "python-mode/test/py-ert-execute-block-test.el" "python-mode/test/py-ert-execute-region-test.el"
+;;;;;;  "python-mode/test/py-ert-forward-tests.el" "python-mode/test/py-ert-function-tests.el"
+;;;;;;  "python-mode/test/py-ert-interactive-tests.el" "python-mode/test/py-ert-just-two-split-lp-1361531-tests.el"
+;;;;;;  "python-mode/test/py-ert-tests-1.el" "python-mode/test/py-ert-tests-2.el"
+;;;;;;  "python-mode/test/py-ert-tests-3.el" "python-mode/test/py-ert-tests-4.el"
+;;;;;;  "python-mode/test/py-ert-variablen-tests.el" "python-mode/test/py-execute-region-commandp-test.el"
+;;;;;;  "python-mode/test/py-interactive-tests.el" "python-mode/test/py-non-travis-tests.el"
+;;;;;;  "python-mode/test/py-shell-arg-ert-tests.el" "python-mode/test/py-shell-completion-tests.el"
+;;;;;;  "python-mode/test/py-shell-ert-tests.el" "python-mode/test/py-split-window-on-execute-lp-1361531-test.el"
+;;;;;;  "python-mode/test/python-extended-executes-test.el" "python-mode/test/python-mode-syntax-test.el"
+;;;;;;  "python-mode/test/python-mode-test.el" "python-mode/test/setup-ert-tests.el"
+;;;;;;  "yasnippet/yasnippet-debug.el" "yasnippet/yasnippet-tests.el")
+;;;;;;  (23223 5262 31228 672000))
 
 ;;;***
 

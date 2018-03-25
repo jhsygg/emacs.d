@@ -1,21 +1,34 @@
-((ac-math status "installed" recipe
+((ac-anything status "installed" recipe
+	      (:name ac-anything :auto-generated t :type emacswiki :description "Auto Complete with Anything" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/ac-anything.el"))
+ (ac-anything2 status "installed" recipe
+	       (:name ac-anything2 :auto-generated t :type emacswiki :description "ac-anything.el for the latest version of auto-complete.el" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/ac-anything2.el"))
+ (ac-company status "installed" recipe
+	     (:name ac-company :website "http://github.com/buzztaiki/auto-complete" :description "company backend for auto-complete" :type http :url "https://raw.github.com/buzztaiki/auto-complete/master/ac-company.el" :depends
+		    (auto-complete company-mode)))
+ (ac-math status "installed" recipe
 	  (:name ac-math :type github :website "https://github.com/vspinu/ac-math" :description "This is an add-on which defines three ac-sources for the auto-complete package" :depends
 		 (auto-complete math-symbol-lists)
 		 :pkgname "vspinu/ac-math"))
- (ac-slime status "required" recipe
-	   (:name ac-slime :website "https://github.com/purcell/ac-slime" :description "Emacs auto-complete plugin for Slime symbols" :type github :depends
-		  (slime)
-		  :pkgname "purcell/ac-slime"))
+ (ac-python status "installed" recipe
+	    (:name ac-python :description "Simple Python Completion Source for Auto-Complete" :depends auto-complete :type http :url "http://chrispoole.com/downloads/ac-python.el" :features ac-python))
+ (ac-python-async status "installed" recipe
+		  (:name ac-python-async :description "Simple Python Completion Source for Auto-Complete" :type github :pkgname "thorrr/ac-python-async"))
  (anaconda-mode status "installed" recipe
 		(:name anaconda-mode :description "Code navigation, documentation lookup and completion for Python." :type github :pkgname "proofit404/anaconda-mode" :depends
 		       (dash f json-rpc pythonic)))
  (anything-slime status "installed" recipe
 		 (:name anything-slime :auto-generated t :type emacswiki :description "anything-sources and some utilities for SLIME." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/anything-slime.el"))
- (auctex status "required" recipe
+ (auctex status "installed" recipe
 	 (:name auctex :website "http://www.gnu.org/software/auctex/" :description "AUCTeX is an extensible package for writing and formatting TeX files in GNU Emacs and XEmacs. It supports many different TeX macro packages, including AMS-TeX, LaTeX, Texinfo, ConTeXt, and docTeX (dtx files)." :type git :module "auctex" :url "git://git.savannah.gnu.org/auctex.git" :build
 		`(("./autogen.sh")
 		  ("./configure" "--without-texmf-dir" "--with-packagelispdir=$(pwd)" "--with-packagedatadir=$(pwd)" ,(concat "--with-emacs=" el-get-emacs))
 		  ("make"))
+		:build/berkeley-unix
+		`(("sed" "-i" "" "-e" "s/MAKE=make/MAKE=gmake/g" "autogen.sh")
+		  ("./autogen.sh")
+		  ("./configure" "--without-texmf-dir" "--with-packagelispdir=$(pwd)" "--with-packagedatadir=$(pwd)" ,(concat "--with-emacs=" el-get-emacs)
+		   "MAKE=gmake")
+		  ("gmake"))
 		:build/darwin
 		`(("./autogen.sh")
 		  ("./configure" "--without-texmf-dir" "--with-packagelispdir=$(pwd)" "--with-packagedatadir=$(pwd)" "--with-lispdir=$(pwd)" ,(concat "--with-emacs=" el-get-emacs))
@@ -166,6 +179,8 @@
 		   (epc python-environment cl-lib)))
  (json-rpc status "installed" recipe
 	   (:name json-rpc :description "JSON-RPC library." :type github :pkgname "skeeto/elisp-json-rpc"))
+ (latex-frame-mode status "installed" recipe
+		   (:name latex-frame-mode :auto-generated t :type emacswiki :description "minor mode for latex beamer geeks equipped with folding power" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/latex-frame-mode.el"))
  (let-alist status "required" recipe
 	    (:name let-alist :description "Easily let-bind values of an assoc-list by their names." :builtin "25.0.50" :type elpa :url "https://elpa.gnu.org/packages/let-alist.html"))
  (math-symbol-lists status "installed" recipe
@@ -191,7 +206,19 @@
  (python-environment status "installed" recipe
 		     (:name python-environment :description "Python virtualenv API for Emacs Lisp" :type github :pkgname "tkf/emacs-python-environment" :depends
 			    (deferred)))
- (python-mode status "required" recipe nil)
+ (python-mode status "installed" recipe
+	      (:name python-mode :description "Major mode for editing Python programs" :type git :url "https://gitlab.com/python-mode-devs/python-mode" :load-path
+		     ("." "test")
+		     :compile nil :prepare
+		     (progn
+		       (autoload 'python-mode "python-mode" "Python editing mode." t)
+		       (autoload 'doctest-mode "doctest-mode" "Doctest unittest editing mode." t)
+		       (setq py-install-directory
+			     (el-get-package-directory "python-mode"))
+		       (add-to-list 'auto-mode-alist
+				    '("\\.py$" . python-mode))
+		       (add-to-list 'interpreter-mode-alist
+				    '("python" . python-mode)))))
  (python-pep8 status "installed" recipe
 	      (:type github :pkgname "emacsmirror/python-pep8" :name python-pep8 :type emacsmirror :description "Minor mode for running `pep8'" :features python-pep8 :post-init
 		     (require 'tramp)))
@@ -200,6 +227,7 @@
  (pyvenv status "installed" recipe
 	 (:name pyvenv :website "https://github.com/jorgenschaefer/pyvenv" :description "Python virtual environment interface for Emacs" :type github :pkgname "jorgenschaefer/pyvenv" :post-init
 		(el-get-envpath-prepend "PYTHONPATH" default-directory)))
+ (qq-mode status "required" recipe nil)
  (request status "installed" recipe
 	  (:name request :description "Easy HTTP request for Emacs Lisp" :type github :submodule nil :pkgname "abingham/emacs-request" :depends
 		 (deferred)
@@ -211,7 +239,18 @@
        (:name sdcv :auto-generated t :type emacswiki :description "Interface for sdcv (StartDict console version)." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/sdcv.el"))
  (seq status "required" recipe
       (:name seq :description "Sequence manipulation library for Emacs" :builtin "25" :type github :pkgname "NicolasPetton/seq.el"))
- (slime status "required" recipe nil)
+ (slime status "installed" recipe
+	(:name slime :description "Superior Lisp Interaction Mode for Emacs" :type github :autoloads "slime-autoloads" :info "doc" :pkgname "slime/slime" :depends cl-lib :load-path
+	       ("." "contrib")
+	       :build
+	       '(("sed" "-i" "s/@itemx INIT-FUNCTION/@item INIT-FUNCTION/" "doc/slime.texi")
+		 ("make" "-C" "doc" "slime.info"))
+	       :build/darwin
+	       '(("make" "-C" "doc" "slime.info"))
+	       :build/berkeley-unix
+	       '(("gmake" "-C" "doc" "slime.info"))
+	       :post-init
+	       (slime-setup)))
  (unicad status "installed" recipe
 	 (:name unicad :auto-generated t :type emacswiki :description "an elisp port of Mozilla Universal Charset Auto Detector" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/unicad.el"))
  (virtualenvwrapper status "installed" recipe
@@ -220,8 +259,7 @@
  (websocket status "installed" recipe
 	    (:name websocket :description "A websocket implementation in elisp, for emacs." :type github :pkgname "ahyatt/emacs-websocket"))
  (yasnippet status "installed" recipe
-	    (:name yasnippet :website "https://github.com/capitaomorte/yasnippet.git" :description "YASnippet is a template system for Emacs." :type github :pkgname "capitaomorte/yasnippet" :compile "yasnippet.el" :submodule nil :build
-		   (("git" "submodule" "update" "--init" "--" "snippets"))))
+	    (:name yasnippet :website "https://github.com/capitaomorte/yasnippet.git" :description "YASnippet is a template system for Emacs." :type github :pkgname "capitaomorte/yasnippet" :compile "yasnippet.el" :submodule nil))
  (yasnippet-config status "installed" recipe
 		   (:name yasnippet-config :auto-generated t :type emacswiki :description "Configuration of yasnippet.el" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/yasnippet-config.el"))
  (yasnippet-snippets status "installed" recipe

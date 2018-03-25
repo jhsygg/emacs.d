@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/auctex-11.88")
+(add-to-list 'load-path "~/.emacs.d/auctex-12.1")
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 
