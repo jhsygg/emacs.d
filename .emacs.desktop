@@ -2,42 +2,30 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Mar 25 16:49:05 2018
+;; Created Tue Mar 27 22:12:48 2018
 ;; Desktop file format version 208
 ;; Emacs version 25.3.1
 
 ;; Global section:
-(setq desktop-saved-frameset [frameset 1 (23223 25217 467340 344000) (desktop . "208") "jdp@localhost.localdomain" nil nil ((((font-backend xft x) (font . "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background . "grey75") (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha 100 100) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (hight . 70) (life . 30) (frameset--id . "7346-B9A7-266F-7FA8") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":1") (explicit-name) (visibility . t) (height . 42) (width . 150) (left . 0) (top . 0)) ((min-height . 4) (min-width . 10) (min-height-ignore . 4) (min-width-ignore . 7) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 90) (min-pixel-height-ignore . 72) (min-pixel-width-ignore . 63) (min-pixel-height-safe . 18) (min-pixel-width-safe . 18)) leaf (pixel-width . 1366) (pixel-height . 750) (total-width . 151) (total-height . 41) (normal-height . 1.0) (normal-width . 1.0) (buffer "gtd.org" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 171) (start . 1))))])
+(setq desktop-saved-frameset [frameset 1 (23226 20832 973931 159000) (desktop . "208") "jdp@localhost.localdomain" nil nil ((((font-backend xft x) (font . "-PfEd-DejaVu Sans Mono-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1") (font-parameter . "Monospace 11") (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars) (horizontal-scroll-bars) (foreground-color . "#fff8dc") (background-color . "#233b5a") (mouse-color . "Grey") (border-color . "black") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 0) (tool-bar-lines . 0) (title) (wait-for-wm . t) (tool-bar-position . top) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . bar) (scroll-bar-width . 0) (scroll-bar-height . 0) (alpha) (fullscreen . fullboth) (display-type . color) (background-mode . dark) (cursor-color . "green") (sticky) (environment) (viper-saved-cursor-color-in-replace-mode . "Red3") (top-toolbar-shadow-color . "#fffffbeeffff") (bottom-toolbar-shadow-color . "#79e77df779e7") (background-toolbar-color . "#cf3ccf3ccf3c") (frameset--id . "FF03-2788-B3AF-515E") (frameset--mini t . t) (modeline . t) (minibuffer . t) (unsplittable) (icon-name) (display . ":1") (explicit-name) (fullscreen-restore) (hight . 70) (life . 30) (visibility . t) (height . 42) (width . 150) (left . 0) (top . 0)) ((min-height . 8) (min-width . 10) (min-height-ignore . 8) (min-width-ignore . 7) (min-height-safe . 2) (min-width-safe . 2) (min-pixel-height . 144) (min-pixel-width . 90) (min-pixel-height-ignore . 144) (min-pixel-width-ignore . 63) (min-pixel-height-safe . 36) (min-pixel-width-safe . 18)) vc (pixel-width . 1366) (pixel-height . 750) (total-width . 152) (total-height . 42) (normal-height . 1.0) (normal-width . 1.0) (combination-limit) (leaf (pixel-width . 1366) (pixel-height . 372) (total-width . 152) (total-height . 21) (normal-height . 0.5) (normal-width . 1.0) (buffer ".emacs" (selected . t) (hscroll . 0) (fringes 8 8 nil) (margins 3) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 27305) (start . 26897))) (leaf (last . t) (pixel-width . 1366) (pixel-height . 378) (total-width . 152) (total-height . 21) (normal-height . 0.5) (normal-width . 1.0) (buffer "*Warnings*" (selected) (hscroll . 0) (fringes 8 8 nil) (margins 1) (scroll-bars nil 0 t nil 0 t) (vscroll . 0) (dedicated) (point . 347) (start . 1)))))])
 (setq desktop-missing-file-warning nil)
 (setq tags-file-name nil)
 (setq tags-table-list nil)
-(setq search-ring '("jdp-sl" "slime" "python" "ac-slime" "latex" "org" "jdp-latex" "org-latex" "init" "org-mode" "ein" "clos" "cede" "cal-" "auto-complate" "auto-c"))
+(setq search-ring '("git" "lisp" "slime" "mmm" "jdp-sl" "python" "ac-slime" "latex" "org" "jdp-latex" "org-latex" "init" "org-mode" "ein" "clos" "cede"))
 (setq regexp-search-ring '("auctex"))
-(setq register-alist '((48 . ";\n;\n;\n;\n;\n;\n;")))
-(setq file-name-history '("~/org/gtd.org" "~/.emacs.d/plugins/jdp-yasnippet.el" "~/.emacs" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/plugins/jdp-latex.el" "/etc/my.cnf" "~/org/懶河懙鐟力懴祽统懝蕬障.org" "~/myworks/mathsj.tex" "~/myworks/" "~/org/" "~/org/ajax懷习.org" "~/org/gtd.org" "~/.emacs.d/el-get" "~/.emacs.d/plugins/jdp-slime.el" "~/.emacs.d/plugins/" "~/emacs.d/init.el" "/usr/share/emacs/25.3/etc/HELLO" "~/emacs.d/lisp/init-python.el" "~/org/gtd.org.gpg" "~/.emacs.d/elpa/auctex-12.1.0/auctex-autoloads.el" "~/myworks" "~/mywork" "~/myworks/ppt.tex" "~/mycode/test.tex" "~/mycode" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.tex" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.org" "~/emacs.d/lisp/init-org.el" "~/emacs.d/lisp/"))
+(setq register-alist nil)
+(setq file-name-history '("~/.emacs.d/el-get/.loaddefs.el" "~/.emacs" "~/.emacs.d/el-get/.loaddefs.el" "~/.emacs.d/plugins/jdp-slime.el" "~/.emacs" "~/.emacs.d/lisp/init-sql.el" "~/.emacs.d/lisp/init-sql" "~/.emacs.d/lisp/init-auto-complete.el" "~/.emacs.d/lisp/" "~/.emacs.d/lisp/init-org.el" "~/.emacs.d/init.el" "~/.emacs.d/lisp/init-lisp.el" "~/org/gtd.org" "~/.emacs.d/plugins/jdp-yasnippet.el" "~/.emacs.d/plugins/jdp-latex.el" "/etc/my.cnf" "~/org/懶河懙鐟力懴祽统懝蕬障.org" "~/myworks/mathsj.tex" "~/myworks/" "~/org/" "~/org/ajax懷习.org" "~/.emacs.d/el-get" "~/.emacs.d/plugins/" "~/emacs.d/init.el" "/usr/share/emacs/25.3/etc/HELLO" "~/emacs.d/lisp/init-python.el" "~/org/gtd.org.gpg" "~/.emacs.d/elpa/auctex-12.1.0/auctex-autoloads.el" "~/myworks" "~/mywork" "~/myworks/ppt.tex" "~/mycode/test.tex" "~/mycode" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.tex" "~/myworks/\221\271\234\364\255\321\323\234\364\256\361\315\352\221\311\234\364\241\321\274\354\221\320\234\364\261\321\260\262\221\234\364\243\253\221\313\370\221\326\234\364\241\321\266\234\364\242\361\265\202\360\234\364\246\310\221\234\364\254\312.org" "~/emacs.d/lisp/init-org.el" "~/emacs.d/lisp/"))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
-(desktop-create-buffer 208
-  "/home/jdp/org/gtd.org"
-  "gtd.org"
-  'org-mode
-  '(linum-mode)
-  171
-  '(nil nil)
-  nil
-  nil
-  '((buffer-file-coding-system . utf-8-unix) (overwrite-mode) (fill-column . 70) (truncate-lines))
-  '((mark-ring nil)))
-
 (desktop-create-buffer 208
   "/home/jdp/.emacs"
   ".emacs"
   'emacs-lisp-mode
   '(auto-complete-mode linum-mode)
-  27414
-  '(4878 nil)
+  27305
+  '(1 nil)
   nil
   nil
   '((buffer-file-coding-system . utf-8-unix) (overwrite-mode))
-  '((mark-ring nil)))
+  '((mark-ring (826))))
 

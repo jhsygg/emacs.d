@@ -13,6 +13,10 @@
 	    (:name ac-python :description "Simple Python Completion Source for Auto-Complete" :depends auto-complete :type http :url "http://chrispoole.com/downloads/ac-python.el" :features ac-python))
  (ac-python-async status "installed" recipe
 		  (:name ac-python-async :description "Simple Python Completion Source for Auto-Complete" :type github :pkgname "thorrr/ac-python-async"))
+ (ac-slime status "installed" recipe
+	   (:name ac-slime :website "https://github.com/purcell/ac-slime" :description "Emacs auto-complete plugin for Slime symbols" :type github :depends
+		  (slime)
+		  :pkgname "purcell/ac-slime"))
  (anaconda-mode status "installed" recipe
 		(:name anaconda-mode :description "Code navigation, documentation lookup and completion for Python." :type github :pkgname "proofit404/anaconda-mode" :depends
 		       (dash f json-rpc pythonic)))

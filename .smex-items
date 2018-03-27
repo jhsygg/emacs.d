@@ -1,0 +1,17 @@
+
+;; ----- smex-history -----
+(
+ package-refresh-contents
+ mmm-mode
+ cd
+ ri
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (package-refresh-contents . 2)
+ (mmm-mode . 2)
+)
