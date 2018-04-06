@@ -1,6 +1,6 @@
 ;;; tex-site.el - Site specific variables.  Don't edit.
 
-;; Copyright (C) 2005 Free Software Foundation, Inc.
+;; Copyright (C) 2005, 2013, 2016-2017 Free Software Foundation, Inc.
 ;;
 ;; completely rewritten.
 
@@ -38,8 +38,15 @@
 
 ;;; Code:
 
-(if (< emacs-major-version 21)
-  (error "AUCTeX requires Emacs 21 or later"))
+(if (< emacs-major-version 24)
+    (error "AUCTeX requires Emacs 24 or later"))
+
+(unless (or (fboundp 'TeX-modes-set)     ;Avoid inf-looping.
+            (fboundp 'TeX-tex-mode))     ;auctex-autoloads is not loaded.
+  ;; Try and support the case where someone loads tex-site.el or
+  ;; auctex.el directly, in the old way.
+  (provide 'tex-site)        ;Avoid (re)loading tex-site from auctex-autoloads.
+  (load "auctex-autoloads" 'noerror 'nomessage))
 
 ;; Define here in order for `M-x customize-group <RET> AUCTeX <RET>'
 ;; to work if the main AUCTeX files are not loaded yet.
@@ -53,7 +60,7 @@
   :load "tex" :load "latex" :load "tex-style")
 
 (defvar TeX-lisp-directory
-  (expand-file-name "auctex" (file-name-directory load-file-name))
+  "/home/jdp/.emacs.d/el-get/auctex"
   "The directory where most of the AUCTeX lisp files are located.
 For the location of lisp files associated with
 styles, see the variables TeX-style-* (hand-generated lisp) and
@@ -62,7 +69,7 @@ TeX-auto-* (automatically generated lisp).")
 (add-to-list 'load-path TeX-lisp-directory)
 
 (defvar TeX-data-directory
-  (expand-file-name "auctex" (file-name-directory load-file-name))
+  "/home/jdp/.emacs.d/el-get/auctex"
   "The directory where the AUCTeX non-Lisp data is located.")
 
 (defcustom TeX-auto-global
@@ -87,21 +94,23 @@ shared by all users of a site."
 
 (add-hook 'tex-site-unload-hook
 	  (lambda ()
-	    (let ((list after-load-alist))
-	      (while list
-		;; Adapted copy of the definition of `assq-delete-all'
-		;; from Emacs 21 as substitute for
-		;; `(assq-delete-all'TeX-modes-set (car list))' which
-		;; fails on non-list elements in Emacs 21.
-		(let* ((alist (car list))
-		       (tail alist)
-		       (key 'TeX-modes-set))
-		  (while tail
-		    (if (and (consp (car tail))
-			     (eq (car (car tail)) key))
-			(setq alist (delq (car tail) alist)))
-		    (setq tail (cdr tail))))
-		(setq list (cdr list))))
+	    (if (fboundp 'advice-add)
+		(TeX-modes-set 'TeX-modes nil)
+	      (let ((list after-load-alist))
+		(while list
+		  ;; Adapted copy of the definition of `assq-delete-all'
+		  ;; from Emacs 21 as substitute for
+		  ;; `(assq-delete-all'TeX-modes-set (car list))' which
+		  ;; fails on non-list elements in Emacs 21.
+		  (let* ((alist (car list))
+			 (tail alist)
+			 (key 'TeX-modes-set))
+		    (while tail
+		      (if (and (consp (car tail))
+			       (eq (car (car tail)) key))
+			  (setq alist (delq (car tail) alist)))
+		      (setq tail (cdr tail))))
+		  (setq list (cdr list)))))
 	    (setq load-path (delq TeX-lisp-directory load-path))))
 
 (defun TeX-modes-set (var value &optional update)
@@ -130,14 +139,14 @@ definition."
               (get elt 'tex-saved))))))))
 
 (defcustom TeX-modes
-  (mapcar 'car TeX-mode-alist)
+  (mapcar #'car TeX-mode-alist)
   "List of modes provided by AUCTeX.
 
 This variable can't be set normally; use customize for that, or
 set it with `TeX-modes-set'."
   :type (cons 'set
 	      (mapcar (lambda(x) (list 'const (car x))) TeX-mode-alist))
-  :set 'TeX-modes-set
+  :set #'TeX-modes-set
   :group 'AUCTeX
   :initialize(lambda (var value)
 	       (custom-initialize-reset var value)
@@ -148,11 +157,11 @@ set it with `TeX-modes-set'."
 		       `(TeX-modes-set ',var ,var t))
 		     (setq list (cdr list)))))) )
 
-(defconst AUCTeX-version "11.88"
+(defconst AUCTeX-version "2018-04-01"
     "AUCTeX version.
 If not a regular release, the date of the last change.")
 
-(defconst AUCTeX-date "2014-10-29"
+(defconst AUCTeX-date "2018-04-01"
   "AUCTeX release date using the ISO 8601 format, yyyy-mm-dd.")
 
 ;; Store bibitems when saving a BibTeX buffer
@@ -163,7 +172,8 @@ If not a regular release, the date of the last change.")
 ;;; Code:
 
 
-;;;### (autoloads nil "bib-cite" "bib-cite.el" (21585 15917 0 0))
+;;;### (autoloads nil "bib-cite" "bib-cite.el" (23239 14271 493877
+;;;;;;  199000))
 ;;; Generated autoloads from bib-cite.el
 
 (autoload 'bib-cite-minor-mode "bib-cite" "\
@@ -181,7 +191,8 @@ Unconditionally turn on Bib Cite mode.
 
 ;;;***
 
-;;;### (autoloads nil "context" "context.el" (21585 15917 0 0))
+;;;### (autoloads nil "context" "context.el" (23239 14271 494877
+;;;;;;  202000))
 ;;; Generated autoloads from context.el
 
 (defalias 'ConTeXt-mode 'context-mode)
@@ -200,8 +211,8 @@ of ConTeXt-mode-hook.
 
 ;;;***
 
-;;;### (autoloads nil "context-en" "context-en.el" (21585 15917 0
-;;;;;;  0))
+;;;### (autoloads nil "context-en" "context-en.el" (23239 14271 494877
+;;;;;;  202000))
 ;;; Generated autoloads from context-en.el
 
 (autoload 'context-en-mode "context-en" "\
@@ -218,8 +229,8 @@ of context-mode-hook.
 
 ;;;***
 
-;;;### (autoloads nil "context-nl" "context-nl.el" (21585 15917 0
-;;;;;;  0))
+;;;### (autoloads nil "context-nl" "context-nl.el" (23239 14271 494877
+;;;;;;  202000))
 ;;; Generated autoloads from context-nl.el
 
 (autoload 'context-nl-mode "context-nl" "\
@@ -236,8 +247,8 @@ of context-mode-hook.
 
 ;;;***
 
-;;;### (autoloads nil "font-latex" "font-latex.el" (21585 15917 0
-;;;;;;  0))
+;;;### (autoloads nil "font-latex" "font-latex.el" (23239 14271 499877
+;;;;;;  216000))
 ;;; Generated autoloads from font-latex.el
 
 (autoload 'font-latex-setup "font-latex" "\
@@ -247,7 +258,7 @@ Setup this buffer for LaTeX font-lock.  Usually called from a hook.
 
 ;;;***
 
-;;;### (autoloads nil "latex" "latex.el" (21585 15917 0 0))
+;;;### (autoloads nil "latex" "latex.el" (23239 14271 503877 228000))
 ;;; Generated autoloads from latex.el
 
 (autoload 'BibTeX-auto-store "latex" "\
@@ -257,6 +268,8 @@ It will setup BibTeX to store keys in an auto file.
 \(fn)" nil nil)
 
 (add-to-list 'auto-mode-alist '("\\.drv\\'" . latex-mode))
+
+(add-to-list 'auto-mode-alist '("\\.hva\\'" . latex-mode))
 
 (autoload 'TeX-latex-mode "latex" "\
 Major mode in AUCTeX for editing LaTeX files.
@@ -284,8 +297,8 @@ runs the hooks in `docTeX-mode-hook'.
 
 ;;;***
 
-;;;### (autoloads nil "multi-prompt" "multi-prompt.el" (21585 15917
-;;;;;;  0 0))
+;;;### (autoloads nil "multi-prompt" "multi-prompt.el" (23239 14271
+;;;;;;  503877 228000))
 ;;; Generated autoloads from multi-prompt.el
 
 (autoload 'multi-prompt "multi-prompt" "\
@@ -314,7 +327,8 @@ The return value is the string as entered in the minibuffer.
 
 ;;;***
 
-;;;### (autoloads nil "plain-tex" "plain-tex.el" (21585 15917 0 0))
+;;;### (autoloads nil "plain-tex" "plain-tex.el" (23239 14271 504877
+;;;;;;  231000))
 ;;; Generated autoloads from plain-tex.el
 
 (autoload 'TeX-plain-tex-mode "plain-tex" "\
@@ -326,7 +340,7 @@ Special commands:
 
 Entering `plain-tex-mode' calls the value of `text-mode-hook',
 then the value of `TeX-mode-hook', and then the value
-of plain-TeX-mode-hook.
+of `plain-TeX-mode-hook'.
 
 \(fn)" t nil)
 
@@ -337,7 +351,7 @@ See info under AUCTeX for documentation.
 Special commands:
 \\{AmSTeX-mode-map}
 
-Entering AmS-tex-mode calls the value of `text-mode-hook',
+Entering `ams-tex-mode' calls the value of `text-mode-hook',
 then the value of `TeX-mode-hook', and then the value
 of `AmS-TeX-mode-hook'.
 
@@ -345,10 +359,8 @@ of `AmS-TeX-mode-hook'.
 
 ;;;***
 
-;;;### (autoloads nil "tex" "tex.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex" "tex.el" (23239 14271 527877 297000))
 ;;; Generated autoloads from tex.el
-
-(defalias 'TeX-assoc-string (symbol-function (if (featurep 'xemacs) 'assoc 'assoc-string)))
 
 (autoload 'TeX-tex-mode "tex" "\
 Major mode in AUCTeX for editing TeX or LaTeX files.
@@ -388,7 +400,8 @@ information about your AUCTeX version and AUCTeX configuration.
 
 ;;;***
 
-;;;### (autoloads nil "tex-bar" "tex-bar.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex-bar" "tex-bar.el" (23239 14271 523877
+;;;;;;  286000))
 ;;; Generated autoloads from tex-bar.el
 
 (autoload 'TeX-install-toolbar "tex-bar" "\
@@ -403,7 +416,8 @@ Install toolbar buttons for LaTeX mode.
 
 ;;;***
 
-;;;### (autoloads nil "tex-fold" "tex-fold.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex-fold" "tex-fold.el" (23239 14271 524877
+;;;;;;  289000))
 ;;; Generated autoloads from tex-fold.el
  (autoload 'TeX-fold-mode "tex-fold" "Minor mode for hiding and revealing macros and environments." t)
 
@@ -411,7 +425,8 @@ Install toolbar buttons for LaTeX mode.
 
 ;;;***
 
-;;;### (autoloads nil "tex-font" "tex-font.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex-font" "tex-font.el" (23239 14271 524877
+;;;;;;  289000))
 ;;; Generated autoloads from tex-font.el
 
 (autoload 'tex-font-setup "tex-font" "\
@@ -421,7 +436,8 @@ Setup font lock support for TeX.
 
 ;;;***
 
-;;;### (autoloads nil "tex-info" "tex-info.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex-info" "tex-info.el" (23239 14271 524877
+;;;;;;  289000))
 ;;; Generated autoloads from tex-info.el
 
 (defalias 'Texinfo-mode 'texinfo-mode)
@@ -439,7 +455,7 @@ value of `Texinfo-mode-hook'.
 
 ;;;***
 
-;;;### (autoloads nil "tex-jp" "tex-jp.el" (21585 15917 0 0))
+;;;### (autoloads nil "tex-jp" "tex-jp.el" (23239 14271 525877 292000))
 ;;; Generated autoloads from tex-jp.el
 
 (autoload 'japanese-plain-tex-mode "tex-jp" "\
@@ -456,7 +472,8 @@ Set `japanese-TeX-mode' to t, and enter `TeX-latex-mode'.
 
 ;;;***
 
-;;;### (autoloads nil "texmathp" "texmathp.el" (21585 15917 0 0))
+;;;### (autoloads nil "texmathp" "texmathp.el" (23239 14271 527877
+;;;;;;  297000))
 ;;; Generated autoloads from texmathp.el
 
 (autoload 'texmathp "texmathp" "\
@@ -476,7 +493,8 @@ Limit searched to BOUND.
 
 ;;;***
 
-;;;### (autoloads nil "toolbar-x" "toolbar-x.el" (21585 15917 0 0))
+;;;### (autoloads nil "toolbar-x" "toolbar-x.el" (23239 14271 527877
+;;;;;;  297000))
 ;;; Generated autoloads from toolbar-x.el
  (autoload 'toolbarx-install-toolbar "toolbar-x")
 
