@@ -24,12 +24,15 @@
 
 ;;; Code:
 
+(setq slime-net-coding-system 'utf-8-unix)
+
 (add-to-list 'load-path "~/.emacs.d/el-get/slime")
 (require 'slime-autoloads)
 
 (setq inferior-lisp-program "/usr/bin/sbcl")
 (setq slime-contribs '(slime-scratch slime-editing-commands))
 
+(add-to-list 'load-path "~/.emacs.d/el-get/slime/contrib")
 (setq slime-contribs '(slime-repl))
 (setq slime-contribs '(slime-fancy))
 

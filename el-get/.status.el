@@ -17,6 +17,8 @@
 	   (:name ac-slime :website "https://github.com/purcell/ac-slime" :description "Emacs auto-complete plugin for Slime symbols" :type github :depends
 		  (slime)
 		  :pkgname "purcell/ac-slime"))
+ (all-ext status "installed" recipe
+	  (:name all-ext :auto-generated t :type emacswiki :description "Extension of M-x all" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/all-ext.el"))
  (anaconda-mode status "installed" recipe
 		(:name anaconda-mode :description "Code navigation, documentation lookup and completion for Python." :type github :pkgname "proofit404/anaconda-mode" :depends
 		       (dash f json-rpc pythonic)))
@@ -190,7 +192,25 @@
  (math-symbol-lists status "installed" recipe
 		    (:name math-symbol-lists :description "Lists of Unicode mathematical symbols and latex commands" :website "https://github.com/vspinu/math-symbol-lists" :type github :depends nil :pkgname "vspinu/math-symbol-lists"))
  (mmm-mode status "required" recipe nil)
- (org-mode status "required" recipe nil)
+ (org-mode status "installed" recipe
+	   (:name org-mode :website "http://orgmode.org/" :description "Org-mode is for keeping notes, maintaining ToDo lists, doing project planning, and authoring with a fast and effective plain-text system." :type git :url "https://code.orgmode.org/bzg/org-mode.git" :info "doc" :build/berkeley-unix `,(mapcar
+																																						  (lambda
+																																						    (target)
+																																						    (list "gmake" target
+																																							  (concat "EMACS="
+																																								  (shell-quote-argument el-get-emacs))))
+																																						  '("oldorg"))
+		  :build `,(mapcar
+			    (lambda
+			      (target)
+			      (list "make" target
+				    (concat "EMACS="
+					    (shell-quote-argument el-get-emacs))))
+			    '("oldorg"))
+		  :load-path
+		  ("." "contrib/lisp" "lisp")
+		  :load
+		  ("lisp/org-loaddefs.el")))
  (pkg-info status "installed" recipe
 	   (:name pkg-info :description "Provide information about Emacs packages." :type github :pkgname "lunaryorn/pkg-info.el" :depends
 		  (dash epl)))
@@ -260,6 +280,10 @@
  (virtualenvwrapper status "installed" recipe
 		    (:name virtualenvwrapper :type github :website "https://github.com/porterjamesj/virtualenvwrapper.el" :description "virtualenv tool for emacs" :pkgname "porterjamesj/virtualenvwrapper.el" :depends
 			   (dash s)))
+ (wcy-desktop status "installed" recipe
+	      (:name wcy-desktop :auto-generated t :type emacswiki :description "faster than desktop.el and less features." :website "https://raw.github.com/emacsmirror/emacswiki.org/master/wcy-desktop.el"))
+ (wcy-swbuff status "installed" recipe
+	     (:name wcy-swbuff :auto-generated t :type emacswiki :description "switch buffer quickly" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/wcy-swbuff.el"))
  (websocket status "installed" recipe
 	    (:name websocket :description "A websocket implementation in elisp, for emacs." :type github :pkgname "ahyatt/emacs-websocket"))
  (yasnippet status "installed" recipe
