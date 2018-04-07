@@ -54,8 +54,7 @@
 			 (ac-config-default))))
  (auto-complete-emacs-lisp status "installed" recipe
 			   (:name auto-complete-emacs-lisp :description "Auto-complete sources for emacs lisp" :type http :url "http://www.cx4a.org/pub/auto-complete-emacs-lisp.el" :depends auto-complete))
- (auto-complete-latex status "installed" recipe
-		      (:name auto-complete-latex :description "A LaTeX extention for auto-complete-mode" :website "https://bitbucket.org/tequilasunset/auto-complete-latex" :url "https://bitbucket.org/tequilasunset/auto-complete-latex" :type hg :depends auto-complete))
+ (auto-complete-latex status "required" recipe nil)
  (better-defaults status "installed" recipe
 		  (:name better-defaults :type github :pkgname "technomancy/better-defaults" :description "Fixing weird quirks and poor defaults." :checkout "0.1.3"))
  (cal-china-x status "installed" recipe
@@ -216,6 +215,8 @@
 		  (dash epl)))
  (popup status "installed" recipe
 	(:name popup :website "https://github.com/auto-complete/popup-el" :description "Visual Popup Interface Library for Emacs" :type github :submodule nil :depends cl-lib :pkgname "auto-complete/popup-el"))
+ (ps-print-19 status "installed" recipe
+	      (:name ps-print-19 :auto-generated t :type emacswiki :description "ps-print.el --- Print text from the buffer as PostScript" :website "https://raw.github.com/emacsmirror/emacswiki.org/master/ps-print-19.el"))
  (py-autopep8 status "installed" recipe
 	      (:name py-autopep8 :description "Use autopep8 to beautify a Python buffer." :type github :pkgname "paetzke/py-autopep8.el"))
  (pycomplete+ status "installed" recipe
