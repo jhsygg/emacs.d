@@ -48,14 +48,25 @@
 ;; Allow users to provide an optional "init-preload-local.el"
 (require 'init-preload-local nil t)
 
+
 ;; Load configs for specific features and modes
 (require-package 'diminish)
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
+
+;; Install use-package
 (eval-when-compile
   (add-to-list 'load-path "~/.emacs.d/use-package")
   (require 'use-package))
+
+
+;; Youdao dictionary
+(setq url-automatic-caching t)
+(global-set-key (kbd "C-c y") 'youdao-dictionary-search-at-point+)
+
+
+(require 'org-tempo)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -67,6 +78,7 @@
 (require 'init-grep)
 (require 'init-uniquify)
 (require 'init-ibuffer)
+
 (require 'init-flymake)
 (require 'init-eglot)
 
@@ -103,11 +115,11 @@
 ;;(require 'init-haml)
 (require 'init-http)
 (require 'init-python)
-(require 'init-haskell)
-(require 'init-elm)
+;;(require 'init-haskell)
+;;(require 'init-elm)
 (require 'init-purescript)
 ;;(require 'init-ruby)
-(require 'init-rails)
+;;(require 'init-rails)
 (require 'init-sql)
 (require 'init-ocaml)
 ;;(require 'init-j)
@@ -115,7 +127,7 @@
 ;;(require 'init-rust)
 ;;(require 'init-toml)
 (require 'init-yaml)
-;;(require 'init-docker)
+(require 'init-docker)
 ;;(require 'init-terraform)
 ;;(require 'init-nix)
 ;;(maybe-require-package 'nginx-mode)
@@ -123,8 +135,8 @@
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-;;(require 'init-clojure)
-;;(require 'init-clojure-cider)
+(require 'init-clojure)
+(require 'init-clojure-cider)
 (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
@@ -139,7 +151,7 @@
 (display-time-mode 1)
 
 (prefer-coding-system 'utf-8-unix)
-;;(require 'init-twitter)
+;; (require 'init-twitter)
 ;; (require 'init-mu)
 (require 'init-ledger)
 ;; Extra packages which don't require any configuration
@@ -181,11 +193,13 @@
 ;; Allow users to provide an optional "init-local" containing personal settings
 (require 'init-local nil t)
 
+
+;; Next is added by me
 (require 'org-bullets)
 (setq org-bullets-bullet-list '("☯" "○" "✸" "✿" "~"))
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
-
+;; Org-roam
 (use-package org-roam
   :ensure t
   :demand t  ;; Ensure org-roam is loaded by default
@@ -322,6 +336,37 @@ capture was not aborted."
 
 (add-to-list 'load-path "~/.emacs.d/chinese-calendar.el")
 (require 'chinese-calendar)
+
+(add-to-list 'load-path "~/.emacs.d/mind-wave/")
+(require 'mind-wave)
+
+(use-package pipenv
+  :hook (python-mode . pipenv-mode)
+  :init
+  (setq
+   pipenv-projectile-after-switch-function
+   #'pipenv-projectile-agter-switch-extended))
+
+(add-to-list 'load-path "~/.emacs.d/codeium.el")
+
+(use-package codeium
+  :init
+  (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+  :config
+  (setq use-dialog-box nil)
+  (setq codeium-mode-line-enable
+        (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
+  (add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
+  (setq codeium-api-enabled
+        (lambda (api)
+          (memq api '(GetCompletions Heartbeat CancelRequest GetAuthToken RegisterUser auth-redirect AcceptCompletion))))
+  (defun my-codeium/document/text ()
+    (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (min (+ (point) 1000) (point-max))))
+  (defun my-codeium/document/cursor_offset ()
+    (codeium-utf8-byte-length
+     (buffer-substring-no-properties (max (- (point) 3000) (point-min)) (point))))
+  (setq codeium/document/text 'my-codeium/document/text)
+  (setq codeium/document/cursor_offset 'my-codeium/document/cursor_offset))
 
 (provide 'init)
 ;; Local Variables:
